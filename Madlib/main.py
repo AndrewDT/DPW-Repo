@@ -19,13 +19,13 @@ CAN COLLECT FROM
 One array CHECK
 One dictionary CHECK
 
-At least 2 mathematical operators
+At least 2 mathematical operators CHECK
 Two conditional statements CHECK
 (with at least one logical operator)
 
-At least one function
-It must return a value
-It must have and use parameters
+At least one function CHECK
+It must return a value CHECK
+It must have and use parameters CHECK
 
 One loop - Remember that this is for repeating code!
 And meet the following requirements:
@@ -43,7 +43,7 @@ Luckily, (STRING) showed up in time to stop the madman! They fought and struggle
 print "------Welcome to MadLib! Here you will be given sections of a paragraph one at a time and fill in the blanks. Once complete, the entire story will appear!------"
 
 #Madlib for viewers
-madlib_part_one = "A villain was attacking {location} around 3pm. In no time, he had caused a great deal of damage while terrorizing the citizens. Luckily, {hero} showed up in time to stop the madman!"
+madlib_part_one = "A villain was attacking {location} around 3pm. In no time, he had caused a great deal of damage while terrorizing the citizens. Luckily, {hero} showed up in time to stop the madman! "
 #Printing Madlib for viewers
 print madlib_part_one
 
@@ -82,7 +82,7 @@ def calcHour(min):
     hour = int(min)/60
     return hour
 
-madlib_part_two = "They fought and struggled for {minutes} minutes or about {hours} hours, but it was clear who the victor would be. As a reward, the hero was given a {reward} and the villain was given {years} years in prison!"
+madlib_part_two = "They fought and struggled for {minutes} minutes or about {hours} hours, but it was clear who the victor would be. As a reward, the hero was given a {reward} and the villain was given {years} years in prison! "
 
 print madlib_part_two
 
@@ -117,8 +117,26 @@ else:
 #Filling in the blanks of the madlib variable
 madlib_part_two = madlib_part_two.format(**locals())
 #printing out the madlib with blank filled
-print madlib_part_two
+print madlib_part_one + madlib_part_two
 
+
+madlib_part_three = "Just as we know {number_one} plus {number_two} equals {result}, we all know evil never {action}!"
+
+print madlib_part_three
+
+number_one = raw_input("Please input a number!  ")
+number_two = raw_input("Please input another number!  ")
+
+def calcResult(number1, number2):
+    result = int(number1) + int(number2)
+    return result
+
+result = calcResult(number_one, number_two)
+
+action = raw_input("Please enter an action!  ")
+
+madlib_part_three = madlib_part_three.format(**locals())
+print madlib_part_one + madlib_part_two + madlib_part_three
 
 
 
