@@ -11,13 +11,13 @@ Mad Libs is a comic word game where one player is prompted for a list of words t
 Create your own mad lib in Python that collects (at least) the following information:
 
 HAS TO COLLECT
-At least 3 strings
-At least 3 numbers
+At least 3 strings CHECK
+At least 3 numbers CHECK
 And includes the following elements:
 
 CAN COLLECT FROM
-One array
-One dictionary
+One array CHECK
+One dictionary CHECK
 
 At least 2 mathematical operators
 Two conditional statements
@@ -48,16 +48,28 @@ madlib = "A villain was attacking the {location} around 3pm. In no time, he had 
 print madlib
 
 #Locations array for first blank choice
-locations = ["- city", "- YMCA", "- PetSmart"]
+locations = ["city", "YMCA", "PetSmart"]
 #Printing locations for viewers to see and choose from
 for l in locations:
     print l
 #Input for viewers to choose first blank
-response_location = raw_input("Please enter the location from the list provided. (Hero is determined by choice)  ")
+response_location = raw_input("Please enter the location from the list provided exactly as seen. (Hero is determined by choice)  ")
 
-location = response_location
-madlib = madlib.format(**locals())
-print madlib
+
+if response_location == locations[0] or response_location == locations[1] or response_location == locations[2]:
+    #Variable to hold the response of input
+    location = response_location
+    #Filling in the blanks of the madlib variable
+    madlib = madlib.format(**locals())
+    #printing out the madlib with blank filled
+    print madlib
+else:
+    print "OOPS! Please choose from the given list"
+    response_location = raw_input("Please enter the location from the list provided exactly as seen. (Hero is determined by choice)  ")
+
+
+
+
 
 #New dictionary declared
 heroes = dict()
