@@ -42,7 +42,7 @@ Luckily, (STRING) showed up in time to stop the madman! They fought and struggle
 print "------Welcome to MadLib! Here you will be given sections of a paragraph one at a time and fill in the blanks. Once complete, the entire story will appear!------"
 
 #Madlib for viewers
-madlib_part_one = "A villain was attacking the {location} around 3pm. In no time, he had caused a great deal of damage while terrorizing the citizens. Luckily, ____ showed up in time to stop the madman!"
+madlib_part_one = "A villain was attacking the {location} around 3pm. In no time, he had caused a great deal of damage while terrorizing the citizens. Luckily, {hero} showed up in time to stop the madman!"
 #Printing Madlib for viewers
 print madlib_part_one
 
@@ -58,12 +58,13 @@ response_location = raw_input("Please enter the location from the list provided 
 heroes = dict()
 #Dictionary containing keys linking to hero to be filled into the blank
 heroes = {locations[0]:"Batman",locations[1]:"Richard Simmons",locations[2]:"The Cashier"}
-
+hero = ""
 
 while response_location != locations[0] or response_location != locations[1] or response_location != locations[2]:
     if response_location == locations[0] or response_location == locations[1] or response_location == locations[2]:
         #Variable to hold the response of input
         location = response_location
+        hero = heroes[location]
         #Filling in the blanks of the madlib variable
         madlib_part_one = madlib_part_one.format(**locals())
         #printing out the madlib with blank filled
