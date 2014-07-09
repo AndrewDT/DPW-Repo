@@ -21,7 +21,7 @@ One dictionary CHECK
 
 At least 2 mathematical operators CHECK
 Two conditional statements CHECK
-(with at least one logical operator)
+(with at least one logical operator) CHECK
 
 At least one function CHECK
 It must return a value CHECK
@@ -39,6 +39,27 @@ Your mad lib should print out the entire story using the "print" function
 A villain was attacking the (STRING) around 4pm. In no time, he had caused insurmountable damage while terrorizing the citizens.
 Luckily, (STRING) showed up in time to stop the madman! They fought and struggled for ____ minutes or ____ hours, but it was clear who the victor would be.As a reward, the hero was given _____ _____ and the villain was given _____ years in prison! Just as we know (number) plus (number) = (result), we all know (evil) never (something)!
 '''
+
+
+#DEFINITIONS (FUNCTIONS)-----------------------------------
+def calcHour(min):
+    hour = int(min)/60
+    return hour
+
+
+def calcResult(number1, number2):
+    result = int(number1) + int(number2)
+    return result
+
+def numberCheck(number_var):
+    if number_var.isalpha():
+        while number_var.isalpha():
+            print "Sorry, has to be a number!"
+            number_var = raw_input("Please enter how long the fight took in minutes! (We'll do a rounded hour conversion for you)   ")
+            return number_var
+    else:
+        pass
+
 
 print "------Welcome to MadLib! Here you will be given sections of a paragraph one at a time and fill in the blanks. Once complete, the entire story will appear!------"
 
@@ -78,22 +99,13 @@ while response_location != locations[0] or response_location != locations[1] or 
 
 
 
-def calcHour(min):
-    hour = int(min)/60
-    return hour
-
 madlib_part_two = "They fought and struggled for {minutes} minutes or about {hours} hours, but it was clear who the victor would be. As a reward, the hero was given a {reward} and the villain was given {years} years in prison! "
 
 print madlib_part_two
 
 minutes = raw_input("Please enter how long the fight took in minutes! (We'll do a rounded hour conversion for you)   ")
 
-if minutes.isalpha():
-    while minutes.isalpha():
-        print "Sorry, has to be a number!"
-        minutes = raw_input("Please enter how long the fight took in minutes! (We'll do a rounded hour conversion for you)   ")
-else:
-    pass
+minutes = numberCheck(minutes)
 
 hours = calcHour(minutes)
 
@@ -127,9 +139,6 @@ print madlib_part_three
 number_one = raw_input("Please input a number!  ")
 number_two = raw_input("Please input another number!  ")
 
-def calcResult(number1, number2):
-    result = int(number1) + int(number2)
-    return result
 
 result = calcResult(number_one, number_two)
 
