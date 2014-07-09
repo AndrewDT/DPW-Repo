@@ -43,12 +43,15 @@ Luckily, (STRING) showed up in time to stop the madman! They fought and struggle
 
 #DEFINITIONS (FUNCTIONS)-----------------------------------
 def calcHour(min):
-    hour = int(min)/60
-    return hour
+    if min.isdigit():
+        hour = float(min)/60
+        return hour
+    else:
+        pass
 
 
 def calcResult(number1, number2):
-    result = int(number1) + int(number2)
+    result = float(number1) + float(number2)
     return result
 
 def numberCheck(number_var):
@@ -56,17 +59,26 @@ def numberCheck(number_var):
         while number_var.isalpha():
             print "Sorry, has to be a number!"
             number_var = raw_input("Please enter a valid number!   ")
-            return number_var
     else:
-        pass
+        return number_var
+
+
+def stringCheck(string_var):
+    if string_var.isdigit():
+        while string_var.isdigit():
+            print "Sorry, no numbers!"
+            string_var = raw_input("Please enter the hero's reward!   ")
+    else:
+        return string_var
+
 
 
 print "------Welcome to MadLib! Here you will be given sections of a paragraph one at a time and fill in the blanks. Once complete, the entire story will appear!------"
 
 #Madlib for viewers
-madlib_part_one = "A villain was attacking {location} around 3pm. In no time, he had caused a great deal of damage while terrorizing the citizens. Luckily, {hero} showed up in time to stop the madman! "
+madlib = "A villain was attacking {location} around 3pm. In no time, he had caused a great deal of damage while terrorizing the citizens. Luckily, {hero} showed up in time to stop the madman! They fought and struggled for {minutes} minutes or about {hours} hours, but it was clear who the victor would be. As a reward, the hero was given a {reward} and the villain was given {years} years in prison!  Just as we know {number_one} plus {number_two} equals {result}, we all know evil never {action}!"
 #Printing Madlib for viewers
-print madlib_part_one
+print madlib
 
 #Locations array for first blank choice
 locations = ["Gotham", "YMCA", "PetSmart"]
@@ -87,10 +99,6 @@ while response_location != locations[0] or response_location != locations[1] or 
         #Variable to hold the response of input
         location = response_location
         hero = heroes[location]
-        #Filling in the blanks of the madlib variable
-        madlib_part_one = madlib_part_one.format(**locals())
-        #printing out the madlib with blank filled
-        print madlib_part_one
         break
     for l in locations:
         print l
@@ -98,24 +106,16 @@ while response_location != locations[0] or response_location != locations[1] or 
     response_location = raw_input("Please enter the location from the list provided exactly as seen. (Hero is determined by choice)  ")
 
 
-
-madlib_part_two = "They fought and struggled for {minutes} minutes or about {hours} hours, but it was clear who the victor would be. As a reward, the hero was given a {reward} and the villain was given {years} years in prison! "
-
-print madlib_part_two
-
 minutes = raw_input("Please enter how long the fight took in minutes! (We'll do a rounded hour conversion for you)   ")
 
-minutes = numberCheck(minutes)
+if minutes.isalpha():
+    numberCheck(minutes)
 
 hours = calcHour(minutes)
 
 reward = raw_input("Please enter the hero's reward!   ")
-if reward.isdigit():
-    while reward.isdigit():
-        print "Sorry, no numbers!"
-        reward = raw_input("Please enter the hero's reward!   ")
-else:
-    pass
+
+reward = stringCheck(reward)
 
 
 years = raw_input("Please enter how long that villain will face justice!   ")
@@ -123,32 +123,24 @@ years = raw_input("Please enter how long that villain will face justice!   ")
 
 years = numberCheck(years)
 
-#Filling in the blanks of the madlib variable
-madlib_part_two = madlib_part_two.format(**locals())
-#printing out the madlib with blank filled
-print madlib_part_one + madlib_part_two
 
-
-madlib_part_three = "Just as we know {number_one} plus {number_two} equals {result}, we all know evil never {action}!"
-
-print madlib_part_three
-
-number_one = raw_input("Please input a number!  ")
+number_one = raw_input("Please input a number for us to add!  ")
 
 number_one = numberCheck(number_one)
 
-number_two = raw_input("Please input another number!  ")
+number_two = raw_input("Please input another number for us to add!  ")
 
 number_two = numberCheck(number_two)
 
-
-result = calcResult(number_one, number_two)
+if number_one.isdigit() and number_two.isdigit():
+    result = calcResult(number_one, number_two)
 
 action = raw_input("Please enter an action!  ")
 
-madlib_part_three = madlib_part_three.format(**locals())
-print madlib_part_one + madlib_part_two + madlib_part_three
+action = stringCheck(action)
 
+madlib = madlib.format(**locals())
+print madlib
 
 
 
