@@ -20,11 +20,13 @@ One array CHECK
 One dictionary CHECK
 
 At least 2 mathematical operators
-Two conditional statements
+Two conditional statements CHECK
 (with at least one logical operator)
+
 At least one function
 It must return a value
 It must have and use parameters
+
 One loop - Remember that this is for repeating code!
 And meet the following requirements:
 
@@ -35,14 +37,13 @@ Any errors will earn an automatic ZERO on this assignment.
 Your mad lib should print out the entire story using the "print" function
 
 A villain was attacking the (STRING) around 4pm. In no time, he had caused insurmountable damage while terrorizing the citizens.
-Luckily, (STRING) showed up in time to stop the madman! They fought and struggled for ____ minutes or ____ hours, but it was clear who the victor would be.As a reward, the hero was given _____ _____ and the villain was given _____ years in prison! Although evil was vanquished, the hero still needed to make it to a meeting by 5pm! Considering it took him _____ to defeat the villain in total, and it will take at least 45 minutes to arrive, he (does or does not have enough time to make it!) It's rough being so heroic."
-
+Luckily, (STRING) showed up in time to stop the madman! They fought and struggled for ____ minutes or ____ hours, but it was clear who the victor would be.As a reward, the hero was given _____ _____ and the villain was given _____ years in prison! Just as we know (number) plus (number) = (result), we all know (evil) never (something)!
 '''
 
 print "------Welcome to MadLib! Here you will be given sections of a paragraph one at a time and fill in the blanks. Once complete, the entire story will appear!------"
 
 #Madlib for viewers
-madlib_part_one = "A villain was attacking the {location} around 3pm. In no time, he had caused a great deal of damage while terrorizing the citizens. Luckily, {hero} showed up in time to stop the madman!"
+madlib_part_one = "A villain was attacking {location} around 3pm. In no time, he had caused a great deal of damage while terrorizing the citizens. Luckily, {hero} showed up in time to stop the madman!"
 #Printing Madlib for viewers
 print madlib_part_one
 
@@ -74,6 +75,51 @@ while response_location != locations[0] or response_location != locations[1] or 
         print l
     print "OOPS! Please choose from choices above"
     response_location = raw_input("Please enter the location from the list provided exactly as seen. (Hero is determined by choice)  ")
+
+
+
+def calcHour(min):
+    hour = int(min)/60
+    return hour
+
+madlib_part_two = "They fought and struggled for {minutes} minutes or about {hours} hours, but it was clear who the victor would be. As a reward, the hero was given a {reward} and the villain was given {years} years in prison!"
+
+print madlib_part_two
+
+minutes = raw_input("Please enter how long the fight took in minutes! (We'll do a rounded hour conversion for you)   ")
+
+if minutes.isalpha():
+    while minutes.isalpha():
+        print "Sorry, has to be a number!"
+        minutes = raw_input("Please enter how long the fight took in minutes! (We'll do a rounded hour conversion for you)   ")
+else:
+    pass
+
+hours = calcHour(minutes)
+
+reward = raw_input("Please enter the hero's reward!   ")
+if reward.isdigit():
+    while reward.isdigit():
+        print "Sorry, no numbers!"
+        reward = raw_input("Please enter the hero's reward!   ")
+else:
+    pass
+
+
+years = raw_input("Please enter how long that villain will face justice!   ")
+if years.isalpha():
+    while years.isalpha():
+        print "Sorry, has to be a number!"
+        years = raw_input("Please enter how long the villain will pay for his crimes!   ")
+else:
+    pass
+
+#Filling in the blanks of the madlib variable
+madlib_part_two = madlib_part_two.format(**locals())
+#printing out the madlib with blank filled
+print madlib_part_two
+
+
 
 
 
