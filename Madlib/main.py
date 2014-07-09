@@ -55,7 +55,7 @@ def numberCheck(number_var):
     if number_var.isalpha():
         while number_var.isalpha():
             print "Sorry, has to be a number!"
-            number_var = raw_input("Please enter how long the fight took in minutes! (We'll do a rounded hour conversion for you)   ")
+            number_var = raw_input("Please enter a valid number!   ")
             return number_var
     else:
         pass
@@ -119,12 +119,9 @@ else:
 
 
 years = raw_input("Please enter how long that villain will face justice!   ")
-if years.isalpha():
-    while years.isalpha():
-        print "Sorry, has to be a number!"
-        years = raw_input("Please enter how long the villain will pay for his crimes!   ")
-else:
-    pass
+
+
+years = numberCheck(years)
 
 #Filling in the blanks of the madlib variable
 madlib_part_two = madlib_part_two.format(**locals())
@@ -137,7 +134,12 @@ madlib_part_three = "Just as we know {number_one} plus {number_two} equals {resu
 print madlib_part_three
 
 number_one = raw_input("Please input a number!  ")
+
+number_one = numberCheck(number_one)
+
 number_two = raw_input("Please input another number!  ")
+
+number_two = numberCheck(number_two)
 
 
 result = calcResult(number_one, number_two)
