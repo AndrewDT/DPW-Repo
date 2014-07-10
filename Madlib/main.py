@@ -51,11 +51,13 @@ def calcHour(min):
 
 
 def calcResult(number1, number2):
-    result = float(number1) + float(number2)
+    result = int(number1) + int(number2)
     return result
+    print result
 
-def numberCheck(number_var):
-    if number_var.isalpha():
+def numberCheck():
+    number_var = raw_input("Please enter a number!  ")
+    while number_var.isalpha():
         while number_var.isalpha():
             print "Sorry, has to be a number!"
             number_var = raw_input("Please enter a valid number!   ")
@@ -105,43 +107,18 @@ while response_location != locations[0] or response_location != locations[1] or 
     print "OOPS! Please choose from choices above"
     response_location = raw_input("Please enter the location from the list provided exactly as seen. (Hero is determined by choice)  ")
 
-
-minutes = raw_input("Please enter how long the fight took in minutes! (We'll do a rounded hour conversion for you)   ")
-
-if minutes.isalpha():
-    numberCheck(minutes)
-
-hours = calcHour(minutes)
-
-reward = raw_input("Please enter the hero's reward!   ")
-
-reward = stringCheck(reward)
-
-
-years = raw_input("Please enter how long that villain will face justice!   ")
-
-
-years = numberCheck(years)
-
-
-number_one = raw_input("Please input a number for us to add!  ")
-
-number_one = numberCheck(number_one)
-
-number_two = raw_input("Please input another number for us to add!  ")
-
-number_two = numberCheck(number_two)
-
-if number_one.isdigit() and number_two.isdigit():
+i = 0
+for i in range(0, 1):
+    minutes = numberCheck()
+    hours = calcHour(minutes)
+    reward = raw_input("Please enter the hero's reward!   ")
+    reward = stringCheck(reward)
+    years = numberCheck()
+    number_one = numberCheck()
+    number_two = numberCheck()
     result = calcResult(number_one, number_two)
-
-action = raw_input("Please enter an action!  ")
-
-action = stringCheck(action)
+    action = raw_input("Please enter an action!  ")
+    action = stringCheck(action)
 
 madlib = madlib.format(**locals())
 print madlib
-
-
-
-
