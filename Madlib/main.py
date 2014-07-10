@@ -35,9 +35,6 @@ All elements should have a purpose within the greater madlib. (In other words yo
 You must make at least 12 meaningful commits to this file in your repository or your assignment will earn a 0.
 Any errors will earn an automatic ZERO on this assignment.
 Your mad lib should print out the entire story using the "print" function
-
-A villain was attacking the (STRING) around 4pm. In no time, he had caused insurmountable damage while terrorizing the citizens.
-Luckily, (STRING) showed up in time to stop the madman! They fought and struggled for ____ minutes or ____ hours, but it was clear who the victor would be.As a reward, the hero was given _____ _____ and the villain was given _____ years in prison! Just as we know (number) plus (number) = (result), we all know (evil) never (something)!
 '''
 
 
@@ -57,19 +54,18 @@ def calcResult(number1, number2):
 
 def numberCheck():
     number_var = raw_input("Please enter a number!  ")
-    while number_var.isalpha():
-        while number_var.isalpha():
-            print "Sorry, has to be a number!"
-            number_var = raw_input("Please enter a valid number!   ")
+    while number_var.isalpha() or number_var == "":
+        print "\nSorry, has to be a number!"
+        number_var = raw_input("Please enter a valid number!   ")
     else:
         return number_var
 
 
-def stringCheck(string_var):
-    if string_var.isdigit():
-        while string_var.isdigit():
-            print "Sorry, no numbers!"
-            string_var = raw_input("Please enter the hero's reward!   ")
+def stringCheck():
+    string_var = raw_input("Please enter a word!   ")
+    while string_var.isdigit() or string_var == "":
+        print "\nSorry, we need a word!"
+        string_var = raw_input("Please enter only letters!   ")
     else:
         return string_var
 
@@ -78,7 +74,7 @@ def stringCheck(string_var):
 print "------Welcome to MadLib! Here you will be given sections of a paragraph one at a time and fill in the blanks. Once complete, the entire story will appear!------"
 
 #Madlib for viewers
-madlib = "A villain was attacking {location} around 3pm. In no time, he had caused a great deal of damage while terrorizing the citizens. Luckily, {hero} showed up in time to stop the madman! They fought and struggled for {minutes} minutes or about {hours} hours, but it was clear who the victor would be. As a reward, the hero was given a {reward} and the villain was given {years} years in prison!  Just as we know {number_one} plus {number_two} equals {result}, we all know evil never {action}!"
+madlib = "\nA villain was attacking {location} around 3pm. In no time, he had caused a great deal of damage while terrorizing the citizens. Luckily, {hero} showed up in time to stop the madman! They fought and struggled for {minutes} minutes or about {hours} hours, but it was clear who the victor would be. As a reward, the hero was given a {reward} and the villain was given {years} years in prison!  Just as we know {number_one} plus {number_two} equals {result} and {obj} are delicious, we all know evil never {action}! \n"
 #Printing Madlib for viewers
 print madlib
 
@@ -104,21 +100,20 @@ while response_location != locations[0] or response_location != locations[1] or 
         break
     for l in locations:
         print l
-    print "OOPS! Please choose from choices above"
+    print "\nOOPS! Please choose from choices above"
     response_location = raw_input("Please enter the location from the list provided exactly as seen. (Hero is determined by choice)  ")
 
 i = 0
 for i in range(0, 1):
     minutes = numberCheck()
     hours = calcHour(minutes)
-    reward = raw_input("Please enter the hero's reward!   ")
-    reward = stringCheck(reward)
+    reward = stringCheck()
     years = numberCheck()
     number_one = numberCheck()
     number_two = numberCheck()
     result = calcResult(number_one, number_two)
-    action = raw_input("Please enter an action!  ")
-    action = stringCheck(action)
+    obj = stringCheck()
+    action = stringCheck()
 
 madlib = madlib.format(**locals())
-print madlib
+print madlib + "\nThanks for playing!!!"
