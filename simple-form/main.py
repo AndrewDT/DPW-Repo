@@ -10,7 +10,7 @@ Create and deliver a form with Python. This form should submit info to a Python 
 The purpose of the form is of your choosing but your form MUST meet the following requirements:
 
 Collect at least 5 pieces of information from the user.
-Use at least one text based input element
+Use at least one text based input element CHECK
 Use at least one checkbox input element
 Use at least one select element
 The form should use the GET method to deliver variables to the following page. The following page should list out the information entered (think of a receipt after an order) in an organized and visually pleasing way.
@@ -43,17 +43,31 @@ class MainHandler(webapp2.RequestHandler):
                     '''
 
         page_body = '''
-
+        <form id="movie_preference" method="GET">
+            <label>Name: </label><input type="text" name="user" />
+            <label>What's your favorite movie? </label><input type="text" name="movieFavorite" />
+            <label>What's your least favorite movie? </label><input type="text" name="movieLeast" />
+            <label>How many movies do you watch weekly? </label>
+            <input type="checkbox" name="frequency"  value="2 or less a week" />2 or less a week
+            <input type="checkbox" name="frequency" value="3-4 a week" />3-4 a week
+            <input type="checkbox" name="frequency" value="5 or more a week"5 or more a week
+            <label>Please select your age group: </label>
+            <select required form="movie_preference" name="age">
+                <option value="13 - 18">13 - 18</option>
+                <option value="19 - 25">19 - 25</option>
+                <option value="25+">25+</option>
+            </select>
+            <input type="submit" value="Submit" />
 
                     '''
 
         page_end = '''
+        </form>
     </body>
 </html
 
                     '''
-
-
+        self.response.write(page_head + page_body + page_end)
 
 
 
