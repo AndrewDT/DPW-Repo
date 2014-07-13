@@ -33,7 +33,36 @@ import webapp2
 
 class MainHandler(webapp2.RequestHandler):
     def get(self):
-        self.response.write('Hello world!')
+        page_head = '''
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <title></title>
+    </head>
+    <body>
+                    '''
+
+        page_body = '''
+
+
+                    '''
+
+        page_end = '''
+    </body>
+</html
+
+                    '''
+
+
+
+
+
+
+
+
+
+
+
 
 app = webapp2.WSGIApplication([
     ('/', MainHandler)
