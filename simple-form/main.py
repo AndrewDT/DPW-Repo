@@ -50,7 +50,7 @@ class MainHandler(webapp2.RequestHandler):
             <label>How many movies do you watch weekly? </label>
             <input type="checkbox" name="frequency"  value="2 or less a week" />2 or less a week
             <input type="checkbox" name="frequency" value="3-4 a week" />3-4 a week
-            <input type="checkbox" name="frequency" value="5 or more a week"5 or more a week
+            <input type="checkbox" name="frequency" value="5 or more a week" />5 or more a week
             <label>Please select your age group: </label>
             <select required form="movie_preference" name="age">
                 <option value="13 - 18">13 - 18</option>
@@ -67,7 +67,15 @@ class MainHandler(webapp2.RequestHandler):
 </html
 
                     '''
-        self.response.write(page_head + page_body + page_end)
+        if self.request.GET:
+            user = self.request.GET["user"]
+            movie_favorite = self.request.GET["movieFavorite"]
+            movie_least = self.request.GET["movieLeast"]
+            frequency = self.request.GET["frequency"]
+            age = self.request.GET["age"]
+            self.response.write(user + movie_favorite + movie_least + frequency + age)
+        else:
+            self.response.write(page_head + page_body + page_end)
 
 
 
