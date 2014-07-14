@@ -11,8 +11,8 @@ The purpose of the form is of your choosing but your form MUST meet the followin
 
 Collect at least 5 pieces of information from the user.
 Use at least one text based input element CHECK
-Use at least one checkbox input element
-Use at least one select element
+Use at least one checkbox input element CHECK
+Use at least one select element CHECK
 The form should use the GET method to deliver variables to the following page. The following page should list out the information entered (think of a receipt after an order) in an organized and visually pleasing way.
 
 Design will be an important component of your grade, so do NOT focus purely on function. Your form should look polished, professional, and user friendly. Your design should fit the market (ideal user) of your application and it's overall purpose. For example, if you make a form to collect info for a pizza company, your design should reflect the market that would use this form.
@@ -37,26 +37,28 @@ class MainHandler(webapp2.RequestHandler):
 <!DOCTYPE HTML>
 <html>
     <head>
-        <title></title>
+        <title>Movie Magic</title>
+        <link rel="stylesheet" href="css/style.css" type="text/css">
     </head>
     <body>
                     '''
 
         page_body = '''
         <form id="movie_preference" method="GET">
-            <label>Name: </label><input type="text" name="user" />
-            <label>What's your favorite movie? </label><input type="text" name="movieFavorite" />
-            <label>What's your least favorite movie? </label><input type="text" name="movieLeast" />
+            <label>Name: </label><input type="text" name="user" /> <br/>
+            <label>What's your favorite movie? </label><input type="text" name="movieFavorite" /> <br/>
+            <label>What's your least favorite movie? </label><input type="text" name="movieLeast" /> <br/>
             <label>How many movies do you watch weekly? </label>
             <input type="checkbox" name="frequency"  value="2 or less a week" />2 or less a week
             <input type="checkbox" name="frequency" value="3-4 a week" />3-4 a week
-            <input type="checkbox" name="frequency" value="5 or more a week" />5 or more a week
+            <input type="checkbox" name="frequency" value="5 or more a week" />5 or more a week <br/>
             <label>Please select your age group: </label>
             <select required form="movie_preference" name="age">
                 <option value="13 - 18">13 - 18</option>
                 <option value="19 - 25">19 - 25</option>
                 <option value="25+">25+</option>
             </select>
+            <br/>
             <input type="submit" value="Submit" />
 
                     '''
@@ -76,12 +78,6 @@ class MainHandler(webapp2.RequestHandler):
             self.response.write(user + movie_favorite + movie_least + frequency + age)
         else:
             self.response.write(page_head + page_body + page_end)
-
-
-
-
-
-
 
 
 
