@@ -13,10 +13,17 @@ ul{
     background-color: lightgray;
     margin: 0 auto;
     width: 40%;
-    height: 300px;
-    color: black
+    height: 515px;
+    color: black;
+    text-align: center;
+    font-family: "Helvetica";
+    font-size: 1.2em;
+    padding-top: 1px;
 }
 
 li{
     list-style-type: none;
+}
+
+h2{
 }
