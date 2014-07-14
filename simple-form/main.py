@@ -41,6 +41,9 @@ class MainHandler(webapp2.RequestHandler):
         <link rel="stylesheet" href="css/style.css" type="text/css">
     </head>
     <body>
+        <header>
+            <h1>Movie Lovers!</h1>
+        </header>
                     '''
 
         page_body = '''
@@ -79,10 +82,13 @@ class MainHandler(webapp2.RequestHandler):
             <ul>
                 <li>{user}</li>
                 <li>{movie_favorite}</li>
+                <li>{movie_least}</li>
                 <li>{frequency}</li>
                 <li>{age}</li>
             </ul>
                             '''
+            if user and movie_favorite and movie_least and frequency and age:
+                page_receipt = page_receipt.format(**locals())
                 self.response.write(page_head + page_receipt + page_end)
         else:
             self.response.write(page_head + page_body + page_end)
