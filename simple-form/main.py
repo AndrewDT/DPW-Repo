@@ -80,11 +80,11 @@ class MainHandler(webapp2.RequestHandler):
             age = self.request.GET["age"]
             page_receipt = '''
             <ul>
-                <li>{user}</li>
-                <li>{movie_favorite}</li>
-                <li>{movie_least}</li>
-                <li>{frequency}</li>
-                <li>{age}</li>
+                <li>Name: {user}</li>
+                <li>Favorite Movie: {movie_favorite}</li>
+                <li>Least Favorite Movie: {movie_least}</li>
+                <li>How Frequently I Watch Movies: {frequency}</li>
+                <li>My Age Group is: {age}</li>
             </ul>
                             '''
             if user and movie_favorite and movie_least and frequency and age:

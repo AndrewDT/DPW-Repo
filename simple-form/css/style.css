@@ -10,9 +10,11 @@ header{
 }
 
 ul{
-    background-color: blue;
+    background-color: lightgray;
     margin: 0 auto;
-    width: 50%;
+    width: 40%;
+    height: 300px;
+    color: black
 }
 
 li{
