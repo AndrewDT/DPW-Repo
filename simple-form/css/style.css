@@ -9,3 +9,12 @@ header{
     width: 100%;
 }
 
+ul{
+    background-color: blue;
+    margin: 0 auto;
+    width: 50%;
+}
+
+li{
+    list-style-type: none;
+}
