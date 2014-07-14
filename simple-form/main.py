@@ -75,7 +75,15 @@ class MainHandler(webapp2.RequestHandler):
             movie_least = self.request.GET["movieLeast"]
             frequency = self.request.GET["frequency"]
             age = self.request.GET["age"]
-            self.response.write(user + movie_favorite + movie_least + frequency + age)
+            page_receipt = '''
+            <ul>
+                <li>{user}</li>
+                <li>{movie_favorite}</li>
+                <li>{frequency}</li>
+                <li>{age}</li>
+            </ul>
+                            '''
+                self.response.write(page_head + page_receipt + page_end)
         else:
             self.response.write(page_head + page_body + page_end)
 

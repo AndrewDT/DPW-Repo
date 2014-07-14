@@ -17,7 +17,9 @@ class MainHandler(webapp2.RequestHandler):
         <title>Simple Form</title>
     </head>
     <body>
+        <header>
 
+        </header>
         '''
         page_body = '''<form method="GET">
             <label>Name: </label><input type="text" name="user"/>
