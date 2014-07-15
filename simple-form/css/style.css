@@ -14,8 +14,7 @@ header{
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a90329', endColorstr='#6d0019',GradientType=0 ); /* IE6-9 */
     height: 70px;
     width: 101%;
-    margin-top: -7px;
-    margin-left: -.30%;
+    margin: -7px 0px 0px -.30%;
 }
 
 
@@ -61,7 +60,7 @@ ul{
     background-color: black;
     margin: 0 auto;
     width: 45%;
-    height: 655px;
+    height: 685px;
     color: white;
     text-align: center;
     font-family: "Helvetica";
@@ -71,8 +70,7 @@ ul{
 
 li{
     list-style-type: none;
-    margin-top: 35px;
-    margin-left: -5%;
+    margin: 35px 0px 0px -5%;
 }
 
 footer{
@@ -86,5 +84,5 @@ footer{
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a90329', endColorstr='#6d0019',GradientType=0 ); /* IE6-9 */
     background-color: white;
     height: 60px;
-    width: 101%;
+    width: 100.4%;
 }
