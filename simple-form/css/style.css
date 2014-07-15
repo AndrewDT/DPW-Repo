@@ -29,11 +29,22 @@ form{
     font-family: "Helvetica";
     font-size: 1.5em;
     padding-top: 1px;
+    border: 1px solid rgb(70,70,70);
 }
 
 label{
     display: block;
-    margin-top: 45px;
+    margin-top: 15px;
+}
+
+input{
+    margin-bottom: 25px;
+    width: 200px;
+}
+
+#newsletter{
+    height: 20px;
+    width: 20px;
 }
 
 
@@ -67,6 +78,7 @@ ul{
     font-family: "Helvetica";
     font-size: 1.4em;
     padding-top: 1px;
+    border: 1px solid rgb(70,70,70);
 }
 
 li{

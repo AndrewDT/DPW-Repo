@@ -40,8 +40,7 @@ class MainHandler(webapp2.RequestHandler):
             </select>
             <br/>
             <label>Email: <br/></label><input type="text" name="email" /> <br/>
-            <label>How many movies do you watch weekly? <br/></label>
-            <input type="checkbox" name="newsletter"  value="Sign up for our movie newsletter?" />Sign up for our movie newsletter?
+            <input id="newsletter" type="checkbox" name="newsletter"  value="Sign up for our movie newsletter?" />Sign up for our movie newsletter? <br/>
             <input id="submit" type="submit" value="Submit" />
 
                     '''
