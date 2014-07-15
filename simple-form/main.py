@@ -63,7 +63,7 @@ class MainHandler(webapp2.RequestHandler):
                 <option value="25+">25+</option>
             </select>
             <br/>
-            <input type="submit" value="Submit" />
+            <input id="submit" type="submit" value="Submit" />
 
                     '''
 
