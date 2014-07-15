@@ -16,7 +16,7 @@ class MainHandler(webapp2.RequestHandler):
 <!DOCTYPE HTML>
 <html>
     <head>
-        <title>Movie Magic</title>
+        <title>Movie Matinee</title>
         <link rel="stylesheet" href="css/style.css" type="text/css">
     </head>
     <body>
@@ -32,10 +32,6 @@ class MainHandler(webapp2.RequestHandler):
             <label>Name: <br/></label><input type="text" name="user" /> <br/>
             <label>What's your favorite movie? <br/></label><input type="text" name="movieFavorite" /> <br/>
             <label>What's your least favorite movie? <br/></label><input type="text" name="movieLeast" /> <br/>
-            <label>How many movies do you watch weekly? <br/></label>
-            <input type="checkbox" name="frequency"  value="2 or less a week" />2 or less a week
-            <input type="checkbox" name="frequency" value="3-4 a week" />3-4 a week
-            <input type="checkbox" name="frequency" value="5 or more a week" />5 or more a week <br/>
             <label>Please select your age group: <br/></label>
             <select required form="movie_preference" name="age">
                 <option value="13 - 18">13 - 18</option>
@@ -43,6 +39,9 @@ class MainHandler(webapp2.RequestHandler):
                 <option value="25+">25+</option>
             </select>
             <br/>
+            <label>Email: <br/></label><input type="text" name="email" /> <br/>
+            <label>How many movies do you watch weekly? <br/></label>
+            <input type="checkbox" name="newsletter"  value="Sign up for our movie newsletter?" />Sign up for our movie newsletter?
             <input id="submit" type="submit" value="Submit" />
 
                     '''
@@ -62,7 +61,7 @@ class MainHandler(webapp2.RequestHandler):
             user = self.request.GET["user"]
             movie_favorite = self.request.GET["movieFavorite"]
             movie_least = self.request.GET["movieLeast"]
-            frequency = self.request.GET["frequency"]
+            email = self.request.GET["email"]
             age = self.request.GET["age"]
             #variable containing the code for the page once each field has been filled and submitted
             page_receipt = '''
@@ -70,12 +69,12 @@ class MainHandler(webapp2.RequestHandler):
                 <li><h2>Name:</h2> {user}</li>
                 <li><h2>Favorite Movie:</h2> {movie_favorite}</li>
                 <li><h2>Least Favorite Movie:</h2> {movie_least}</li>
-                <li><h2>How Frequently You Watch Movies:</h2> {frequency}</li>
+                <li><h2>Email: </h2> {email}</li>
                 <li><h2>My Age Group is:</h2> {age}</li>
             </ul>
                             '''
             #conditional for nested code to run once each of the form fields have been filled and submitted within parent conditional
-            if user and movie_favorite and movie_least and frequency and age:
+            if user and movie_favorite and movie_least and email and age:
                 #formatting the page_receipt variable's locals to match GET values
                 page_receipt = page_receipt.format(**locals())
                 #writing the html to the page from within each variable
