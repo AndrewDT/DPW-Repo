@@ -44,6 +44,7 @@ label{
     border-radius: 10px;
     border-style: none;
     font-size: .6em;
+    outline: none;
 }
 
 #submit:active{

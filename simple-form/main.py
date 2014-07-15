@@ -3,28 +3,6 @@ Name: Andrew Tillett
 Date: 07/13/14
 Class: Design Patters for Web Programming Online 1407
 Assignment: Simple Form
-
-
-Create and deliver a form with Python. This form should submit info to a Python script and display the results for the user.
-
-The purpose of the form is of your choosing but your form MUST meet the following requirements:
-
-Collect at least 5 pieces of information from the user.
-Use at least one text based input element CHECK
-Use at least one checkbox input element CHECK
-Use at least one select element CHECK
-The form should use the GET method to deliver variables to the following page. The following page should list out the information entered (think of a receipt after an order) in an organized and visually pleasing way.
-
-Design will be an important component of your grade, so do NOT focus purely on function. Your form should look polished, professional, and user friendly. Your design should fit the market (ideal user) of your application and it's overall purpose. For example, if you make a form to collect info for a pizza company, your design should reflect the market that would use this form.
-
-Minimum requirements (Violating these garners an automatic 0):
-
-Remember that, like other assignments in this class, your design skills and choices will be graded!
-Comment your code. Everything needs to be explained in detail.
-Don't forget to do 20 commits.
-You may not use any Python frameworks for this assignment.
-Global variables are not permitted.
-Any errors will earn an automatic ZERO on this assignment.
 '''
 
 
@@ -33,6 +11,7 @@ import webapp2
 
 class MainHandler(webapp2.RequestHandler):
     def get(self):
+        #variable containing the code for the !DOCTYPE through header set of tags for the page's html
         page_head = '''
 <!DOCTYPE HTML>
 <html>
@@ -46,6 +25,7 @@ class MainHandler(webapp2.RequestHandler):
         </header>
                     '''
 
+        #variable containing the code for the form, all inputs, and the form submit button
         page_body = '''
         <form id="movie_preference" method="GET">
             <h3>Please fill out our brief survey, <br/> for all movie lovers!</h3>
@@ -67,20 +47,24 @@ class MainHandler(webapp2.RequestHandler):
 
                     '''
 
+        #variable containing the code for the end of the form, body, entire footer, and ending html tag
         page_end = '''
         </form>
     </body>
     <footer>
     </footer>
-</html
+</html>
 
                     '''
+        #Conditional set if self.request.GET == true, then run nested code
         if self.request.GET:
+            #variables containing each value corresponding to GET method name value
             user = self.request.GET["user"]
             movie_favorite = self.request.GET["movieFavorite"]
             movie_least = self.request.GET["movieLeast"]
             frequency = self.request.GET["frequency"]
             age = self.request.GET["age"]
+            #variable containing the code for the page once each field has been filled and submitted
             page_receipt = '''
             <ul>
                 <li><h2>Name:</h2> {user}</li>
@@ -90,10 +74,15 @@ class MainHandler(webapp2.RequestHandler):
                 <li><h2>My Age Group is:</h2> {age}</li>
             </ul>
                             '''
+            #conditional for nested code to run once each of the form fields have been filled and submitted within parent conditional
             if user and movie_favorite and movie_least and frequency and age:
+                #formatting the page_receipt variable's locals to match GET values
                 page_receipt = page_receipt.format(**locals())
+                #writing the html to the page from within each variable
                 self.response.write(page_head + page_receipt + page_end)
+        #conditional set to write basic page html with form if the above parent if statement condition is not met
         else:
+            #writing the html to the page from within each variable
             self.response.write(page_head + page_body + page_end)
 
 
