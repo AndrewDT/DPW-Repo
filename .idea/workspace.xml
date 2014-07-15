@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d8245105-4081-43fe-b76f-0ef28a09d299" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/simple-form/css/images/logo.png" afterPath="$PROJECT_DIR$/simple-form/css/images/logo.png" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/simple-form/main.py" afterPath="$PROJECT_DIR$/simple-form/main.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/simple-form/css/style.css" afterPath="$PROJECT_DIR$/simple-form/css/style.css" />
     </list>
@@ -26,21 +27,21 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="main.py" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="main.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/simple-form/main.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.44401544" vertical-offset="510" max-vertical-offset="1650">
-              <caret line="54" column="19" selection-start-line="54" selection-start-column="19" selection-end-line="54" selection-end-column="55" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="858" max-vertical-offset="1680">
+              <caret line="72" column="12" selection-start-line="72" selection-start-column="12" selection-end-line="72" selection-end-column="12" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="style.css" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="style.css" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/simple-form/css/style.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-4.7090907" vertical-offset="281" max-vertical-offset="1215">
-              <caret line="36" column="17" selection-start-line="36" selection-start-column="17" selection-end-line="36" selection-end-column="17" />
+            <state vertical-scroll-proportion="0.8519041" vertical-offset="716" max-vertical-offset="1425">
+              <caret line="88" column="16" selection-start-line="88" selection-start-column="16" selection-end-line="88" selection-end-column="16" />
               <folding />
             </state>
           </provider>
@@ -70,8 +71,8 @@
         <option value="$PROJECT_DIR$/data-objects/main.py" />
         <option value="$PROJECT_DIR$/simple-form/app.yaml" />
         <option value="$PROJECT_DIR$/simple-login/main.py" />
-        <option value="$PROJECT_DIR$/simple-form/css/style.css" />
         <option value="$PROJECT_DIR$/simple-form/main.py" />
+        <option value="$PROJECT_DIR$/simple-form/css/style.css" />
       </list>
     </option>
   </component>
@@ -516,18 +517,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/simple-form/css/style.css">
+    <entry file="file://$PROJECT_DIR$/simple-form/main.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-4.7090907" vertical-offset="281" max-vertical-offset="1215">
-          <caret line="36" column="17" selection-start-line="36" selection-start-column="17" selection-end-line="36" selection-end-column="17" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="858" max-vertical-offset="1680">
+          <caret line="72" column="12" selection-start-line="72" selection-start-column="12" selection-end-line="72" selection-end-column="12" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/simple-form/main.py">
+    <entry file="file://$PROJECT_DIR$/simple-form/css/style.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.44401544" vertical-offset="510" max-vertical-offset="1650">
-          <caret line="54" column="19" selection-start-line="54" selection-start-column="19" selection-end-line="54" selection-end-column="55" />
+        <state vertical-scroll-proportion="0.8519041" vertical-offset="716" max-vertical-offset="1425">
+          <caret line="88" column="16" selection-start-line="88" selection-start-column="16" selection-end-line="88" selection-end-column="16" />
           <folding />
         </state>
       </provider>

@@ -70,6 +70,8 @@ class MainHandler(webapp2.RequestHandler):
         page_end = '''
         </form>
     </body>
+    <footer>
+    </footer>
 </html
 
                     '''
