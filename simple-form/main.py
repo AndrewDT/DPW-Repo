@@ -48,6 +48,7 @@ class MainHandler(webapp2.RequestHandler):
 
         page_body = '''
         <form id="movie_preference" method="GET">
+            <h3>Please fill out our brief survey, <br/> for all movie lovers!</h3>
             <label>Name: <br/></label><input type="text" name="user" /> <br/>
             <label>What's your favorite movie? <br/></label><input type="text" name="movieFavorite" /> <br/>
             <label>What's your least favorite movie? <br/></label><input type="text" name="movieLeast" /> <br/>
