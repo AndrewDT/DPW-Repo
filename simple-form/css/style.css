@@ -18,6 +18,29 @@ header{
     margin-left: -.30%;
 }
 
+
+
+form{
+    background-color: blue;
+    margin: 0 auto;
+    width: 45%;
+    height: 645px;
+    color: white;
+    text-align: center;
+    font-family: "Helvetica";
+    font-size: 1.8em;
+    padding-top: 1px;
+}
+
+label{
+    display: block;
+    margin-top: 35px;
+}
+
+input{
+    margin-bottom: 20px;
+}
+
 ul{
     background-color: black;
     margin: 0 auto;

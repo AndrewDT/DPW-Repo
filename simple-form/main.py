@@ -48,14 +48,14 @@ class MainHandler(webapp2.RequestHandler):
 
         page_body = '''
         <form id="movie_preference" method="GET">
-            <label>Name: </label><input type="text" name="user" /> <br/>
-            <label>What's your favorite movie? </label><input type="text" name="movieFavorite" /> <br/>
-            <label>What's your least favorite movie? </label><input type="text" name="movieLeast" /> <br/>
-            <label>How many movies do you watch weekly? </label>
+            <label>Name: <br/></label><input type="text" name="user" /> <br/>
+            <label>What's your favorite movie? <br/></label><input type="text" name="movieFavorite" /> <br/>
+            <label>What's your least favorite movie? <br/></label><input type="text" name="movieLeast" /> <br/>
+            <label>How many movies do you watch weekly? <br/></label>
             <input type="checkbox" name="frequency"  value="2 or less a week" />2 or less a week
             <input type="checkbox" name="frequency" value="3-4 a week" />3-4 a week
             <input type="checkbox" name="frequency" value="5 or more a week" />5 or more a week <br/>
-            <label>Please select your age group: </label>
+            <label>Please select your age group: <br/></label>
             <select required form="movie_preference" name="age">
                 <option value="13 - 18">13 - 18</option>
                 <option value="19 - 25">19 - 25</option>
