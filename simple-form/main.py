@@ -42,7 +42,7 @@ class MainHandler(webapp2.RequestHandler):
     </head>
     <body>
         <header>
-            <h1>Movie Lovers!</h1>
+            <img src="css/images/logo.png">
         </header>
                     '''
 
