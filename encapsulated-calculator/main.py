@@ -46,7 +46,40 @@ class MainHandler(webapp2.RequestHandler):
         jake.height = 72
         jake.age = 21
         jake.calc_bmr()
-        self.response.write(str(jake.bmr))
+        self.response.write("Jake's BMR is " + str(jake.bmr) + " calories a day")
+
+        hugh = Person()
+        hugh.name = "Hugh"
+        hugh.weight = 245
+        hugh.height = 68
+        hugh.age = 39
+        hugh.calc_bmr()
+        self.response.write("<br/>Hugh's BMR is " + str(hugh.bmr) + " calories a day")
+
+
+        matt = Person()
+        matt.name = "Matt"
+        matt.weight = 190
+        matt.height = 62
+        matt.age = 25
+        matt.calc_bmr()
+        self.response.write("<br/>Matt's BMR is " + str(matt.bmr) + " calories a day")
+
+        steve = Person()
+        steve.name = "Steve"
+        steve.weight = 187
+        steve.height = 68
+        steve.age = 31
+        steve.calc_bmr()
+        self.response.write("<br/>Steve's BMR is " + str(steve.bmr) + " calories a day")
+
+        tony = Person()
+        tony.name = "Tony"
+        tony.weight = 175
+        tony.height = 64
+        tony.age = 42
+        tony.calc_bmr()
+        self.response.write("<br/>Tony's BMR is "  + str(tony.bmr) + " calories a day")
 
         #variable containing the code for the !DOCTYPE through header set of tags for the page's html
         page_head = '''
