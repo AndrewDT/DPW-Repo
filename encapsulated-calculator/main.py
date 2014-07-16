@@ -3,12 +3,77 @@ Name: Andrew Tillett
 Date: 7/16/14
 Class: Design Patters for Web Programming Online 1407
 Assignment: Encapsulated Calculator
+
+
+Find a purpose:
+
+Like other projects in this class, you must create the situation for this type of web application. You are essentially listing out pieces of information from the same type of object and then using some of the data to calculate a 6th piece of information and displaying it all within the application. This is an exercise in creating and protecting certain pieces of data within an object, so try to find a purpose that reflects that (but NOT one listed here or used in class).
+
+Your application must have the following requirements:
+
+5 Data Objects (made from the same class) that will hold the data. These should be hard coded. No form or user input should be used for this assignment.
+These data objects should be made from the same class. There should be a minimum of 5 attributes. This class MUST have properties set up for at least 2 of the attributes/variables in the class and there should be at least one example of a getter and one of a setter. (The setter must be there, even though it will not actually be used by the rest of the code.)
+There should be a button (or link) for each item.
+When a button is clicked, your application should show the data for the object that button represents and use some of the data in a calculation. The results for that calculation should appear in the app as well.
+Here's an example:
+
+A grade average calculator. It holds the grade data for 5 students (Leonardo, Michael Angelo, Raphael, Donatello and Splinter). The application holds a "view" where the data will be seen and five buttons, one for each student. When the button labeled "Raphael" is clicked, his grade data appears in the view and likewise for the other students. In addition to his grades his GPA (calculated from his grades) is shown as well.
+
+Minimum requirements (Violating these garners an automatic 0):
+
+Remember that, like other assignments in this class, your design skills and choices will be graded!
+Comment your code. Everything needs to be explained in detail.
+Don't forget to do 20 commits.
+You may not use any Python frameworks for this assignment.
+Global variables are not permitted.
+Any errors will earn an automatic ZERO on this assignment.
 '''
 import webapp2
 
 class MainHandler(webapp2.RequestHandler):
     def get(self):
-        self.response.write('Hello world!')
+        #variable containing the code for the !DOCTYPE through header set of tags for the page's html
+        page_head = '''
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <title>Encapsulated Calculator</title>
+        <link rel="stylesheet" href="css/style.css" type="text/css">
+    </head>
+    <body>
+        <header>
+        </header>
+                    '''
+
+        #variable containing the code for the form, all inputs, and the form submit button
+        page_body = '''
+
+
+                    '''
+
+        #variable containing the code for the end of the form, body, entire footer, and ending html tag
+        page_end = '''
+        </form>
+    </body>
+    <footer>
+    </footer>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 app = webapp2.WSGIApplication([
     ('/', MainHandler)
