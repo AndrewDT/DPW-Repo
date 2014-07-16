@@ -79,9 +79,9 @@ class MainHandler(webapp2.RequestHandler):
         tony.height = 64
         tony.age = 42
         tony.calc_bmr()
-        self.response.write("<br/>Tony's BMR is "  + str(tony.bmr) + " calories a day")
+        self.response.write("<br/>Tony's BMR is " + str(tony.bmr) + " calories a day")
 
-        #variable containing the code for the !DOCTYPE through header set of tags for the page's html
+
         page_head = '''
 <!DOCTYPE HTML>
 <html>
@@ -94,13 +94,15 @@ class MainHandler(webapp2.RequestHandler):
         </header>
                     '''
 
-        #variable containing the code for the form, all inputs, and the form submit button
         page_body = '''
-
+        <h1>Name: {tony.name}</h1>
+        <p>Weight: {tony.weight}</p>
+        <p>Height: {tony.height}</p>
+        <p>Age: {tony.age}</p>
+        <p>Basil Metabolic Rate: {tony.bmr}</p>
 
                     '''
 
-        #variable containing the code for the end of the form, body, entire footer, and ending html tag
         page_end = '''
         </form>
     </body>
@@ -108,6 +110,9 @@ class MainHandler(webapp2.RequestHandler):
     </footer>
 </html>
                     '''
+
+        page_body = page_body.format(**locals())
+        self.response.write(page_head + page_body + page_end)
 
 class Person(object):
     def __init__(self):
