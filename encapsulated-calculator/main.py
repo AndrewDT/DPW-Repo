@@ -79,11 +79,35 @@ class MainHandler(webapp2.RequestHandler):
 class Person(object):
     def __init__(self):
         self.name = ""
-        self.weight = 0
-        self.height = 0
-        self.age = 0
+        self.__weight = 0
+        self.__height = 0
+        self.__age = 0
         self.__bmr = 0
 
+
+    @property
+    def weight(self):
+        return self.__weight
+
+    @weight.setter
+    def weight(self, new_weight):
+        self.__weight = new_weight
+
+    @property
+    def height(self):
+        return self.__height
+
+    @height.setter
+    def height(self, new_height):
+        self.__height = new_height
+
+    @property
+    def age(self):
+        return self.__age
+
+    @age.setter
+    def age(self, new_age):
+        self.__age = new_age
 
     @property
     def bmr(self):
