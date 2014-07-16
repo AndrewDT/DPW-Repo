@@ -13,6 +13,13 @@ Your application must have the following requirements:
 
 5 Data Objects (made from the same class) that will hold the data. These should be hard coded. No form or user input should be used for this assignment.
 These data objects should be made from the same class. There should be a minimum of 5 attributes. This class MUST have properties set up for at least 2 of the attributes/variables in the class and there should be at least one example of a getter and one of a setter. (The setter must be there, even though it will not actually be used by the rest of the code.)
+name
+weight
+height
+age
+bmr
+BMR = 66 + ( 6.23 x weight in pounds ) + ( 12.7 x height in inches ) - ( 6.8 x age in year )
+
 There should be a button (or link) for each item.
 When a button is clicked, your application should show the data for the object that button represents and use some of the data in a calculation. The results for that calculation should appear in the app as well.
 Here's an example:
@@ -28,10 +35,19 @@ You may not use any Python frameworks for this assignment.
 Global variables are not permitted.
 Any errors will earn an automatic ZERO on this assignment.
 '''
+
 import webapp2
 
 class MainHandler(webapp2.RequestHandler):
     def get(self):
+        jake = Person()
+        jake.name = "Jake"
+        jake.weight = 200
+        jake.height = 72
+        jake.age = 21
+        jake.calc_bmr()
+        self.response.write(str(jake.bmr))
+
         #variable containing the code for the !DOCTYPE through header set of tags for the page's html
         page_head = '''
 <!DOCTYPE HTML>
@@ -58,9 +74,27 @@ class MainHandler(webapp2.RequestHandler):
     <footer>
     </footer>
 </html>
+                    '''
+
+class Person(object):
+    def __init__(self):
+        self.name = ""
+        self.weight = 0
+        self.height = 0
+        self.age = 0
+        self.__bmr = 0
 
 
+    @property
+    def bmr(self):
+        return self.__bmr
 
+    @bmr.setter
+    def bmr(self, new_bmr):
+        pass
+
+    def calc_bmr(self):
+        self.__bmr = 66 + (6.23*self.weight) + (12.7*self.height) - (6.8*self.age)
 
 
 
