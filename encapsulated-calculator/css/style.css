@@ -1,18 +1,40 @@
 body{
-    background-color: white;
+background: rgb(254,255,255); /* Old browsers */
+background: -moz-radial-gradient(center, ellipse cover, rgba(254,255,255,1) 0%, rgba(221,241,249,1) 85%, rgba(160,216,239,1) 100%); /* FF3.6+ */
+background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%,rgba(254,255,255,1)), color-stop(85%,rgba(221,241,249,1)), color-stop(100%,rgba(160,216,239,1))); /* Chrome,Safari4+ */
+background: -webkit-radial-gradient(center, ellipse cover, rgba(254,255,255,1) 0%,rgba(221,241,249,1) 85%,rgba(160,216,239,1) 100%); /* Chrome10+,Safari5.1+ */
+background: -o-radial-gradient(center, ellipse cover, rgba(254,255,255,1) 0%,rgba(221,241,249,1) 85%,rgba(160,216,239,1) 100%); /* Opera 12+ */
+background: -ms-radial-gradient(center, ellipse cover, rgba(254,255,255,1) 0%,rgba(221,241,249,1) 85%,rgba(160,216,239,1) 100%); /* IE10+ */
+background: radial-gradient(ellipse at center, rgba(254,255,255,1) 0%,rgba(221,241,249,1) 85%,rgba(160,216,239,1) 100%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#feffff', endColorstr='#a0d8ef',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
     font-family: "Myriad Hebrew"
 }
 
 header{
-    background-color: blue;
+background: rgb(178,225,255); /* Old browsers */
+background: -moz-linear-gradient(top, rgba(178,225,255,1) 0%, rgba(102,182,252,1) 100%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(178,225,255,1)), color-stop(100%,rgba(102,182,252,1))); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(top, rgba(178,225,255,1) 0%,rgba(102,182,252,1) 100%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(top, rgba(178,225,255,1) 0%,rgba(102,182,252,1) 100%); /* Opera 11.10+ */
+background: -ms-linear-gradient(top, rgba(178,225,255,1) 0%,rgba(102,182,252,1) 100%); /* IE10+ */
+background: linear-gradient(to bottom, rgba(178,225,255,1) 0%,rgba(102,182,252,1) 100%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#b2e1ff', endColorstr='#66b6fc',GradientType=0 ); /* IE6-9 */
     width: 101%;
     height: 60px;
     margin: -20px 0px 0px -.5%;
 }
 
+#welcome_container{
+    border-bottom: solid 2px black;
+    width: 83%;
+    margin: 0 auto;
+    margin-bottom: 15px;
+}
+
 h1, h2{
     text-align: center;
 }
+
 
 form{
     margin: 0 auto;
@@ -20,11 +42,12 @@ form{
 }
 
 input{
+    outline: none;
     border-style: none;
     border-radius: 5px;
     height: 60px;
     width: 200px;
-    margin-left: 3%;
+    margin-left: 2%;
     font-size: 2em;
     background-color: lightgray;
 }
@@ -33,7 +56,7 @@ input:active{
     background-color: darkgray;
 }
 
-div{
+#info_container{
     background: #d5ebfb; /* Old browsers */
     background: -moz-linear-gradient(top, #d5ebfb 0%, #89c3eb 49%, #abd3ee 50%, #ebf1f6 100%); /* FF3.6+ */
     background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#d5ebfb), color-stop(49%,#89c3eb), color-stop(50%,#abd3ee), color-stop(100%,#ebf1f6)); /* Chrome,Safari4+ */

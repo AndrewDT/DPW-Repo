@@ -86,69 +86,69 @@ class MainHandler(webapp2.RequestHandler):
             user.name = self.request.GET["person"]
             if user.name == jake.name:
                 p.body = '''
-                <div>
-                    <h3>BMR & Measurements</h3>
-                    <p class="odd">Name: {jake.name}</p>
-                    <p class="even">Weight: {jake.weight} lbs</p>
-                    <p class="odd">Height: {jake.height} inches</p>
-                    <p class="even">Age: {jake.age} years old</p>
-                    <p class="odd">BMR: {jake.bmr} calories</p>
-                </div>
+            <div id="info_container">
+                <h3>BMR & Measurements</h3>
+                <p class="odd">Name: {jake.name}</p>
+                <p class="even">Weight: {jake.weight} lbs</p>
+                <p class="odd">Height: {jake.height} inches</p>
+                <p class="even">Age: {jake.age} years old</p>
+                <p class="odd">BMR: {jake.bmr} calories</p>
+            </div>
                 '''
                 p.body = p.body.format(**locals())
                 self.response.write(p.full_page)
             elif user.name == hugh.name:
                 p.body = '''
-                <div>
-                    <h3>BMR & Measurements</h3>
-                    <p class="odd">Name: {hugh.name}</p>
-                    <p class="even">Weight: {hugh.weight} lbs</p>
-                    <p class="odd">Height: {hugh.height} inches</p>
-                    <p class="even">Age: {hugh.age} years old</p>
-                    <p class="odd">BMR: {hugh.bmr} calories</p>
-                </div>
+            <div id="info_container">
+                <h3>BMR & Measurements</h3>
+                <p class="odd">Name: {hugh.name}</p>
+                <p class="even">Weight: {hugh.weight} lbs</p>
+                <p class="odd">Height: {hugh.height} inches</p>
+                <p class="even">Age: {hugh.age} years old</p>
+                <p class="odd">BMR: {hugh.bmr} calories</p>
+            </div>
                 '''
                 p.body = p.body.format(**locals())
                 p.update()
                 self.response.write(p.full_page)
             elif user.name == matt.name:
                 p.body = '''
-                <div>
-                    <h3>BMR & Measurements</h3>
-                    <p class="odd">Name: {matt.name}</p>
-                    <p class="even">Weight: {matt.weight} lbs</p>
-                    <p class="odd">Height: {matt.height} inches</p>
-                    <p class="even">Age: {matt.age} years old</p>
-                    <p class="odd">BMR: {matt.bmr} calories</p>
-                </div>
+            <div id="info_container">
+                <h3>BMR & Measurements</h3>
+                <p class="odd">Name: {matt.name}</p>
+                <p class="even">Weight: {matt.weight} lbs</p>
+                <p class="odd">Height: {matt.height} inches</p>
+                <p class="even">Age: {matt.age} years old</p>
+                <p class="odd">BMR: {matt.bmr} calories</p>
+            </div>
                 '''
                 p.body = p.body.format(**locals())
                 p.update()
                 self.response.write(p.full_page)
             elif user.name == steve.name:
                 p.body = '''
-                <div>
-                    <h3>BMR & Measurements</h3>
-                    <p class="odd">Name: {steve.name}</p>
-                    <p class="even">Weight: {steve.weight} lbs</p>
-                    <p class="odd">Height: {steve.height} inches</p>
-                    <p class="even">Age: {steve.age} years old</p>
-                    <p class="odd">BMR: {steve.bmr} calories</p>
-                </div>
+            <div id="info_container">
+                <h3>BMR & Measurements</h3>
+                <p class="odd">Name: {steve.name}</p>
+                <p class="even">Weight: {steve.weight} lbs</p>
+                <p class="odd">Height: {steve.height} inches</p>
+                <p class="even">Age: {steve.age} years old</p>
+                <p class="odd">BMR: {steve.bmr} calories</p>
+            </div>
                 '''
                 p.body = p.body.format(**locals())
                 p.update()
                 self.response.write(p.full_page)
             elif user.name == tony.name:
                 p.body = '''
-                <div>
-                    <h3>BMR & Measurements</h3>
-                    <p class="odd">Name: {tony.name}</p>
-                    <p class="even">Weight: {tony.weight} lbs</p>
-                    <p class="odd">Height: {tony.height} inches</p>
-                    <p class="even">Age: {tony.age} years old</p>
-                    <p class="odd">BMR: {tony.bmr} calories</p>
-                </div>
+            <div id="info_container">
+                <h3>BMR & Measurements</h3>
+                <p class="odd">Name: {tony.name}</p>
+                <p class="even">Weight: {tony.weight} lbs</p>
+                <p class="odd">Height: {tony.height} inches</p>
+                <p class="even">Age: {tony.age} years old</p>
+                <p class="odd">BMR: {tony.bmr} calories</p>
+            </div>
                 '''
                 p.body = p.body.format(**locals())
                 p.update()
@@ -219,8 +219,10 @@ class Page(object):
         <header>
         <h1>Header</h1>
         </header>
+        <div id="welcome_container">
         <h1>Welcome, here we'll show you how to calculate Basil Metabolic Rate (BMR)
-        <h2>Basal metabolic rate (BMR) is the rate of energy expenditure by humans at rest, and is measured in kJ per hour per kg body mass.<br/> The formula is: <br/>BMR = 66 + ( 6.23 x weight in pounds ) + ( 12.7 x height in inches ) - ( 6.8 x age in year ) for males<br/>BMR = 655 + ( 4.35 x weight in pounds ) + ( 4.7 x height in inches ) - ( 4.7 x age in years ) for females.<br/>Here we are using the formula for males only.</h2>
+        <h2>Basal metabolic rate (BMR) is the rate of energy expenditure by humans at rest, and is measured in kJ per hour per kg body mass.<br/> The formula is: <br/>BMR = 66 + ( 6.23 x weight in pounds ) + ( 12.7 x height in inches ) - ( 6.8 x age in year ) for males<br/>BMR = 655 + ( 4.35 x weight in pounds ) + ( 4.7 x height in inches ) - ( 4.7 x age in years ) for females<br/>Here we are using the formula for males</h2>
+        </div>
         <form method="GET">
             <input type="submit" name="person" value="jake" />
             <input type="submit" name="person" value="hugh" />
