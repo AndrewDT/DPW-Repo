@@ -89,10 +89,10 @@ class MainHandler(webapp2.RequestHandler):
                 <div>
                     <h3>BMR & Measurements</h3>
                     <p class="odd">Name: {jake.name}</p>
-                    <p class="even">Weight: {jake.weight}</p>
-                    <p class="odd">Height: {jake.height}</p>
-                    <p class="even">Age: {jake.age}</p>
-                    <p class="odd">BMR: {jake.bmr}</p>
+                    <p class="even">Weight: {jake.weight} lbs</p>
+                    <p class="odd">Height: {jake.height} inches</p>
+                    <p class="even">Age: {jake.age} years old</p>
+                    <p class="odd">BMR: {jake.bmr} calories</p>
                 </div>
                 '''
                 p.body = p.body.format(**locals())
@@ -102,10 +102,10 @@ class MainHandler(webapp2.RequestHandler):
                 <div>
                     <h3>BMR & Measurements</h3>
                     <p class="odd">Name: {hugh.name}</p>
-                    <p class="even">Weight: {hugh.weight}</p>
-                    <p class="odd">Height: {hugh.height}</p>
-                    <p class="even">Age: {hugh.age}</p>
-                    <p class="odd">BMR: {hugh.bmr}</p>
+                    <p class="even">Weight: {hugh.weight} lbs</p>
+                    <p class="odd">Height: {hugh.height} inches</p>
+                    <p class="even">Age: {hugh.age} years old</p>
+                    <p class="odd">BMR: {hugh.bmr} calories</p>
                 </div>
                 '''
                 p.body = p.body.format(**locals())
@@ -116,10 +116,10 @@ class MainHandler(webapp2.RequestHandler):
                 <div>
                     <h3>BMR & Measurements</h3>
                     <p class="odd">Name: {matt.name}</p>
-                    <p class="even">Weight: {matt.weight}</p>
-                    <p class="odd">Height: {matt.height}</p>
-                    <p class="even">Age: {matt.age}</p>
-                    <p class="odd">BMR: {matt.bmr}</p>
+                    <p class="even">Weight: {matt.weight} lbs</p>
+                    <p class="odd">Height: {matt.height} inches</p>
+                    <p class="even">Age: {matt.age} years old</p>
+                    <p class="odd">BMR: {matt.bmr} calories</p>
                 </div>
                 '''
                 p.body = p.body.format(**locals())
@@ -130,10 +130,10 @@ class MainHandler(webapp2.RequestHandler):
                 <div>
                     <h3>BMR & Measurements</h3>
                     <p class="odd">Name: {steve.name}</p>
-                    <p class="even">Weight: {steve.weight}</p>
-                    <p class="odd">Height: {steve.height}</p>
-                    <p class="even">Age: {steve.age}</p>
-                    <p class="odd">BMR: {steve.bmr}</p>
+                    <p class="even">Weight: {steve.weight} lbs</p>
+                    <p class="odd">Height: {steve.height} inches</p>
+                    <p class="even">Age: {steve.age} years old</p>
+                    <p class="odd">BMR: {steve.bmr} calories</p>
                 </div>
                 '''
                 p.body = p.body.format(**locals())
@@ -144,10 +144,10 @@ class MainHandler(webapp2.RequestHandler):
                 <div>
                     <h3>BMR & Measurements</h3>
                     <p class="odd">Name: {tony.name}</p>
-                    <p class="even">Weight: {tony.weight}</p>
-                    <p class="odd">Height: {tony.height}</p>
-                    <p class="even">Age: {tony.age}</p>
-                    <p class="odd">Tony: {tony.bmr}</p>
+                    <p class="even">Weight: {tony.weight} lbs</p>
+                    <p class="odd">Height: {tony.height} inches</p>
+                    <p class="even">Age: {tony.age} years old</p>
+                    <p class="odd">BMR: {tony.bmr} calories</p>
                 </div>
                 '''
                 p.body = p.body.format(**locals())
@@ -219,8 +219,8 @@ class Page(object):
         <header>
         <h1>Header</h1>
         </header>
-        <h1>Welcome,</h1>
-        <h2>Here we'll show you how to calculate Basil Metabolic Rate (BMR)</h2>
+        <h1>Welcome, here we'll show you how to calculate Basil Metabolic Rate (BMR)
+        <h2>Basal metabolic rate (BMR) is the rate of energy expenditure by humans at rest, and is measured in kJ per hour per kg body mass.<br/> The formula is: <br/>BMR = 66 + ( 6.23 x weight in pounds ) + ( 12.7 x height in inches ) - ( 6.8 x age in year ) for males<br/>BMR = 655 + ( 4.35 x weight in pounds ) + ( 4.7 x height in inches ) - ( 4.7 x age in years ) for females.<br/>Here we are using the formula for males only.</h2>
         <form method="GET">
             <input type="submit" name="person" value="jake" />
             <input type="submit" name="person" value="hugh" />
