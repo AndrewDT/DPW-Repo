@@ -87,11 +87,12 @@ class MainHandler(webapp2.RequestHandler):
             if user.name == jake.name:
                 p.body = '''
                 <div>
-                    <p>Name: {jake.name}</p>
-                    <p>Weight: {jake.weight}</p>
-                    <p>Height: {jake.height}</p>
-                    <p>Age: {jake.age}</p>
-                    <p>BMR: {jake.bmr}</p>
+                    <h3>BMR & Measurements</h3>
+                    <p class="odd">Name: {jake.name}</p>
+                    <p class="even">Weight: {jake.weight}</p>
+                    <p class="odd">Height: {jake.height}</p>
+                    <p class="even">Age: {jake.age}</p>
+                    <p class="odd">BMR: {jake.bmr}</p>
                 </div>
                 '''
                 p.body = p.body.format(**locals())
@@ -99,11 +100,12 @@ class MainHandler(webapp2.RequestHandler):
             elif user.name == hugh.name:
                 p.body = '''
                 <div>
-                    <p>Name: {hugh.name}</p>
-                    <p>Weight: {hugh.weight}</p>
-                    <p>Height: {hugh.height}</p>
-                    <p>Age: {hugh.age}</p>
-                    <p>BMR: {hugh.bmr}</p>
+                    <h3>BMR & Measurements</h3>
+                    <p class="odd">Name: {hugh.name}</p>
+                    <p class="even">Weight: {hugh.weight}</p>
+                    <p class="odd">Height: {hugh.height}</p>
+                    <p class="even">Age: {hugh.age}</p>
+                    <p class="odd">BMR: {hugh.bmr}</p>
                 </div>
                 '''
                 p.body = p.body.format(**locals())
@@ -112,11 +114,12 @@ class MainHandler(webapp2.RequestHandler):
             elif user.name == matt.name:
                 p.body = '''
                 <div>
-                    <p>Name: {matt.name}</p>
-                    <p>Weight: {matt.weight}</p>
-                    <p>Height: {matt.height}</p>
-                    <p>Age: {matt.age}</p>
-                    <p>BMR: {matt.bmr}</p>
+                    <h3>BMR & Measurements</h3>
+                    <p class="odd">Name: {matt.name}</p>
+                    <p class="even">Weight: {matt.weight}</p>
+                    <p class="odd">Height: {matt.height}</p>
+                    <p class="even">Age: {matt.age}</p>
+                    <p class="odd">BMR: {matt.bmr}</p>
                 </div>
                 '''
                 p.body = p.body.format(**locals())
@@ -125,11 +128,12 @@ class MainHandler(webapp2.RequestHandler):
             elif user.name == steve.name:
                 p.body = '''
                 <div>
-                    <p>Name: {steve.name}</p>
-                    <p>Weight: {steve.weight}</p>
-                    <p>Height: {steve.height}</p>
-                    <p>Age: {steve.age}</p>
-                    <p>BMR: {steve.bmr}</p>
+                    <h3>BMR & Measurements</h3>
+                    <p class="odd">Name: {steve.name}</p>
+                    <p class="even">Weight: {steve.weight}</p>
+                    <p class="odd">Height: {steve.height}</p>
+                    <p class="even">Age: {steve.age}</p>
+                    <p class="odd">BMR: {steve.bmr}</p>
                 </div>
                 '''
                 p.body = p.body.format(**locals())
@@ -138,11 +142,12 @@ class MainHandler(webapp2.RequestHandler):
             elif user.name == tony.name:
                 p.body = '''
                 <div>
-                    <p>Name: {tony.name}</p>
-                    <p>Weight: {tony.weight}</p>
-                    <p>Height: {tony.height}</p>
-                    <p>Age: {tony.age}</p>
-                    <p>Tony: {tony.bmr}</p>
+                    <h3>BMR & Measurements</h3>
+                    <p class="odd">Name: {tony.name}</p>
+                    <p class="even">Weight: {tony.weight}</p>
+                    <p class="odd">Height: {tony.height}</p>
+                    <p class="even">Age: {tony.age}</p>
+                    <p class="odd">Tony: {tony.bmr}</p>
                 </div>
                 '''
                 p.body = p.body.format(**locals())
