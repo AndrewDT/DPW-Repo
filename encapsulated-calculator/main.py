@@ -86,54 +86,64 @@ class MainHandler(webapp2.RequestHandler):
             user.name = self.request.GET["person"]
             if user.name == jake.name:
                 p.body = '''
-                <p>{jake.name}</p>
-                <p>{jake.weight}</p>
-                <p>{jake.height}</p>
-                <p>{jake.age}</p>
-                <p>{jake.bmr}</p>
+                <div>
+                    <p>Name: {jake.name}</p>
+                    <p>Weight: {jake.weight}</p>
+                    <p>Height: {jake.height}</p>
+                    <p>Age: {jake.age}</p>
+                    <p>BMR: {jake.bmr}</p>
+                </div>
                 '''
                 p.body = p.body.format(**locals())
                 self.response.write(p.full_page)
             elif user.name == hugh.name:
                 p.body = '''
-                <p>{hugh.name}</p>
-                <p>{hugh.weight}</p>
-                <p>{hugh.height}</p>
-                <p>{hugh.age}</p>
-                <p>{hugh.bmr}</p>
+                <div>
+                    <p>Name: {hugh.name}</p>
+                    <p>Weight: {hugh.weight}</p>
+                    <p>Height: {hugh.height}</p>
+                    <p>Age: {hugh.age}</p>
+                    <p>BMR: {hugh.bmr}</p>
+                </div>
                 '''
                 p.body = p.body.format(**locals())
                 p.update()
                 self.response.write(p.full_page)
             elif user.name == matt.name:
                 p.body = '''
-                <p>{matt.name}</p>
-                <p>{matt.weight}</p>
-                <p>{matt.height}</p>
-                <p>{matt.age}</p>
-                <p>{matt.bmr}</p>
+                <div>
+                    <p>Name: {matt.name}</p>
+                    <p>Weight: {matt.weight}</p>
+                    <p>Height: {matt.height}</p>
+                    <p>Age: {matt.age}</p>
+                    <p>BMR: {matt.bmr}</p>
+                </div>
                 '''
                 p.body = p.body.format(**locals())
                 p.update()
                 self.response.write(p.full_page)
             elif user.name == steve.name:
                 p.body = '''
-                <p>{steve.name}</p>
-                <p>{steve.weight}</p>
-                <p>{steve.height}</p>
-                <p>{steve.age}</p>
-                <p>{steve.bmr}</p>
+                <div>
+                    <p>Name: {steve.name}</p>
+                    <p>Weight: {steve.weight}</p>
+                    <p>Height: {steve.height}</p>
+                    <p>Age: {steve.age}</p>
+                    <p>BMR: {steve.bmr}</p>
+                </div>
                 '''
                 p.body = p.body.format(**locals())
                 p.update()
                 self.response.write(p.full_page)
             elif user.name == tony.name:
                 p.body = '''
-                <p>{tony.name}</p>
-                <p>{tony.weight}</p>
-                <p>{tony.height}</p>
-                <p>{tony.age}</p>
-                <p>{tony.bmr}</p>
+                <div>
+                    <p>Name: {tony.name}</p>
+                    <p>Weight: {tony.weight}</p>
+                    <p>Height: {tony.height}</p>
+                    <p>Age: {tony.age}</p>
+                    <p>Tony: {tony.bmr}</p>
+                </div>
                 '''
                 p.body = p.body.format(**locals())
                 p.update()
