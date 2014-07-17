@@ -47,6 +47,8 @@ class MainHandler(webapp2.RequestHandler):
         jake.age = 21
         jake.calc_bmr()
         self.response.write("Jake's BMR is " + str(jake.bmr) + " calories a day")
+        jake.format_locals()
+        self.response.write(jake.page_head + jake.page_body + jake.page_end)
 
         hugh = Person()
         hugh.name = "Hugh"
@@ -82,7 +84,16 @@ class MainHandler(webapp2.RequestHandler):
         self.response.write("<br/>Tony's BMR is " + str(tony.bmr) + " calories a day")
 
 
-        page_head = '''
+
+
+class Person(object):
+    def __init__(self):
+        self.name = ""
+        self.__weight = 0
+        self.__height = 0
+        self.__age = 0
+        self.__bmr = 0
+        self.page_head = '''
 <!DOCTYPE HTML>
 <html>
     <head>
@@ -94,33 +105,28 @@ class MainHandler(webapp2.RequestHandler):
         </header>
                     '''
 
-        page_body = '''
-        <h1>Name: {tony.name}</h1>
-        <p>Weight: {tony.weight}</p>
-        <p>Height: {tony.height}</p>
-        <p>Age: {tony.age}</p>
-        <p>Basil Metabolic Rate: {tony.bmr}</p>
+        self.page_body = '''
+        <a href="#jake">Jake</a>
+        <a href="#hugh">Hugh</a>
+        <a href="#matt">Matt</a>
+        <a href="#steve">Steve</a>
+        <a href="#tony">Tony</a>
+        <div id="{self.name}">
+            <h1>Name: {self.name}</h1>
+            <p>Weight: {self.weight}</p>
+            <p>Height: {self.height}</p>
+            <p>Age: {self.age}</p>
+            <p>Basil Metabolic Rate: {self.bmr}</p>
+        </div>
 
                     '''
 
-        page_end = '''
-        </form>
+        self.page_end = '''
     </body>
     <footer>
     </footer>
 </html>
                     '''
-
-        page_body = page_body.format(**locals())
-        self.response.write(page_head + page_body + page_end)
-
-class Person(object):
-    def __init__(self):
-        self.name = ""
-        self.__weight = 0
-        self.__height = 0
-        self.__age = 0
-        self.__bmr = 0
 
 
     @property
@@ -158,7 +164,9 @@ class Person(object):
     def calc_bmr(self):
         self.__bmr = 66 + (6.23*self.weight) + (12.7*self.height) - (6.8*self.age)
 
-
+    def format_locals(self):
+        self.page_body = self.page_body.format(**locals())
+        return self.page_body
 
 
 
