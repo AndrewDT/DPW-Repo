@@ -193,14 +193,19 @@ class Page(object):
 <!DOCTYPE HTML>
 <html>
     <head>
-        <title></title>
+        <title>BMR Calculator</title>
+        <link rel="stylesheet" href="css/style.css" type="text/css">
     </head>
     <body>
 
                     '''
 
         self.__body = '''
-        <h1>Hello!</h1>
+        <header>
+        <h1>Header</h1>
+        </header>
+        <h1>Welcome,</h1>
+        <h2>Here we'll show you how to calculate Basil Metabolic Rate (BMR)</h2>
         <form method="GET">
             <input type="submit" name="person" value="jake" />
             <input type="submit" name="person" value="hugh" />
