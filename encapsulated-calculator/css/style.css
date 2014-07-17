@@ -21,7 +21,7 @@ header{
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#b2e1ff', endColorstr='#66b6fc',GradientType=0 ); /* IE6-9 */
     width: 101%;
     height: 80px;
-    margin: -7px 0px 0px -.5%;
+    margin: -7px 0px -5px -.5%;
 }
 
 img{
@@ -30,13 +30,20 @@ img{
 
 #welcome_container{
     border-bottom: solid 2px black;
+    border-color: rgba(0,0,0,.2);
     width: 83%;
+    height: 205px;
     margin: 0 auto;
-    margin-bottom: 15px;
+    margin-bottom: 25px;
 }
 
 h1, h2{
     text-align: center;
+}
+
+h2{
+    margin-top: -10px;
+    font-size: 1.25em;
 }
 
 
