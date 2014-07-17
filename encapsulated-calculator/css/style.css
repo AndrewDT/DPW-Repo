@@ -1,27 +1,31 @@
 body{
-background: rgb(254,255,255); /* Old browsers */
-background: -moz-radial-gradient(center, ellipse cover, rgba(254,255,255,1) 0%, rgba(221,241,249,1) 85%, rgba(160,216,239,1) 100%); /* FF3.6+ */
-background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%,rgba(254,255,255,1)), color-stop(85%,rgba(221,241,249,1)), color-stop(100%,rgba(160,216,239,1))); /* Chrome,Safari4+ */
-background: -webkit-radial-gradient(center, ellipse cover, rgba(254,255,255,1) 0%,rgba(221,241,249,1) 85%,rgba(160,216,239,1) 100%); /* Chrome10+,Safari5.1+ */
-background: -o-radial-gradient(center, ellipse cover, rgba(254,255,255,1) 0%,rgba(221,241,249,1) 85%,rgba(160,216,239,1) 100%); /* Opera 12+ */
-background: -ms-radial-gradient(center, ellipse cover, rgba(254,255,255,1) 0%,rgba(221,241,249,1) 85%,rgba(160,216,239,1) 100%); /* IE10+ */
-background: radial-gradient(ellipse at center, rgba(254,255,255,1) 0%,rgba(221,241,249,1) 85%,rgba(160,216,239,1) 100%); /* W3C */
+    background: rgb(254,255,255); /* Old browsers */
+    background: -moz-radial-gradient(center, ellipse cover, rgba(254,255,255,1) 0%, rgba(221,241,249,1) 85%, rgba(160,216,239,1) 100%); /* FF3.6+ */
+    background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%,rgba(254,255,255,1)), color-stop(85%,rgba(221,241,249,1)), color-stop(100%,rgba(160,216,239,1))); /* Chrome,Safari4+ */
+    background: -webkit-radial-gradient(center, ellipse cover, rgba(254,255,255,1) 0%,rgba(221,241,249,1) 85%,rgba(160,216,239,1) 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-radial-gradient(center, ellipse cover, rgba(254,255,255,1) 0%,rgba(221,241,249,1) 85%,rgba(160,216,239,1) 100%); /* Opera 12+ */
+    background: -ms-radial-gradient(center, ellipse cover, rgba(254,255,255,1) 0%,rgba(221,241,249,1) 85%,rgba(160,216,239,1) 100%); /* IE10+ */
+    background: radial-gradient(ellipse at center, rgba(254,255,255,1) 0%,rgba(221,241,249,1) 85%,rgba(160,216,239,1) 100%); /* W3C */
 filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#feffff', endColorstr='#a0d8ef',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
     font-family: "Myriad Hebrew"
 }
 
 header{
-background: rgb(178,225,255); /* Old browsers */
-background: -moz-linear-gradient(top, rgba(178,225,255,1) 0%, rgba(102,182,252,1) 100%); /* FF3.6+ */
-background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(178,225,255,1)), color-stop(100%,rgba(102,182,252,1))); /* Chrome,Safari4+ */
-background: -webkit-linear-gradient(top, rgba(178,225,255,1) 0%,rgba(102,182,252,1) 100%); /* Chrome10+,Safari5.1+ */
-background: -o-linear-gradient(top, rgba(178,225,255,1) 0%,rgba(102,182,252,1) 100%); /* Opera 11.10+ */
-background: -ms-linear-gradient(top, rgba(178,225,255,1) 0%,rgba(102,182,252,1) 100%); /* IE10+ */
-background: linear-gradient(to bottom, rgba(178,225,255,1) 0%,rgba(102,182,252,1) 100%); /* W3C */
-filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#b2e1ff', endColorstr='#66b6fc',GradientType=0 ); /* IE6-9 */
+    background: rgb(178,225,255); /* Old browsers */
+    background: -moz-linear-gradient(top, rgba(178,225,255,1) 0%, rgba(102,182,252,1) 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(178,225,255,1)), color-stop(100%,rgba(102,182,252,1))); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top, rgba(178,225,255,1) 0%,rgba(102,182,252,1) 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top, rgba(178,225,255,1) 0%,rgba(102,182,252,1) 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top, rgba(178,225,255,1) 0%,rgba(102,182,252,1) 100%); /* IE10+ */
+    background: linear-gradient(to bottom, rgba(178,225,255,1) 0%,rgba(102,182,252,1) 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#b2e1ff', endColorstr='#66b6fc',GradientType=0 ); /* IE6-9 */
     width: 101%;
-    height: 60px;
-    margin: -20px 0px 0px -.5%;
+    height: 80px;
+    margin: -7px 0px 0px -.5%;
+}
+
+img{
+    margin-left: 1%;
 }
 
 #welcome_container{
@@ -49,11 +53,11 @@ input{
     width: 200px;
     margin-left: 2%;
     font-size: 2em;
-    background-color: lightgray;
+    background-color: rgb(0,180,225);
 }
 
 input:active{
-    background-color: darkgray;
+    background-color: rgb(0,150,225);
 }
 
 #info_container{
