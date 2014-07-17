@@ -1,5 +1,5 @@
 body{
-    background-color: lightgray;
+    background-color: white;
     font-family: "Myriad Hebrew"
 }
 
@@ -16,10 +16,17 @@ form{
 }
 
 input{
-    border-style: solid 1px green;
+    border-style: none;
+    border-radius: 5px;
     height: 60px;
     width: 200px;
     margin-left: 3%;
+    font-size: 2em;
+    background-color: lightgray;
+}
+
+input:active{
+    background-color: darkgray;
 }
 
 div{
