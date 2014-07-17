@@ -84,7 +84,51 @@ class MainHandler(webapp2.RequestHandler):
         if self.request.GET:
             user = Person()
             user.name = self.request.GET["person"]
-            if user.name == tony.name:
+            if user.name == jake.name:
+                p.body = '''
+                <p>{jake.name}</p>
+                <p>{jake.weight}</p>
+                <p>{jake.height}</p>
+                <p>{jake.age}</p>
+                <p>{jake.bmr}</p>
+                '''
+                p.body = p.body.format(**locals())
+                p.update()
+                self.response.write(p.body)
+            elif user.name == hugh.name:
+                p.body = '''
+                <p>{hugh.name}</p>
+                <p>{hugh.weight}</p>
+                <p>{hugh.height}</p>
+                <p>{hugh.age}</p>
+                <p>{hugh.bmr}</p>
+                '''
+                p.body = p.body.format(**locals())
+                p.update()
+                self.response.write(p.body)
+            elif user.name == matt.name:
+                p.body = '''
+                <p>{matt.name}</p>
+                <p>{matt.weight}</p>
+                <p>{matt.height}</p>
+                <p>{matt.age}</p>
+                <p>{matt.bmr}</p>
+                '''
+                p.body = p.body.format(**locals())
+                p.update()
+                self.response.write(p.body)
+            elif user.name == steve.name:
+                p.body = '''
+                <p>{steve.name}</p>
+                <p>{steve.weight}</p>
+                <p>{steve.height}</p>
+                <p>{steve.age}</p>
+                <p>{steve.bmr}</p>
+                '''
+                p.body = p.body.format(**locals())
+                p.update()
+                self.response.write(p.body)
+            elif user.name == tony.name:
                 p.body = '''
                 <p>{tony.name}</p>
                 <p>{tony.weight}</p>
@@ -93,9 +137,8 @@ class MainHandler(webapp2.RequestHandler):
                 <p>{tony.bmr}</p>
                 '''
                 p.body = p.body.format(**locals())
-                p.full_page = (p.head + p.body + p.close)
-                self.response.write(p.full_page)
-
+                p.update()
+                self.response.write(p.body)
 
 class Person(object):
     def __init__(self):
@@ -147,7 +190,7 @@ class Person(object):
 class Page(object):
     def __init__(self):
 
-        self.head = '''
+        self.__head = '''
 <!DOCTYPE HTML>
 <html>
     <head>
@@ -157,7 +200,7 @@ class Page(object):
 
                     '''
 
-        self.body = '''
+        self.__body = '''
         <h1>Hello!</h1>
         <form method="GET">
             <input type="submit" name="person" value="jake" />
@@ -168,20 +211,25 @@ class Page(object):
         </form>
         '''
 
-        self.close = '''
+        self.__close = '''
     </body>
 </html>
                     '''
 
-        self.full_page = self.head + self.body + self.close
+        self.full_page = self.__head + self.__body + self.__close
 
 
     def update(self):
-        self.full_page = self.head + self.body + self.close
-        self.full_page = self.full_page.format(**locals())
+        self.full_page = self.__head + self.__body + self.__close
 
 
+    @property
+    def body(self):
+        return self.__body
 
+    @body.setter
+    def body(self, new_body):
+        self.__body = new_body
 
 
 
