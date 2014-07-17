@@ -46,9 +46,6 @@ class MainHandler(webapp2.RequestHandler):
         jake.height = 72
         jake.age = 21
         jake.calc_bmr()
-        self.response.write("Jake's BMR is " + str(jake.bmr) + " calories a day")
-        jake.format_locals()
-        self.response.write(jake.page_head + jake.page_body + jake.page_end)
 
         hugh = Person()
         hugh.name = "Hugh"
@@ -56,7 +53,6 @@ class MainHandler(webapp2.RequestHandler):
         hugh.height = 68
         hugh.age = 39
         hugh.calc_bmr()
-        self.response.write("<br/>Hugh's BMR is " + str(hugh.bmr) + " calories a day")
 
 
         matt = Person()
@@ -65,7 +61,6 @@ class MainHandler(webapp2.RequestHandler):
         matt.height = 62
         matt.age = 25
         matt.calc_bmr()
-        self.response.write("<br/>Matt's BMR is " + str(matt.bmr) + " calories a day")
 
         steve = Person()
         steve.name = "Steve"
@@ -73,7 +68,6 @@ class MainHandler(webapp2.RequestHandler):
         steve.height = 68
         steve.age = 31
         steve.calc_bmr()
-        self.response.write("<br/>Steve's BMR is " + str(steve.bmr) + " calories a day")
 
         tony = Person()
         tony.name = "Tony"
@@ -81,19 +75,9 @@ class MainHandler(webapp2.RequestHandler):
         tony.height = 64
         tony.age = 42
         tony.calc_bmr()
-        self.response.write("<br/>Tony's BMR is " + str(tony.bmr) + " calories a day")
 
 
-
-
-class Person(object):
-    def __init__(self):
-        self.name = ""
-        self.__weight = 0
-        self.__height = 0
-        self.__age = 0
-        self.__bmr = 0
-        self.page_head = '''
+        page_head = '''
 <!DOCTYPE HTML>
 <html>
     <head>
@@ -105,28 +89,47 @@ class Person(object):
         </header>
                     '''
 
-        self.page_body = '''
-        <a href="#jake">Jake</a>
-        <a href="#hugh">Hugh</a>
-        <a href="#matt">Matt</a>
-        <a href="#steve">Steve</a>
-        <a href="#tony">Tony</a>
-        <div id="{self.name}">
-            <h1>Name: {self.name}</h1>
-            <p>Weight: {self.weight}</p>
-            <p>Height: {self.height}</p>
-            <p>Age: {self.age}</p>
-            <p>Basil Metabolic Rate: {self.bmr}</p>
-        </div>
+        page_body = '''
+        <h1>Hello!</h1>
+        <form method="GET">
+            <input type="submit" name="jake_info" value="Jake"/>
+        </form>
 
                     '''
 
-        self.page_end = '''
+        page_info = ''' '''
+
+        page_end = '''
     </body>
     <footer>
     </footer>
 </html>
                     '''
+
+        self.response.write(page_head + page_body + page_end)
+
+        if self.request.GET:
+            jake_print = self.request.GET["jake_info"]
+            page_info = '''
+            <p>{jake.name}</p>
+            <p>{jake.weight}</p>
+            <p>{jake.height}</p>
+            <p>{jake.age}</p>
+            <p>{jake.bmr}</p>
+
+                        '''
+
+            page_info = page_info.format(**locals())
+            return page_info
+
+
+class Person(object):
+    def __init__(self):
+        self.name = ""
+        self.__weight = 0
+        self.__height = 0
+        self.__age = 0
+        self.__bmr = 0
 
 
     @property
@@ -163,12 +166,6 @@ class Person(object):
 
     def calc_bmr(self):
         self.__bmr = 66 + (6.23*self.weight) + (12.7*self.height) - (6.8*self.age)
-
-    def format_locals(self):
-        self.page_body = self.page_body.format(**locals())
-        return self.page_body
-
-
 
 
 
