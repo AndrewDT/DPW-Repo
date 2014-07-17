@@ -40,6 +40,7 @@ import webapp2
 
 class MainHandler(webapp2.RequestHandler):
     def get(self):
+
         jake = Person()
         jake.name = "Jake"
         jake.weight = 200
@@ -76,51 +77,9 @@ class MainHandler(webapp2.RequestHandler):
         tony.age = 42
         tony.calc_bmr()
 
-
-        page_head = '''
-<!DOCTYPE HTML>
-<html>
-    <head>
-        <title>Encapsulated Calculator</title>
-        <link rel="stylesheet" href="css/style.css" type="text/css">
-    </head>
-    <body>
-        <header>
-        </header>
-                    '''
-
-        page_body = '''
-        <h1>Hello!</h1>
-        <form method="GET">
-            <input type="submit" name="jake_info" value="Jake"/>
-        </form>
-
-                    '''
-
-        page_info = ''' '''
-
-        page_end = '''
-    </body>
-    <footer>
-    </footer>
-</html>
-                    '''
-
-        self.response.write(page_head + page_body + page_end)
-
-        if self.request.GET:
-            jake_print = self.request.GET["jake_info"]
-            page_info = '''
-            <p>{jake.name}</p>
-            <p>{jake.weight}</p>
-            <p>{jake.height}</p>
-            <p>{jake.age}</p>
-            <p>{jake.bmr}</p>
-
-                        '''
-
-            page_info = page_info.format(**locals())
-            return page_info
+        p = Page()
+        p.name_submit = jake.name
+        self.response.write(p.full_page)
 
 
 class Person(object):
@@ -167,6 +126,49 @@ class Person(object):
     def calc_bmr(self):
         self.__bmr = 66 + (6.23*self.weight) + (12.7*self.height) - (6.8*self.age)
 
+
+
+
+class Page(object):
+    def __init__(self):
+        self.__name_submit = ""
+
+        self.head = '''
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <title></title>
+    </head>
+    <body>
+
+                    '''
+
+        self.body = '''
+        <form method="GET">
+            <input type="submit" name="{self.name_submit}" value="{self.name_submit}" />
+        </form>
+        '''
+
+        self.close = '''
+    </body>
+</html>
+                    '''
+
+        self.full_page = self.head + self.body + self.close
+
+
+    def update(self):
+        self.full_page = self.head + self.body + self.close
+        self.full_page = self.full_page.format(**locals())
+
+    @property
+    def name_submit(self):
+        return self.__name_submit
+
+    @name_submit.setter
+    def name_submit(self, new_name_submit):
+        self.__name_submit = new_name_submit
+        self.update()
 
 
 
