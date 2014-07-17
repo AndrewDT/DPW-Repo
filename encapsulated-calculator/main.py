@@ -93,8 +93,7 @@ class MainHandler(webapp2.RequestHandler):
                 <p>{jake.bmr}</p>
                 '''
                 p.body = p.body.format(**locals())
-                p.update()
-                self.response.write(p.body)
+                self.response.write(p.full_page)
             elif user.name == hugh.name:
                 p.body = '''
                 <p>{hugh.name}</p>
@@ -105,7 +104,7 @@ class MainHandler(webapp2.RequestHandler):
                 '''
                 p.body = p.body.format(**locals())
                 p.update()
-                self.response.write(p.body)
+                self.response.write(p.full_page)
             elif user.name == matt.name:
                 p.body = '''
                 <p>{matt.name}</p>
@@ -116,7 +115,7 @@ class MainHandler(webapp2.RequestHandler):
                 '''
                 p.body = p.body.format(**locals())
                 p.update()
-                self.response.write(p.body)
+                self.response.write(p.full_page)
             elif user.name == steve.name:
                 p.body = '''
                 <p>{steve.name}</p>
@@ -127,7 +126,7 @@ class MainHandler(webapp2.RequestHandler):
                 '''
                 p.body = p.body.format(**locals())
                 p.update()
-                self.response.write(p.body)
+                self.response.write(p.full_page)
             elif user.name == tony.name:
                 p.body = '''
                 <p>{tony.name}</p>
@@ -138,7 +137,7 @@ class MainHandler(webapp2.RequestHandler):
                 '''
                 p.body = p.body.format(**locals())
                 p.update()
-                self.response.write(p.body)
+                self.response.write(p.full_page)
 
 class Person(object):
     def __init__(self):
@@ -216,11 +215,20 @@ class Page(object):
 </html>
                     '''
 
-        self.full_page = self.__head + self.__body + self.__close
+        self.full_page = self.head + self.body
 
 
     def update(self):
-        self.full_page = self.__head + self.__body + self.__close
+        self.full_page = self.body + self.close
+
+    @property
+    def head(self):
+        return self.__head
+
+    @head.setter
+    def head(self, new_head):
+        self.__head = new_head
+        self.update()
 
 
     @property
@@ -230,7 +238,17 @@ class Page(object):
     @body.setter
     def body(self, new_body):
         self.__body = new_body
+        self.update()
 
+
+    @property
+    def close(self):
+        return self.__close
+
+    @close.setter
+    def close(self, new_close):
+        self.__close = new_close
+        self.update()
 
 
 
