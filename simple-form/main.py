@@ -21,7 +21,7 @@ class MainHandler(webapp2.RequestHandler):
     </head>
     <body>
         <header>
-            <img src="css/images/logo.png">
+            <img src="images/logo.png">
         </header>
                     '''
 
