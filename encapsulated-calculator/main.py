@@ -82,6 +82,7 @@ class MainHandler(webapp2.RequestHandler):
         self.response.write(p.full_page)
 
 
+
 class Person(object):
     def __init__(self):
         self.name = ""
@@ -144,9 +145,19 @@ class Page(object):
                     '''
 
         self.body = '''
+        <h1>Hello!</h1>
         <form method="GET">
-            <input type="submit" name="{self.name_submit}" value="{self.name_submit}" />
+            <input type="submit" name="Jake" value="Jake" />
+            <input type="submit" name="Hugh" value="Hugh" />
+            <input type="submit" name="Matt" value="Matt" />
+            <input type="submit" name="Steve" value="Steve" />
+            <input type="submit" name="Tony" value="Tony" />
         </form>
+        <a href="?name=Jake">Jake</a><br/>
+        <a href="?name=Hugh">Hugh</a><br/>
+        <a href="?name=Matt">Matt</a><br/>
+        <a href="?name=Steve">Steve</a><br/>
+        <a href="?name=Tony">Tony</a><br/>
         '''
 
         self.close = '''
