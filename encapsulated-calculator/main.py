@@ -42,14 +42,14 @@ class MainHandler(webapp2.RequestHandler):
     def get(self):
 
         jake = Person()
-        jake.name = "Jake"
+        jake.name = "jake"
         jake.weight = 200
         jake.height = 72
         jake.age = 21
         jake.calc_bmr()
 
         hugh = Person()
-        hugh.name = "Hugh"
+        hugh.name = "hugh"
         hugh.weight = 245
         hugh.height = 68
         hugh.age = 39
@@ -57,30 +57,44 @@ class MainHandler(webapp2.RequestHandler):
 
 
         matt = Person()
-        matt.name = "Matt"
+        matt.name = "matt"
         matt.weight = 190
         matt.height = 62
         matt.age = 25
         matt.calc_bmr()
 
         steve = Person()
-        steve.name = "Steve"
+        steve.name = "steve"
         steve.weight = 187
         steve.height = 68
         steve.age = 31
         steve.calc_bmr()
 
         tony = Person()
-        tony.name = "Tony"
+        tony.name = "tony"
         tony.weight = 175
         tony.height = 64
         tony.age = 42
         tony.calc_bmr()
 
         p = Page()
-        p.name_submit = jake.name
         self.response.write(p.full_page)
 
+
+        if self.request.GET:
+            user = Person()
+            user.name = self.request.GET["person"]
+            if user.name == tony.name:
+                p.body = '''
+                <p>{tony.name}</p>
+                <p>{tony.weight}</p>
+                <p>{tony.height}</p>
+                <p>{tony.age}</p>
+                <p>{tony.bmr}</p>
+                '''
+                p.body = p.body.format(**locals())
+                p.full_page = (p.head + p.body + p.close)
+                self.response.write(p.full_page)
 
 
 class Person(object):
@@ -132,7 +146,6 @@ class Person(object):
 
 class Page(object):
     def __init__(self):
-        self.__name_submit = ""
 
         self.head = '''
 <!DOCTYPE HTML>
@@ -147,17 +160,12 @@ class Page(object):
         self.body = '''
         <h1>Hello!</h1>
         <form method="GET">
-            <input type="submit" name="Jake" value="Jake" />
-            <input type="submit" name="Hugh" value="Hugh" />
-            <input type="submit" name="Matt" value="Matt" />
-            <input type="submit" name="Steve" value="Steve" />
-            <input type="submit" name="Tony" value="Tony" />
+            <input type="submit" name="person" value="jake" />
+            <input type="submit" name="person" value="hugh" />
+            <input type="submit" name="person" value="matt" />
+            <input type="submit" name="person" value="steve" />
+            <input type="submit" name="person" value="tony" />
         </form>
-        <a href="?name=Jake">Jake</a><br/>
-        <a href="?name=Hugh">Hugh</a><br/>
-        <a href="?name=Matt">Matt</a><br/>
-        <a href="?name=Steve">Steve</a><br/>
-        <a href="?name=Tony">Tony</a><br/>
         '''
 
         self.close = '''
@@ -171,15 +179,6 @@ class Page(object):
     def update(self):
         self.full_page = self.head + self.body + self.close
         self.full_page = self.full_page.format(**locals())
-
-    @property
-    def name_submit(self):
-        return self.__name_submit
-
-    @name_submit.setter
-    def name_submit(self, new_name_submit):
-        self.__name_submit = new_name_submit
-        self.update()
 
 
 
