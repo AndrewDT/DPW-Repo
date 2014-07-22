@@ -36,6 +36,7 @@ class MainHandler(webapp2.RequestHandler):
         wolf.img_url = "http://www-tc.pbs.org/wnet/nature/files/2012/04/wolffact-post.jpg"
         wolf.habitat = "Arctic Tundra, Dense Forests, Mountains, Dry Shrublands"
         wolf.geolocation = "North America, Europe, Asia, Canadian Arctic, India"
+        wolf.make_noise()
         self.response.write(wolf.print_out())
 
         badger = HoneyBadger()
@@ -48,6 +49,7 @@ class MainHandler(webapp2.RequestHandler):
         badger.img_url = "http://animals.sandiegozoo.org/sites/default/files/styles/feeds_animal_thumbnail/public/honey_badger_thumb.jpg?itok=fu1a3BG_"
         badger.habitat = "Dry areas, Forests, Grasslands"
         badger.geolocation = "Africa, Asia"
+        badger.make_noise()
         self.response.write("<br/>" + badger.print_out())
 
         kangaroo = Kangaroo()
@@ -60,6 +62,7 @@ class MainHandler(webapp2.RequestHandler):
         kangaroo.img_url = "http://animals.sandiegozoo.org/sites/default/files/styles/feeds_animal_thumbnail/public/kangaroo_thumb.jpg?itok=b7XyytP2"
         kangaroo.habitat = "All Australian habitats"
         kangaroo.geolocation = "Australia, New Guinea"
+        kangaroo.make_noise()
         self.response.write("<br/>" + kangaroo.print_out())
 
 class Mammals(object):
@@ -85,7 +88,7 @@ class Mammals(object):
         pass
 
     def make_noise(self):
-        pass
+        print (self.noise)
 
     def sleep(self):
         pass
@@ -98,30 +101,24 @@ class GrayWolf(Mammals):
         super(GrayWolf, self).__init__()
 
     def make_noise(self):
-        return self.noise
+        self.noise = "Bark"
 
-    def print_out(self):
-        return self.phylum + self.classification + self.order + self.family + self.genus + self.img_url + self.avg_lifespan + self.habitat + self.geolocation + self.noise
+
 
 class HoneyBadger(Mammals):
     def __init__(self):
         super(HoneyBadger, self).__init__()
 
     def make_noise(self):
-        return self.noise
-
-    def print_out(self):
-        return self.phylum + self.classification + self.order + self.family + self.genus + self.img_url + self.avg_lifespan + self.habitat + self.geolocation + self.noise
+        self.noise = "Squeal"
 
 class Kangaroo(Mammals):
     def __init__(self):
         super(Kangaroo, self).__init__()
 
     def make_noise(self):
-        return self.noise
+        self.noise = "Grunt"
 
-    def print_out(self):
-        return self.phylum + self.classification + self.order + self.family + self.genus + self.img_url + self.avg_lifespan + self.habitat + self.geolocation + self.noise
 
 
 app = webapp2.WSGIApplication([
