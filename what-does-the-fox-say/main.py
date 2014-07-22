@@ -103,8 +103,6 @@ class GrayWolf(Mammals):
     def make_noise(self):
         self.noise = "Bark"
 
-
-
 class HoneyBadger(Mammals):
     def __init__(self):
         super(HoneyBadger, self).__init__()
@@ -118,6 +116,32 @@ class Kangaroo(Mammals):
 
     def make_noise(self):
         self.noise = "Grunt"
+
+
+
+
+
+class Page(object):
+    def __init__(self):
+        self._head = '''
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <title>Mammal Fact Sheet</title>
+    </head>
+    <body>
+                    '''
+        self._body = ''
+        self._close = '''
+
+    </body>
+</html>
+                    '''
+
+    def print_out(self):
+        return self._head + self._body + self._close
+
+
 
 
 
