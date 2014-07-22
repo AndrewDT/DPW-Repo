@@ -50,6 +50,17 @@ class MainHandler(webapp2.RequestHandler):
         badger.geolocation = "Africa, Asia"
         self.response.write("<br/>" + badger.print_out())
 
+        kangaroo = Kangaroo()
+        kangaroo.phylum = "Chordata"
+        kangaroo.classification = "Mammalia"
+        kangaroo.order = "Diprotodontia"
+        kangaroo.family = "Macropodidae"
+        kangaroo.genus = "Macropus"
+        kangaroo.avg_lifespan = "13 years"
+        kangaroo.img_url = "http://animals.sandiegozoo.org/sites/default/files/styles/feeds_animal_thumbnail/public/kangaroo_thumb.jpg?itok=b7XyytP2"
+        kangaroo.habitat = "All Australian habitats"
+        kangaroo.geolocation = "Australia, New Guinea"
+        self.response.write("<br/>" + kangaroo.print_out())
 
 class Mammals(object):
     def __init__(self):
@@ -95,6 +106,16 @@ class GrayWolf(Mammals):
 class HoneyBadger(Mammals):
     def __init__(self):
         super(HoneyBadger, self).__init__()
+
+    def make_noise(self):
+        return self.noise
+
+    def print_out(self):
+        return self.phylum + self.classification + self.order + self.family + self.genus + self.img_url + self.avg_lifespan + self.habitat + self.geolocation + self.noise
+
+class Kangaroo(Mammals):
+    def __init__(self):
+        super(Kangaroo, self).__init__()
 
     def make_noise(self):
         return self.noise
