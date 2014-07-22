@@ -27,6 +27,7 @@ import webapp2
 class MainHandler(webapp2.RequestHandler):
     def get(self):
         wolf = GrayWolf()
+        wolf.name = "Gray Wolf"
         wolf.phylum = "Chordata"
         wolf.classification = "Mammalia"
         wolf.order = "Carnivora"
@@ -39,6 +40,7 @@ class MainHandler(webapp2.RequestHandler):
         wolf.make_noise()
 
         badger = HoneyBadger()
+        badger.name ="Honey Badger"
         badger.phylum = "Chordata"
         badger.classification = "Mammalia"
         badger.order = "Carnivora"
@@ -51,6 +53,7 @@ class MainHandler(webapp2.RequestHandler):
         badger.make_noise()
 
         kangaroo = Kangaroo()
+        kangaroo.name = "Kangaroo"
         kangaroo.phylum = "Chordata"
         kangaroo.classification = "Mammalia"
         kangaroo.order = "Diprotodontia"
@@ -65,8 +68,60 @@ class MainHandler(webapp2.RequestHandler):
         p = FormPage()
         self.response.write(p.print_out())
 
+        if self.request.GET:
+            animal = self.request.GET["animal"]
+            if animal == wolf.name:
+                p.form = '''
+                <p>{wolf.phylum}</p>
+                <p>{wolf.classification}</p>
+                <p>{wolf.order}</p>
+                <p>{wolf.family}</p>
+                <p>{wolf.genus}</p>
+                <p>{wolf.avg_lifespan}</p>
+                <a href="{wolf.img_url}">Gray Wolf Image</a>
+                <p>{wolf.habitat}</p>
+                <p>{wolf.geolocation}</p>
+                <p>{wolf.noise}</p>
+                    '''
+                p.form = p.form.format(**locals())
+                self.response.write(p.head + p.body + p.form + p.close)
+            elif animal == badger.name:
+                p.form = '''
+                <p>{badger.phylum}</p>
+                <p>{badger.classification}</p>
+                <p>{badger.order}</p>
+                <p>{badger.family}</p>
+                <p>{badger.genus}</p>
+                <p>{badger.avg_lifespan}</p>
+                <a href="{badger.img_url}">Honey Badger Image</a>
+                <p>{badger.habitat}</p>
+                <p>{badger.geolocation}</p>
+                <p>{badger.noise}</p>
+                    '''
+                p.form = p.form.format(**locals())
+                self.response.write(p.head + p.body + p.form + p.close)
+            elif animal == kangaroo.name:
+                p.form = '''
+                <p>{kangaroo.phylum}</p>
+                <p>{kangaroo.classification}</p>
+                <p>{kangaroo.order}</p>
+                <p>{kangaroo.family}</p>
+                <p>{kangaroo.genus}</p>
+                <p>{kangaroo.avg_lifespan}</p>
+                <a href="{kangaroo.img_url}">Kangaroo Image</a>
+                <p>{kangaroo.habitat}</p>
+                <p>{kangaroo.geolocation}</p>
+                <p>{kangaroo.noise}</p>
+                    '''
+                p.form = p.form.format(**locals())
+                self.response.write(p.head + p.body + p.form + p.close)
+
+
+
+
 class Mammals(object):
     def __init__(self):
+        self.name = ""
         self.phylum = ""
         self.classification = ""
         self.order = ""
@@ -156,18 +211,24 @@ class FormPage(Page):
     def __init__(self):
         super(FormPage, self).__init__()
 
-        self.form = '''
-            <form method="GET">
-                <input type="submit" name="animal" value="Gray Wolf">
-                <input type="submit" name="animal" value="Honey Badger">
-                <input type="submit" name="animal" value="Kangaroo">
-            </form>
+        self.__form = '''
+        <form method="GET">
+            <input type="submit" name="animal" value="Gray Wolf">
+            <input type="submit" name="animal" value="Honey Badger">
+            <input type="submit" name="animal" value="Kangaroo">
+        </form>
             '''
+
+    @property
+    def form(self):
+        return self.__form
+
+    @form.setter
+    def form(self, new_form):
+        self.__form = new_form
 
     def print_out(self):
         return self.head + self.body + self.form + self.close
-
-
 
 
 
