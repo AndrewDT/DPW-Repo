@@ -28,6 +28,34 @@ class MainHandler(webapp2.RequestHandler):
     def get(self):
         self.response.write('Hello world!')
 
+
+class Mammals(object):
+    def __init__(self):
+        self.phylum = ""
+        self.classification = ""
+        self.order = ""
+        self.family = ""
+        self.genus = ""
+        self.img_url = ""
+        self.avg_lifespan = ""
+        self.habitat = ""
+        self.geolocation = ""
+
+    def wake_up(self):
+        pass
+
+    def eat(self):
+        pass
+
+    def run(self):
+        pass
+
+    def make_noise(self):
+        pass
+
+    def sleep(self):
+        pass
+
 app = webapp2.WSGIApplication([
     ('/', MainHandler)
 ], debug=True)
