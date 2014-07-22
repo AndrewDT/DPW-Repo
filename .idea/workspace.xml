@@ -28,13 +28,15 @@
       <file leaf-file-name="main.py" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/what-does-the-fox-say/main.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.47876447" vertical-offset="903" max-vertical-offset="1680">
-              <caret line="129" column="21" selection-start-line="129" selection-start-column="21" selection-end-line="129" selection-end-column="21" />
+            <state vertical-scroll-proportion="-0.1003861" vertical-offset="648" max-vertical-offset="1425">
+              <caret line="38" column="25" selection-start-line="38" selection-start-column="25" selection-end-line="38" selection-end-column="25" />
               <folding>
-                <element signature="e#2763#3439#0" expanded="false" />
-                <element signature="e#3470#3585#0" expanded="false" />
-                <element signature="e#3619#3739#0" expanded="false" />
-                <element signature="e#3770#3886#0" expanded="false" />
+                <element signature="e#2666#3342#0" expanded="false" />
+                <element signature="e#3373#3488#0" expanded="false" />
+                <element signature="e#3522#3642#0" expanded="false" />
+                <element signature="e#3673#3789#0" expanded="false" />
+                <element signature="e#3816#4341#0" expanded="false" />
+                <element signature="e#4371#4824#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -44,7 +46,7 @@
         <entry file="file://$PROJECT_DIR$/polymorphism/main.py">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0" vertical-offset="48" max-vertical-offset="825">
-              <caret line="15" column="0" selection-start-line="15" selection-start-column="0" selection-end-line="33" selection-end-column="52" />
+              <caret line="74" column="109" selection-start-line="74" selection-start-column="109" selection-end-line="74" selection-end-column="109" />
               <folding>
                 <element signature="e#484#816#0" expanded="false" />
                 <element signature="e#1497#1501#0" expanded="false" />
@@ -69,8 +71,8 @@
       <file leaf-file-name="main.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/encapsulated-calculator/main.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="661" max-vertical-offset="4515">
-              <caret line="52" column="90" selection-start-line="52" selection-start-column="90" selection-end-line="52" selection-end-column="90" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="3061" max-vertical-offset="4515">
+              <caret line="160" column="22" selection-start-line="160" selection-start-column="22" selection-end-line="160" selection-end-column="22" />
               <folding />
             </state>
           </provider>
@@ -579,18 +581,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/encapsulated-calculator/main.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="661" max-vertical-offset="4515">
-          <caret line="52" column="90" selection-start-line="52" selection-start-column="90" selection-end-line="52" selection-end-column="90" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/polymorphism/main.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="107" max-vertical-offset="1095">
-          <caret line="15" column="0" selection-start-line="15" selection-start-column="0" selection-end-line="33" selection-end-column="52" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="48" max-vertical-offset="825">
+          <caret line="74" column="109" selection-start-line="74" selection-start-column="109" selection-end-line="74" selection-end-column="109" />
           <folding>
             <element signature="e#484#816#0" expanded="false" />
             <element signature="e#1497#1501#0" expanded="false" />
@@ -599,15 +593,25 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/encapsulated-calculator/main.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="3061" max-vertical-offset="4515">
+          <caret line="160" column="22" selection-start-line="160" selection-start-column="22" selection-end-line="160" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/what-does-the-fox-say/main.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.47876447" vertical-offset="903" max-vertical-offset="1680">
-          <caret line="129" column="21" selection-start-line="129" selection-start-column="21" selection-end-line="129" selection-end-column="21" />
+        <state vertical-scroll-proportion="-0.1003861" vertical-offset="648" max-vertical-offset="1425">
+          <caret line="38" column="25" selection-start-line="38" selection-start-column="25" selection-end-line="38" selection-end-column="25" />
           <folding>
-            <element signature="e#2763#3439#0" expanded="false" />
-            <element signature="e#3470#3585#0" expanded="false" />
-            <element signature="e#3619#3739#0" expanded="false" />
-            <element signature="e#3770#3886#0" expanded="false" />
+            <element signature="e#2666#3342#0" expanded="false" />
+            <element signature="e#3373#3488#0" expanded="false" />
+            <element signature="e#3522#3642#0" expanded="false" />
+            <element signature="e#3673#3789#0" expanded="false" />
+            <element signature="e#3816#4341#0" expanded="false" />
+            <element signature="e#4371#4824#0" expanded="false" />
           </folding>
         </state>
       </provider>

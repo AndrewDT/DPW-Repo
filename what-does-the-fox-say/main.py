@@ -37,7 +37,6 @@ class MainHandler(webapp2.RequestHandler):
         wolf.habitat = "Arctic Tundra, Dense Forests, Mountains, Dry Shrublands"
         wolf.geolocation = "North America, Europe, Asia, Canadian Arctic, India"
         wolf.make_noise()
-        self.response.write(wolf.print_out())
 
         badger = HoneyBadger()
         badger.phylum = "Chordata"
@@ -50,7 +49,6 @@ class MainHandler(webapp2.RequestHandler):
         badger.habitat = "Dry areas, Forests, Grasslands"
         badger.geolocation = "Africa, Asia"
         badger.make_noise()
-        self.response.write("<br/>" + badger.print_out())
 
         kangaroo = Kangaroo()
         kangaroo.phylum = "Chordata"
@@ -63,7 +61,9 @@ class MainHandler(webapp2.RequestHandler):
         kangaroo.habitat = "All Australian habitats"
         kangaroo.geolocation = "Australia, New Guinea"
         kangaroo.make_noise()
-        self.response.write("<br/>" + kangaroo.print_out())
+
+        p = FormPage()
+        self.response.write(p.print_out())
 
 class Mammals(object):
     def __init__(self):
@@ -118,9 +118,6 @@ class Kangaroo(Mammals):
         self.noise = "Grunt"
 
 
-
-
-
 class Page(object):
     def __init__(self):
         self._head = '''
@@ -138,8 +135,37 @@ class Page(object):
 </html>
                     '''
 
+    @property
+    def head(self):
+        return self._head
+
+    @property
+    def body(self):
+        return self._body
+
+    @property
+    def close(self):
+        return self._close
+
     def print_out(self):
         return self._head + self._body + self._close
+
+
+
+class FormPage(Page):
+    def __init__(self):
+        super(FormPage, self).__init__()
+
+        self.form = '''
+            <form method="GET">
+                <input type="submit" name="animal" value="Gray Wolf">
+                <input type="submit" name="animal" value="Honey Badger">
+                <input type="submit" name="animal" value="Kangaroo">
+            </form>
+            '''
+
+    def print_out(self):
+        return self.head + self.body + self.form + self.close
 
 
 
