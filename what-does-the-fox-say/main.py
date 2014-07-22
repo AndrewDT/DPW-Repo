@@ -26,7 +26,18 @@ import webapp2
 
 class MainHandler(webapp2.RequestHandler):
     def get(self):
-        self.response.write('Hello world!')
+        w = GrayWolf()
+        w.phylum = "Chordata"
+        w.classification = "Mammalia"
+        w.order = "Carnivora"
+        w.family = "Canidae"
+        w.genus = "Canis"
+        w.avg_lifespan = "7 years"
+        w.img_url = "http://www-tc.pbs.org/wnet/nature/files/2012/04/wolffact-post.jpg"
+        w.habitat = "Arctic Tundra, Dense Forests, Mountains, Dry Shrublands"
+        w.geolocation = "North America, Europe, Asia, Canadian Arctic, India"
+        w.print_out()
+        self.response.write(w.print_out())
 
 
 class Mammals(object):
@@ -40,6 +51,7 @@ class Mammals(object):
         self.avg_lifespan = ""
         self.habitat = ""
         self.geolocation = ""
+        self.noise = ""
 
     def wake_up(self):
         pass
@@ -55,6 +67,20 @@ class Mammals(object):
 
     def sleep(self):
         pass
+
+    def print_out(self):
+        return self.phylum + self.classification + self.order + self.family + self.genus + self.img_url + self.avg_lifespan + self.habitat + self.geolocation + self.noise
+
+class GrayWolf(Mammals):
+    def __init__(self):
+        super(GrayWolf, self).__init__()
+
+    def make_noise(self):
+        return self.noise
+
+    def print_out(self):
+        return self.phylum + self.classification + self.order + self.family + self.genus + self.img_url + self.avg_lifespan + self.habitat + self.geolocation + self.noise
+
 
 app = webapp2.WSGIApplication([
     ('/', MainHandler)
