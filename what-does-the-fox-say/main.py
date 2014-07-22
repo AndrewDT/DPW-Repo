@@ -26,18 +26,29 @@ import webapp2
 
 class MainHandler(webapp2.RequestHandler):
     def get(self):
-        w = GrayWolf()
-        w.phylum = "Chordata"
-        w.classification = "Mammalia"
-        w.order = "Carnivora"
-        w.family = "Canidae"
-        w.genus = "Canis"
-        w.avg_lifespan = "7 years"
-        w.img_url = "http://www-tc.pbs.org/wnet/nature/files/2012/04/wolffact-post.jpg"
-        w.habitat = "Arctic Tundra, Dense Forests, Mountains, Dry Shrublands"
-        w.geolocation = "North America, Europe, Asia, Canadian Arctic, India"
-        w.print_out()
-        self.response.write(w.print_out())
+        wolf = GrayWolf()
+        wolf.phylum = "Chordata"
+        wolf.classification = "Mammalia"
+        wolf.order = "Carnivora"
+        wolf.family = "Canidae"
+        wolf.genus = "Canis"
+        wolf.avg_lifespan = "7 years"
+        wolf.img_url = "http://www-tc.pbs.org/wnet/nature/files/2012/04/wolffact-post.jpg"
+        wolf.habitat = "Arctic Tundra, Dense Forests, Mountains, Dry Shrublands"
+        wolf.geolocation = "North America, Europe, Asia, Canadian Arctic, India"
+        self.response.write(wolf.print_out())
+
+        badger = HoneyBadger()
+        badger.phylum = "Chordata"
+        badger.classification = "Mammalia"
+        badger.order = "Carnivora"
+        badger.family = "Mustelidae"
+        badger.genus = "Mellivora"
+        badger.avg_lifespan = "26 years"
+        badger.img_url = "http://animals.sandiegozoo.org/sites/default/files/styles/feeds_animal_thumbnail/public/honey_badger_thumb.jpg?itok=fu1a3BG_"
+        badger.habitat = "Dry areas, Forests, Grasslands"
+        badger.geolocation = "Africa, Asia"
+        self.response.write("<br/>" + badger.print_out())
 
 
 class Mammals(object):
@@ -74,6 +85,16 @@ class Mammals(object):
 class GrayWolf(Mammals):
     def __init__(self):
         super(GrayWolf, self).__init__()
+
+    def make_noise(self):
+        return self.noise
+
+    def print_out(self):
+        return self.phylum + self.classification + self.order + self.family + self.genus + self.img_url + self.avg_lifespan + self.habitat + self.geolocation + self.noise
+
+class HoneyBadger(Mammals):
+    def __init__(self):
+        super(HoneyBadger, self).__init__()
 
     def make_noise(self):
         return self.noise
