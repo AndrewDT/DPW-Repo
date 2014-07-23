@@ -2,10 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d8245105-4081-43fe-b76f-0ef28a09d299" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/what-does-the-fox-say/css/styles.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/what-does-the-fox-say/app.yaml" afterPath="$PROJECT_DIR$/what-does-the-fox-say/app.yaml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/what-does-the-fox-say/main.py" afterPath="$PROJECT_DIR$/what-does-the-fox-say/main.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/what-does-the-fox-say/css/styles.css" afterPath="$PROJECT_DIR$/what-does-the-fox-say/css/styles.css" />
     </list>
     <ignored path="DPW-Repo.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -56,8 +53,8 @@
       <file leaf-file-name="styles.css" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/what-does-the-fox-say/css/styles.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.5162524" vertical-offset="0" max-vertical-offset="523">
-              <caret line="18" column="19" selection-start-line="18" selection-start-column="19" selection-end-line="18" selection-end-column="19" />
+            <state vertical-scroll-proportion="0.6596558" vertical-offset="0" max-vertical-offset="523">
+              <caret line="23" column="19" selection-start-line="23" selection-start-column="19" selection-end-line="23" selection-end-column="19" />
               <folding />
             </state>
           </provider>
@@ -684,8 +681,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/what-does-the-fox-say/css/styles.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5162524" vertical-offset="0" max-vertical-offset="523">
-          <caret line="18" column="19" selection-start-line="18" selection-start-column="19" selection-end-line="18" selection-end-column="19" />
+        <state vertical-scroll-proportion="0.6596558" vertical-offset="0" max-vertical-offset="523">
+          <caret line="23" column="19" selection-start-line="23" selection-start-column="19" selection-end-line="23" selection-end-column="19" />
           <folding />
         </state>
       </provider>

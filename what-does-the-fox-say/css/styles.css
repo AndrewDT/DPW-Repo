@@ -18,3 +18,10 @@ form{
 input{
     margin-left: 15%;
 }
+
+p, a{
+    margin: 0 auto;
+    display: block;
+    background-color: red;
+    width: 50%;
+}
