@@ -19,9 +19,9 @@ input{
     margin-left: 15%;
 }
 
-p, a{
+li{
     margin: 0 auto;
-    display: block;
     background-color: red;
     width: 50%;
+    list-style-type: none;
 }

@@ -73,48 +73,54 @@ class MainHandler(webapp2.RequestHandler):
             animal = self.request.GET["animal"]
             if animal == animals[0].name:
                 p.form_results = '''
-        <p>{animals[0].phylum}</p>
-        <p>{animals[0].classification}</p>
-        <p>{animals[0].order}</p>
-        <p>{animals[0].family}</p>
-        <p>{animals[0].genus}</p>
-        <p>{animals[0].avg_lifespan}</p>
-        <a href="{animals[0].img_url}">Gray Wolf Image</a>
-        <p>{animals[0].habitat}</p>
-        <p>{animals[0].geolocation}</p>
-        <p>{animals[0].noise}</p>
+        <ul>
+            <li><label>Phylum:</label>{animals[0].phylum}</li>
+            <li><label>Class:</label>{animals[0].classification}</li>
+            <li><label>Order:</label>{animals[0].order}</li>
+            <li><label>Family:</label>{animals[0].family}</li>
+            <li><label>Genus:</label>{animals[0].genus}</li>
+            <li><label>Avg Lifespan:</label>{animals[0].avg_lifespan}</li>
+            <li><a href="{animals[0].img_url}">Gray Wolf Image</a></li>
+            <li><label>Habitat:</label>{animals[0].habitat}</li>
+            <li><label>Geolocation:</label>{animals[0].geolocation}</li>
+            <li><label>Noise:</label>{animals[0].noise}</li>
+        </ul>
                     '''
                 p.update()
                 p.whole_page = p.whole_page.format(**locals())
                 self.response.write(p.print_out())
             elif animal == animals[1].name:
                 p.form_results = '''
-        <p>{animals[1].phylum}</p>
-        <p>{animals[1].classification}</p>
-        <p>{animals[1].order}</p>
-        <p>{animals[1].family}</p>
-        <p>{animals[1].genus}</p>
-        <p>{animals[1].avg_lifespan}</p>
-        <a href="{animals[1].img_url}">Honey Badger Image</a>
-        <p>{animals[1].habitat}</p>
-        <p>{animals[1].geolocation}</p>
-        <p>{animals[1].noise}</p>
+        <ul>
+            <li><label>Phylum:</label>{animals[1].phylum}</li>
+            <li><label>Class:</label>{animals[1].classification}</li>
+            <li><label>Order:</label>{animals[1].order}</li>
+            <li><label>Family:</label>{animals[1].family}</li>
+            <li><label>Genus:</label>{animals[1].genus}</li>
+            <li><label>Avg Lifespan:</label>{animals[1].avg_lifespan}</li>
+            <li><a href="{animals[1].img_url}">Honey Badger Image</a></li>
+            <li><label>Habitat:</label>{animals[1].habitat}</li>
+            <li><label>Geolocation:</label>{animals[1].geolocation}</li>
+            <li><label>Noise:</label>{animals[1].noise}</li>
+        </ul>
                     '''
                 p.update()
                 p.whole_page = p.whole_page.format(**locals())
                 self.response.write(p.print_out())
             elif animal == animals[2].name:
                 p.form_results = '''
-        <p>{animals[2].phylum}</p>
-        <p>{animals[2].classification}</p>
-        <p>{animals[2].order}</p>
-        <p>{animals[2].family}</p>
-        <p>{animals[2].genus}</p>
-        <p>{animals[2].avg_lifespan}</p>
-        <a href="{animals[2].img_url}">Kangaroo Image</a>
-        <p>{animals[2].habitat}</p>
-        <p>{animals[2].geolocation}</p>
-        <p>{animals[2].noise}</p>
+        <ul>
+            <li><label>Phylum:</label>{animals[2].phylum}</li>
+            <li><label>Class:</label>{animals[2].classification}</li>
+            <li><label>Order:</label>{animals[2].order}</li>
+            <li><label>Family:</label>{animals[2].family}</li>
+            <li><label>Genus:</label>{animals[2].genus}</li>
+            <li><label>Avg Lifespan:</label>{animals[2].avg_lifespan}</li>
+            <li><a href="{animals[2].img_url}">Kangaroo Image</a></li>
+            <li><label>Habitat:</label>{animals[2].habitat}</li>
+            <li><label>Geolocation:</label>{animals[2].geolocation}</li>
+            <li><label>Noise:</label>{animals[2].noise}</li>
+        </ul>
                     '''
                 p.update()
                 p.whole_page = p.whole_page.format(**locals())
