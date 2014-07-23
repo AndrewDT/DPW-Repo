@@ -68,56 +68,56 @@ class MainHandler(webapp2.RequestHandler):
         animals[2].geolocation = "Australia, New Guinea"
         animals[2].make_noise()
 
-        for animal in animals:
-            print animal.name
-
         if self.request.GET:
             animal = self.request.GET["animal"]
             if animal == animals[0].name:
-                p.form = '''
-                <p>{animals[0].phylum}</p>
-                <p>{animals[0].classification}</p>
-                <p>{animals[0].order}</p>
-                <p>{animals[0].family}</p>
-                <p>{animals[0].genus}</p>
-                <p>{animals[0].avg_lifespan}</p>
-                <a href="{animals[0].img_url}">Gray Wolf Image</a>
-                <p>{animals[0].habitat}</p>
-                <p>{animals[0].geolocation}</p>
-                <p>{animals[0].noise}</p>
+                p.form_results = '''
+        <p>{animals[0].phylum}</p>
+        <p>{animals[0].classification}</p>
+        <p>{animals[0].order}</p>
+        <p>{animals[0].family}</p>
+        <p>{animals[0].genus}</p>
+        <p>{animals[0].avg_lifespan}</p>
+        <a href="{animals[0].img_url}">Gray Wolf Image</a>
+        <p>{animals[0].habitat}</p>
+        <p>{animals[0].geolocation}</p>
+        <p>{animals[0].noise}</p>
                     '''
-                p.form = p.form.format(**locals())
-                self.response.write(p.head + p.body + p.form + p.close)
+                p.update()
+                p.whole_page = p.whole_page.format(**locals())
+                self.response.write(p.print_out())
             elif animal == animals[1].name:
-                p.form = '''
-                <p>{animals[1].phylum}</p>
-                <p>{animals[1].classification}</p>
-                <p>{animals[1].order}</p>
-                <p>{animals[1].family}</p>
-                <p>{animals[1].genus}</p>
-                <p>{animals[1].avg_lifespan}</p>
-                <a href="{animals[1].img_url}">Honey Badger Image</a>
-                <p>{animals[1].habitat}</p>
-                <p>{animals[1].geolocation}</p>
-                <p>{animals[1].noise}</p>
+                p.form_results = '''
+        <p>{animals[1].phylum}</p>
+        <p>{animals[1].classification}</p>
+        <p>{animals[1].order}</p>
+        <p>{animals[1].family}</p>
+        <p>{animals[1].genus}</p>
+        <p>{animals[1].avg_lifespan}</p>
+        <a href="{animals[1].img_url}">Honey Badger Image</a>
+        <p>{animals[1].habitat}</p>
+        <p>{animals[1].geolocation}</p>
+        <p>{animals[1].noise}</p>
                     '''
-                p.form = p.form.format(**locals())
-                self.response.write(p.head + p.body + p.form + p.close)
+                p.update()
+                p.whole_page = p.whole_page.format(**locals())
+                self.response.write(p.print_out())
             elif animal == animals[2].name:
-                p.form = '''
-                <p>{animals[2].phylum}</p>
-                <p>{animals[2].classification}</p>
-                <p>{animals[2].order}</p>
-                <p>{animals[2].family}</p>
-                <p>{animals[2].genus}</p>
-                <p>{animals[2].avg_lifespan}</p>
-                <a href="{animals[2].img_url}">Kangaroo Image</a>
-                <p>{animals[2].habitat}</p>
-                <p>{animals[2].geolocation}</p>
-                <p>{animals[2].noise}</p>
+                p.form_results = '''
+        <p>{animals[2].phylum}</p>
+        <p>{animals[2].classification}</p>
+        <p>{animals[2].order}</p>
+        <p>{animals[2].family}</p>
+        <p>{animals[2].genus}</p>
+        <p>{animals[2].avg_lifespan}</p>
+        <a href="{animals[2].img_url}">Kangaroo Image</a>
+        <p>{animals[2].habitat}</p>
+        <p>{animals[2].geolocation}</p>
+        <p>{animals[2].noise}</p>
                     '''
-                p.form = p.form.format(**locals())
-                self.response.write(p.head + p.body + p.form + p.close)
+                p.update()
+                p.whole_page = p.whole_page.format(**locals())
+                self.response.write(p.print_out())
 
 
 
@@ -221,6 +221,13 @@ class FormPage(Page):
         </form>
             '''
 
+        self.__form_results = ""
+
+        self.whole_page = ""
+
+    def update(self):
+        self.whole_page = self.head + self.body + self.form + self.form_results + self.close
+
     @property
     def form(self):
         return self.__form
@@ -229,8 +236,16 @@ class FormPage(Page):
     def form(self, new_form):
         self.__form = new_form
 
+    @property
+    def form_results(self):
+        return self.__form_results
+
+    @form_results.setter
+    def form_results(self, new_form_results):
+        self.__form_results = new_form_results
+
     def print_out(self):
-        return self.head + self.body + self.form + self.close
+        return self.whole_page
 
 
 
