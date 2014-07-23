@@ -30,7 +30,8 @@ class MainHandler(webapp2.RequestHandler):
 
 
         p = FormPage()
-        self.response.write(p.print_out())
+        p.whole_page = p.head + p.body + p.form
+        self.response.write(p.whole_page)
 
         animals[0].name = "Gray Wolf"
         animals[0].phylum = "Chordata"
@@ -192,17 +193,33 @@ class Page(object):
 </html>
                     '''
 
+
     @property
     def head(self):
         return self._head
+
+    @head.setter
+    def head(self, new_head):
+        self._head = new_head
+        self.update()
 
     @property
     def body(self):
         return self._body
 
+    @body.setter
+    def body(self, new_body):
+        self._body = new_body
+        self.update()
+
     @property
     def close(self):
         return self._close
+
+    @close.setter
+    def close(self, new_close):
+        self._close = new_close
+        self.update()
 
     def print_out(self):
         return self._head + self._body + self._close
@@ -226,7 +243,7 @@ class FormPage(Page):
         self.whole_page = ""
 
     def update(self):
-        self.whole_page = self.head + self.body + self.form + self.form_results + self.close
+        self.whole_page = self.form_results + self.close
 
     @property
     def form(self):
