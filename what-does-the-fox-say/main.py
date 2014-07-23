@@ -183,10 +183,11 @@ class Page(object):
 <html>
     <head>
         <title>Mammal Fact Sheet</title>
+        <link rel="stylesheet" href="css/styles.css" type="text/css">
     </head>
     <body>
                     '''
-        self._body = ''
+        self._body = '<header>HEADER</header>'
         self._close = '''
 
     </body>

@@ -1,0 +1,20 @@
+body{
+    background-color: #fb9e6b;
+}
+
+header{
+    background-color: #31741f;
+    height: 50px;
+    width: 101%;
+    margin: -10px 0px 0px -.5%;
+}
+
+form{
+    background-color: yellow;
+    width: 50%;
+    margin: 0 auto;
+}
+
+input{
+    margin-left: 15%;
+}
