@@ -26,96 +26,98 @@ import webapp2
 
 class MainHandler(webapp2.RequestHandler):
     def get(self):
-        wolf = GrayWolf()
-        wolf.name = "Gray Wolf"
-        wolf.phylum = "Chordata"
-        wolf.classification = "Mammalia"
-        wolf.order = "Carnivora"
-        wolf.family = "Canidae"
-        wolf.genus = "Canis"
-        wolf.avg_lifespan = "7 years"
-        wolf.img_url = "http://www-tc.pbs.org/wnet/nature/files/2012/04/wolffact-post.jpg"
-        wolf.habitat = "Arctic Tundra, Dense Forests, Mountains, Dry Shrublands"
-        wolf.geolocation = "North America, Europe, Asia, Canadian Arctic, India"
-        wolf.make_noise()
+        animals = [Wolf(), Badger(), Kangaroo()]
 
-        badger = HoneyBadger()
-        badger.name ="Honey Badger"
-        badger.phylum = "Chordata"
-        badger.classification = "Mammalia"
-        badger.order = "Carnivora"
-        badger.family = "Mustelidae"
-        badger.genus = "Mellivora"
-        badger.avg_lifespan = "26 years"
-        badger.img_url = "http://animals.sandiegozoo.org/sites/default/files/styles/feeds_animal_thumbnail/public/honey_badger_thumb.jpg?itok=fu1a3BG_"
-        badger.habitat = "Dry areas, Forests, Grasslands"
-        badger.geolocation = "Africa, Asia"
-        badger.make_noise()
-
-        kangaroo = Kangaroo()
-        kangaroo.name = "Kangaroo"
-        kangaroo.phylum = "Chordata"
-        kangaroo.classification = "Mammalia"
-        kangaroo.order = "Diprotodontia"
-        kangaroo.family = "Macropodidae"
-        kangaroo.genus = "Macropus"
-        kangaroo.avg_lifespan = "13 years"
-        kangaroo.img_url = "http://animals.sandiegozoo.org/sites/default/files/styles/feeds_animal_thumbnail/public/kangaroo_thumb.jpg?itok=b7XyytP2"
-        kangaroo.habitat = "All Australian habitats"
-        kangaroo.geolocation = "Australia, New Guinea"
-        kangaroo.make_noise()
 
         p = FormPage()
         self.response.write(p.print_out())
 
+        animals[0].name = "Gray Wolf"
+        animals[0].phylum = "Chordata"
+        animals[0].classification = "Mammalia"
+        animals[0].order = "Carnivora"
+        animals[0].family = "Canidae"
+        animals[0].genus = "Canis"
+        animals[0].avg_lifespan = "7 years"
+        animals[0].img_url = "http://www-tc.pbs.org/wnet/nature/files/2012/04/wolffact-post.jpg"
+        animals[0].habitat = "Arctic Tundra, Dense Forests, Mountains, Dry Shrublands"
+        animals[0].geolocation = "North America, Europe, Asia, Canadian Arctic, India"
+        animals[0].make_noise()
+
+        animals[1].name = "Honey Badger"
+        animals[1].phylum = "Chordata"
+        animals[1].classification = "Mammalia"
+        animals[1].order = "Carnivora"
+        animals[1].family = "Mustelidae"
+        animals[1].genus = "Mellivora"
+        animals[1].avg_lifespan = "26 years"
+        animals[1].img_url = "http://animals.sandiegozoo.org/sites/default/files/styles/feeds_animal_thumbnail/public/honey_badger_thumb.jpg?itok=fu1a3BG_"
+        animals[1].habitat = "Dry areas, Forests, Grasslands"
+        animals[1].geolocation = "Africa, Asia"
+        animals[1].make_noise()
+
+        animals[2].name = "Kangaroo"
+        animals[2].phylum = "Chordata"
+        animals[2].classification = "Mammalia"
+        animals[2].order = "Diprotodontia"
+        animals[2].family = "Macropodidae"
+        animals[2].genus = "Macropus"
+        animals[2].avg_lifespan = "13 years"
+        animals[2].img_url = "http://animals.sandiegozoo.org/sites/default/files/styles/feeds_animal_thumbnail/public/kangaroo_thumb.jpg?itok=b7XyytP2"
+        animals[2].habitat = "All Australian habitats"
+        animals[2].geolocation = "Australia, New Guinea"
+        animals[2].make_noise()
+
+        for animal in animals:
+            print animal.name
+
         if self.request.GET:
             animal = self.request.GET["animal"]
-            if animal == wolf.name:
+            if animal == animals[0].name:
                 p.form = '''
-                <p>{wolf.phylum}</p>
-                <p>{wolf.classification}</p>
-                <p>{wolf.order}</p>
-                <p>{wolf.family}</p>
-                <p>{wolf.genus}</p>
-                <p>{wolf.avg_lifespan}</p>
-                <a href="{wolf.img_url}">Gray Wolf Image</a>
-                <p>{wolf.habitat}</p>
-                <p>{wolf.geolocation}</p>
-                <p>{wolf.noise}</p>
+                <p>{animals[0].phylum}</p>
+                <p>{animals[0].classification}</p>
+                <p>{animals[0].order}</p>
+                <p>{animals[0].family}</p>
+                <p>{animals[0].genus}</p>
+                <p>{animals[0].avg_lifespan}</p>
+                <a href="{animals[0].img_url}">Gray Wolf Image</a>
+                <p>{animals[0].habitat}</p>
+                <p>{animals[0].geolocation}</p>
+                <p>{animals[0].noise}</p>
                     '''
                 p.form = p.form.format(**locals())
                 self.response.write(p.head + p.body + p.form + p.close)
-            elif animal == badger.name:
+            elif animal == animals[1].name:
                 p.form = '''
-                <p>{badger.phylum}</p>
-                <p>{badger.classification}</p>
-                <p>{badger.order}</p>
-                <p>{badger.family}</p>
-                <p>{badger.genus}</p>
-                <p>{badger.avg_lifespan}</p>
-                <a href="{badger.img_url}">Honey Badger Image</a>
-                <p>{badger.habitat}</p>
-                <p>{badger.geolocation}</p>
-                <p>{badger.noise}</p>
+                <p>{animals[1].phylum}</p>
+                <p>{animals[1].classification}</p>
+                <p>{animals[1].order}</p>
+                <p>{animals[1].family}</p>
+                <p>{animals[1].genus}</p>
+                <p>{animals[1].avg_lifespan}</p>
+                <a href="{animals[1].img_url}">Honey Badger Image</a>
+                <p>{animals[1].habitat}</p>
+                <p>{animals[1].geolocation}</p>
+                <p>{animals[1].noise}</p>
                     '''
                 p.form = p.form.format(**locals())
                 self.response.write(p.head + p.body + p.form + p.close)
-            elif animal == kangaroo.name:
+            elif animal == animals[2].name:
                 p.form = '''
-                <p>{kangaroo.phylum}</p>
-                <p>{kangaroo.classification}</p>
-                <p>{kangaroo.order}</p>
-                <p>{kangaroo.family}</p>
-                <p>{kangaroo.genus}</p>
-                <p>{kangaroo.avg_lifespan}</p>
-                <a href="{kangaroo.img_url}">Kangaroo Image</a>
-                <p>{kangaroo.habitat}</p>
-                <p>{kangaroo.geolocation}</p>
-                <p>{kangaroo.noise}</p>
+                <p>{animals[2].phylum}</p>
+                <p>{animals[2].classification}</p>
+                <p>{animals[2].order}</p>
+                <p>{animals[2].family}</p>
+                <p>{animals[2].genus}</p>
+                <p>{animals[2].avg_lifespan}</p>
+                <a href="{animals[2].img_url}">Kangaroo Image</a>
+                <p>{animals[2].habitat}</p>
+                <p>{animals[2].geolocation}</p>
+                <p>{animals[2].noise}</p>
                     '''
                 p.form = p.form.format(**locals())
                 self.response.write(p.head + p.body + p.form + p.close)
-
 
 
 
@@ -151,16 +153,16 @@ class Mammals(object):
     def print_out(self):
         return self.phylum + self.classification + self.order + self.family + self.genus + self.img_url + self.avg_lifespan + self.habitat + self.geolocation + self.noise
 
-class GrayWolf(Mammals):
+class Wolf(Mammals):
     def __init__(self):
-        super(GrayWolf, self).__init__()
+        super(Wolf, self).__init__()
 
     def make_noise(self):
         self.noise = "Bark"
 
-class HoneyBadger(Mammals):
+class Badger(Mammals):
     def __init__(self):
-        super(HoneyBadger, self).__init__()
+        super(Badger, self).__init__()
 
     def make_noise(self):
         self.noise = "Squeal"
