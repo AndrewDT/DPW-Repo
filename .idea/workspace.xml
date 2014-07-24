@@ -29,13 +29,13 @@
       <file leaf-file-name="main.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/what-does-the-fox-say/main.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="1140" max-vertical-offset="3885">
-              <caret line="82" column="44" selection-start-line="82" selection-start-column="44" selection-end-line="82" selection-end-column="44" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="2130" max-vertical-offset="3885">
+              <caret line="209" column="20" selection-start-line="209" selection-start-column="20" selection-end-line="209" selection-end-column="20" />
               <folding>
-                <element signature="e#5931#6630#0" expanded="false" />
-                <element signature="e#6657#6768#0" expanded="false" />
-                <element signature="e#6797#6912#0" expanded="false" />
-                <element signature="e#6943#7059#0" expanded="false" />
+                <element signature="e#5904#6603#0" expanded="false" />
+                <element signature="e#6630#6741#0" expanded="false" />
+                <element signature="e#6770#6885#0" expanded="false" />
+                <element signature="e#6916#7032#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -44,8 +44,8 @@
       <file leaf-file-name="styles.css" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/what-does-the-fox-say/css/styles.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.10989011" vertical-offset="570" max-vertical-offset="1410">
-              <caret line="42" column="1" selection-start-line="42" selection-start-column="1" selection-end-line="42" selection-end-column="1" />
+            <state vertical-scroll-proportion="0.521978" vertical-offset="1245" max-vertical-offset="1965">
+              <caret line="96" column="31" selection-start-line="96" selection-start-column="31" selection-end-line="96" selection-end-column="31" />
               <folding />
             </state>
           </provider>
@@ -404,10 +404,10 @@
         <state vertical-scroll-proportion="0.0" vertical-offset="768" max-vertical-offset="3480">
           <caret line="188" column="36" selection-start-line="188" selection-start-column="36" selection-end-line="188" selection-end-column="36" />
           <folding>
-            <element signature="e#5931#6630#0" expanded="false" />
-            <element signature="e#6657#6768#0" expanded="false" />
-            <element signature="e#6797#6912#0" expanded="false" />
-            <element signature="e#6943#7059#0" expanded="false" />
+            <element signature="e#5904#6603#0" expanded="false" />
+            <element signature="e#6630#6741#0" expanded="false" />
+            <element signature="e#6770#6885#0" expanded="false" />
+            <element signature="e#6916#7032#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -653,21 +653,21 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/what-does-the-fox-say/main.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="1140" max-vertical-offset="3885">
-          <caret line="82" column="44" selection-start-line="82" selection-start-column="44" selection-end-line="82" selection-end-column="44" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="2130" max-vertical-offset="3885">
+          <caret line="209" column="20" selection-start-line="209" selection-start-column="20" selection-end-line="209" selection-end-column="20" />
           <folding>
-            <element signature="e#5931#6630#0" expanded="false" />
-            <element signature="e#6657#6768#0" expanded="false" />
-            <element signature="e#6797#6912#0" expanded="false" />
-            <element signature="e#6943#7059#0" expanded="false" />
+            <element signature="e#5904#6603#0" expanded="false" />
+            <element signature="e#6630#6741#0" expanded="false" />
+            <element signature="e#6770#6885#0" expanded="false" />
+            <element signature="e#6916#7032#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/what-does-the-fox-say/css/styles.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.10989011" vertical-offset="570" max-vertical-offset="1410">
-          <caret line="42" column="1" selection-start-line="42" selection-start-column="1" selection-end-line="42" selection-end-column="1" />
+        <state vertical-scroll-proportion="0.521978" vertical-offset="1245" max-vertical-offset="1965">
+          <caret line="96" column="31" selection-start-line="96" selection-start-column="31" selection-end-line="96" selection-end-column="31" />
           <folding />
         </state>
       </provider>

@@ -76,17 +76,17 @@ class MainHandler(webapp2.RequestHandler):
         <div class="info_container_whole">
             <img src="{animals[0].img_url}" height="300" width="600" />
             <div class="info_container_top">
-                <h2>Phylum:</h2><p>{animals[0].phylum}</p>
-                <h2>Class:</h2><p>{animals[0].classification}</p>
-                <h2>Order:</h2><p>{animals[0].order}</p>
-                <h2>Family:</h2><p>{animals[0].family}</p>
-                <h2>Genus:</h2><p>{animals[0].genus}</p>
+                <h2>Phylum</h2><p>{animals[0].phylum}</p>
+                <h2>Class</h2><p>{animals[0].classification}</p>
+                <h2>Order</h2><p>{animals[0].order}</p>
+                <h2>Family</h2><p>{animals[0].family}</p>
+                <h2>Genus</h2><p>{animals[0].genus}</p>
             </div>
             <div class="info_container_bottom">
-                <h2>Avg Lifespan:</h2><p>{animals[1].avg_lifespan}</p>
-                <h2>Habitat:</h2><p>{animals[1].habitat}</p>
-                <h2>Geolocation:</h2><p>{animals[1].geolocation}</p>
-                <h2>Noise:</h2><p>{animals[1].noise}</p>
+                <h2>Avg Lifespan</h2><p>{animals[1].avg_lifespan}</p>
+                <h2>Habitat</h2><p>{animals[1].habitat}</p>
+                <h2>Geolocation</h2><p>{animals[1].geolocation}</p>
+                <h2>Noise</h2><p>{animals[1].noise}</p>
             </div>
         <div>
                     '''
@@ -98,17 +98,17 @@ class MainHandler(webapp2.RequestHandler):
         <div class="info_container_whole">
             <img src="{animals[1].img_url}" height="300" width="600" />
             <div class="info_container_top">
-                <h2>Phylum:</h2><p>{animals[1].phylum}</p>
-                <h2>Class:</h2><p>{animals[1].classification}</p>
-                <h2>Order:</h2><p>{animals[1].order}</p>
-                <h2>Family:</h2><p>{animals[1].family}</p>
-                <h2>Genus:</h2><p>{animals[1].genus}</p>
+                <h2>Phylum</h2><p>{animals[1].phylum}</p>
+                <h2>Class</h2><p>{animals[1].classification}</p>
+                <h2>Order</h2><p>{animals[1].order}</p>
+                <h2>Family</h2><p>{animals[1].family}</p>
+                <h2>Genus</h2><p>{animals[1].genus}</p>
             </div>
             <div class="info_container_bottom">
-                <h2>Avg Lifespan:</h2><p>{animals[1].avg_lifespan}</p>
-                <h2>Habitat:</h2><p>{animals[1].habitat}</p>
-                <h2>Geolocation:</h2><p>{animals[1].geolocation}</p>
-                <h2>Noise:</h2><p>{animals[1].noise}</p>
+                <h2>Avg Lifespan</h2><p>{animals[1].avg_lifespan}</p>
+                <h2>Habitat</h2><p>{animals[1].habitat}</p>
+                <h2>Geolocation</h2><p>{animals[1].geolocation}</p>
+                <h2>Noise</h2><p>{animals[1].noise}</p>
             </div>
         <div>
                     '''
@@ -120,17 +120,17 @@ class MainHandler(webapp2.RequestHandler):
         <div class="info_container_whole">
             <img src="{animals[2].img_url}" height="300" width="600" />
             <div class="info_container_top">
-                <h2>Phylum:</h2><p>{animals[2].phylum}</p>
-                <h2>Class:</h2><p>{animals[2].classification}</p>
-                <h2>Order:</h2><p>{animals[2].order}</p>
-                <h2>Family:</h2><p>{animals[2].family}</p>
-                <h2>Genus:</h2><p>{animals[2].genus}</p>
+                <h2>Phylum</h2><p>{animals[2].phylum}</p>
+                <h2>Class</h2><p>{animals[2].classification}</p>
+                <h2>Order</h2><p>{animals[2].order}</p>
+                <h2>Family</h2><p>{animals[2].family}</p>
+                <h2>Genus</h2><p>{animals[2].genus}</p>
             </div>
             <div class="info_container_bottom">
-                <h2>Avg Lifespan:</h2><p>{animals[2].avg_lifespan}</p>
-                <h2>Habitat:</h2><p>{animals[2].habitat}</p>
-                <h2>Geolocation:</h2><p>{animals[2].geolocation}</p>
-                <h2>Noise:</h2><p>{animals[2].noise}</p>
+                <h2>Avg Lifespan</h2><p>{animals[2].avg_lifespan}</p>
+                <h2>Habitat</h2><p>{animals[2].habitat}</p>
+                <h2>Geolocation</h2><p>{animals[2].geolocation}</p>
+                <h2>Noise</h2><p>{animals[2].noise}</p>
             </div>
         <div>
                     '''
@@ -205,7 +205,10 @@ class Page(object):
     </head>
     <body>
                     '''
-        self._body = '<header>HEADER</header>'
+        self._body = '''
+        <header>HEADER</header>
+        <h1>Welcome, click each button for a fun fact sheet about some of the world's favorite mammals!</h1>
+        '''
         self._close = '''
 
     </body>
@@ -251,11 +254,11 @@ class FormPage(Page):
 
         self.__form = '''
         <form method="GET">
-            <label><img src="images/wolf_icon.png" width="100" height="100"></label><input type="submit" name="animal" value="Gray Wolf">
+            <input type="submit" name="animal" value="Gray Wolf">
             <br/>
-            <label><img src="images/badger_icon.png" width="100" height="100"></label><input type="submit" name="animal" value="Honey Badger">
+            <input type="submit" name="animal" value="Honey Badger">
             <br/>
-            <label><img src="images/kangaroo_icon.png" width="100" height="100"></label><input type="submit" name="animal" value="Kangaroo">
+            <input type="submit" name="animal" value="Kangaroo">
         </form>
             '''
 
