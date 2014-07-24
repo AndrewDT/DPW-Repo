@@ -171,7 +171,7 @@ class Page(object):
     <body>
                     '''
         self._body = '''
-        <header>HEADER</header>
+        <header><img src="images/logo.png"</header>
         <h1>Welcome, click each button for a fun fact sheet about some of the world's favorite mammals!</h1>
         '''
         self._close = '''
