@@ -42,24 +42,48 @@ input:active{
     background-color: #d38358;
 }
 
-ul{
-    background-color: #ffff66;
-    width: 53.1%;
-    height: 390px;
-    float: right;
-    margin-top: 30px;
-    margin-right: 7%;
+h2{
+    height: 20px;
+    width: 70%;
+    margin-left: 30px;
+    font-size: 1em;
 }
 
-li{
-    height: 25px;
-    width: 105.5%;
-    margin-left: -42px;
-    margin-bottom: 15.7px;
-    background-color: red;
-    list-style-type: none;
+p{
+    height: 20px;
+    width: 80%;
+    margin-top: -10px;
+    margin-left: 30px;
+    margin-bottom: -5px;
+}
+
+
+.info_container_whole{
+    background-color: #ffff66;
+    width: 53.1%;
+    height: 590px;
+    float: right;
+    margin-right: 7%;
+    margin-top: 30px;
+}
+
+.info_container_whole img{
+    margin-left: 11%;
+    margin-top: 10px;
+}
+
+.info_container_top{
+    float: left;
+    width: 40%;
+    margin-left: 11%;
+}
+
+.info_container_bottom{
+    float: right;
+    width: 38%;
+    margin-right: 10%;
 }
 
 li label{
-    margin-right: 30px;
+    margin-right: 20px;
 }

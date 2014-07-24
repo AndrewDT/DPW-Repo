@@ -40,7 +40,7 @@ class MainHandler(webapp2.RequestHandler):
         animals[0].family = "Canidae"
         animals[0].genus = "Canis"
         animals[0].avg_lifespan = "7 years"
-        animals[0].img_url = "http://www-tc.pbs.org/wnet/nature/files/2012/04/wolffact-post.jpg"
+        animals[0].img_url = "images/wolf_pack.jpg"
         animals[0].habitat = "Arctic Tundra, Dense Forests, Mountains, Dry Shrublands"
         animals[0].geolocation = "North America, Europe, Asia, Canadian Arctic, India"
         animals[0].make_noise()
@@ -52,7 +52,7 @@ class MainHandler(webapp2.RequestHandler):
         animals[1].family = "Mustelidae"
         animals[1].genus = "Mellivora"
         animals[1].avg_lifespan = "26 years"
-        animals[1].img_url = "http://animals.sandiegozoo.org/sites/default/files/styles/feeds_animal_thumbnail/public/honey_badger_thumb.jpg?itok=fu1a3BG_"
+        animals[1].img_url = "images/honey_badger.jpg"
         animals[1].habitat = "Dry areas, Forests, Grasslands"
         animals[1].geolocation = "Africa, Asia"
         animals[1].make_noise()
@@ -64,7 +64,7 @@ class MainHandler(webapp2.RequestHandler):
         animals[2].family = "Macropodidae"
         animals[2].genus = "Macropus"
         animals[2].avg_lifespan = "13 years"
-        animals[2].img_url = "http://animals.sandiegozoo.org/sites/default/files/styles/feeds_animal_thumbnail/public/kangaroo_thumb.jpg?itok=b7XyytP2"
+        animals[2].img_url = "images/kangaroos.jpg"
         animals[2].habitat = "All Australian habitats"
         animals[2].geolocation = "Australia, New Guinea"
         animals[2].make_noise()
@@ -73,54 +73,66 @@ class MainHandler(webapp2.RequestHandler):
             animal = self.request.GET["animal"]
             if animal == animals[0].name:
                 p.form_results = '''
-        <ul>
-            <li><label>Phylum:</label>{animals[0].phylum}</li>
-            <li><label>Class:</label>{animals[0].classification}</li>
-            <li><label>Order:</label>{animals[0].order}</li>
-            <li><label>Family:</label>{animals[0].family}</li>
-            <li><label>Genus:</label>{animals[0].genus}</li>
-            <li><label>Avg Lifespan:</label>{animals[0].avg_lifespan}</li>
-            <li><a href="{animals[0].img_url}">Gray Wolf Image</a></li>
-            <li><label>Habitat:</label>{animals[0].habitat}</li>
-            <li><label>Geolocation:</label>{animals[0].geolocation}</li>
-            <li><label>Noise:</label>{animals[0].noise}</li>
-        </ul>
+        <div class="info_container_whole">
+            <img src="{animals[0].img_url}" height="300" width="600" />
+            <div class="info_container_top">
+                <h2>Phylum:</h2><p>{animals[0].phylum}</p>
+                <h2>Class:</h2><p>{animals[0].classification}</p>
+                <h2>Order:</h2><p>{animals[0].order}</p>
+                <h2>Family:</h2><p>{animals[0].family}</p>
+                <h2>Genus:</h2><p>{animals[0].genus}</p>
+            </div>
+            <div class="info_container_bottom">
+                <h2>Avg Lifespan:</h2><p>{animals[1].avg_lifespan}</p>
+                <h2>Habitat:</h2><p>{animals[1].habitat}</p>
+                <h2>Geolocation:</h2><p>{animals[1].geolocation}</p>
+                <h2>Noise:</h2><p>{animals[1].noise}</p>
+            </div>
+        <div>
                     '''
                 p.update()
                 p.whole_page = p.whole_page.format(**locals())
                 self.response.write(p.print_out())
             elif animal == animals[1].name:
                 p.form_results = '''
-        <ul>
-            <li><label>Phylum:</label>{animals[1].phylum}</li>
-            <li><label>Class:</label>{animals[1].classification}</li>
-            <li><label>Order:</label>{animals[1].order}</li>
-            <li><label>Family:</label>{animals[1].family}</li>
-            <li><label>Genus:</label>{animals[1].genus}</li>
-            <li><label>Avg Lifespan:</label>{animals[1].avg_lifespan}</li>
-            <li><a href="{animals[1].img_url}">Honey Badger Image</a></li>
-            <li><label>Habitat:</label>{animals[1].habitat}</li>
-            <li><label>Geolocation:</label>{animals[1].geolocation}</li>
-            <li><label>Noise:</label>{animals[1].noise}</li>
-        </ul>
+        <div class="info_container_whole">
+            <img src="{animals[1].img_url}" height="300" width="600" />
+            <div class="info_container_top">
+                <h2>Phylum:</h2><p>{animals[1].phylum}</p>
+                <h2>Class:</h2><p>{animals[1].classification}</p>
+                <h2>Order:</h2><p>{animals[1].order}</p>
+                <h2>Family:</h2><p>{animals[1].family}</p>
+                <h2>Genus:</h2><p>{animals[1].genus}</p>
+            </div>
+            <div class="info_container_bottom">
+                <h2>Avg Lifespan:</h2><p>{animals[1].avg_lifespan}</p>
+                <h2>Habitat:</h2><p>{animals[1].habitat}</p>
+                <h2>Geolocation:</h2><p>{animals[1].geolocation}</p>
+                <h2>Noise:</h2><p>{animals[1].noise}</p>
+            </div>
+        <div>
                     '''
                 p.update()
                 p.whole_page = p.whole_page.format(**locals())
                 self.response.write(p.print_out())
             elif animal == animals[2].name:
                 p.form_results = '''
-        <ul>
-            <li><label>Phylum:</label>{animals[2].phylum}</li>
-            <li><label>Class:</label>{animals[2].classification}</li>
-            <li><label>Order:</label>{animals[2].order}</li>
-            <li><label>Family:</label>{animals[2].family}</li>
-            <li><label>Genus:</label>{animals[2].genus}</li>
-            <li><label>Avg Lifespan:</label>{animals[2].avg_lifespan}</li>
-            <li><a href="{animals[2].img_url}">Kangaroo Image</a></li>
-            <li><label>Habitat:</label>{animals[2].habitat}</li>
-            <li><label>Geolocation:</label>{animals[2].geolocation}</li>
-            <li><label>Noise:</label>{animals[2].noise}</li>
-        </ul>
+        <div class="info_container_whole">
+            <img src="{animals[2].img_url}" height="300" width="600" />
+            <div class="info_container_top">
+                <h2>Phylum:</h2><p>{animals[2].phylum}</p>
+                <h2>Class:</h2><p>{animals[2].classification}</p>
+                <h2>Order:</h2><p>{animals[2].order}</p>
+                <h2>Family:</h2><p>{animals[2].family}</p>
+                <h2>Genus:</h2><p>{animals[2].genus}</p>
+            </div>
+            <div class="info_container_bottom">
+                <h2>Avg Lifespan:</h2><p>{animals[2].avg_lifespan}</p>
+                <h2>Habitat:</h2><p>{animals[2].habitat}</p>
+                <h2>Geolocation:</h2><p>{animals[2].geolocation}</p>
+                <h2>Noise:</h2><p>{animals[2].noise}</p>
+            </div>
+        <div>
                     '''
                 p.update()
                 p.whole_page = p.whole_page.format(**locals())
