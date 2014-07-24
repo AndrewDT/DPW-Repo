@@ -2,37 +2,23 @@
 Name: Andrew Tillett
 Date: 7/22/14
 Class: DPW - Online 1407
-Assignment: What Does the Fox Say?
-
-Create an Abstract Animal class (with the appropriate properties, attributes and methods). This should include a method for the animal making a sound.
-3 Animal Classes that will inherit from the AbstractAnimal class and that will have attributes for the following:
-Properties:
-Phylum
-Class
-Order
-Family
-Genus
-URL for the image of the animal
-Average Lifespan
-Habitat
-Geolocation
-Methods:
-Method that overrides the AbstractAnimal's sound-making method. This is so the Animal will make it's own, more specific sound.
-There should be an instance created of each of the animal classes and they should be stored within an array.
-There should be a button (or link) for each item.
-When a button is clicked, your application should show the data for the animal that button represents.
+Assignment: What Does the Fox Say
 '''
 import webapp2
 
 class MainHandler(webapp2.RequestHandler):
     def get(self):
+        #array of sub-class instances
         animals = [Wolf(), Badger(), Kangaroo()]
 
-
+        #Instance of FormPage sub-class
         p = FormPage()
+        #Assigning whole_page the value of p.head + p.body + p.form to create page html
         p.whole_page = p.head + p.body + p.form
+        #writing page html
         self.response.write(p.whole_page)
 
+        #setting each property of the Wolf() instance
         animals[0].name = "Gray Wolf"
         animals[0].phylum = "Chordata"
         animals[0].classification = "Mammalia"
@@ -45,6 +31,7 @@ class MainHandler(webapp2.RequestHandler):
         animals[0].geolocation = "North America, Europe, Asia, India"
         animals[0].make_noise()
 
+        #setting each property of the Badger() instance
         animals[1].name = "Honey Badger"
         animals[1].phylum = "Chordata"
         animals[1].classification = "Mammalia"
@@ -57,6 +44,7 @@ class MainHandler(webapp2.RequestHandler):
         animals[1].geolocation = "Africa, Asia"
         animals[1].make_noise()
 
+        #setting each property of the Kangaroo() instance
         animals[2].name = "Kangaroo"
         animals[2].phylum = "Chordata"
         animals[2].classification = "Mammalia"
@@ -69,8 +57,9 @@ class MainHandler(webapp2.RequestHandler):
         animals[2].geolocation = "Australia, New Guinea"
         animals[2].make_noise()
 
-
+        #function that takes the argument of the corresponding animal instance and create the html value in p.form, updates the page, formats the page locals, and writes to page the result
         def print_results(anim_obj):
+                #setting the new value for p.form_results
                 p.form_results = '''
         <div class="info_container_whole">
             <img src="{anim_obj.img_url}" height="300" width="610" />
@@ -89,22 +78,32 @@ class MainHandler(webapp2.RequestHandler):
             </div>
         <div>
                     '''
+                #running the p.update() function
                 p.update()
+                #formatting the whole_page locals
                 p.whole_page = p.whole_page.format(**locals())
+                #writing out the page from the p.print_out method
                 self.response.write(p.print_out())
 
-
+        #conditional set to run nested code if self.request.GET == true
         if self.request.GET:
+            #creating a variable to hold the value of self.request.GET
             animal = self.request.GET["animal"]
+            #conditional set to run nested code if animal == to animals[0].name (Gray Wolf)
             if animal == animals[0].name:
+                #calling the print_results function and passing the Wolf object as a parameter
                 print_results(animals[0])
+            #conditional set to run nested code if animal == to animals[1].name (Honey Badger)
             elif animal == animals[1].name:
+                #calling the print_results function and passing the Badger object as a parameter
                 print_results(animals[1])
+            #conditional set to run nested code if animal == to animals[2].name (Kangaroo)
             elif animal == animals[2].name:
+                #calling the print_results function and passing the Kangaroo object as a parameter
                 print_results(animals[2])
 
 
-
+#creation  of Mammals Abstract class
 class Mammals(object):
     def __init__(self):
         self.name = ""
@@ -137,31 +136,41 @@ class Mammals(object):
     def print_out(self):
         return self.phylum + self.classification + self.order + self.family + self.genus + self.img_url + self.avg_lifespan + self.habitat + self.geolocation + self.noise
 
+#creation of Wolf sub-class
 class Wolf(Mammals):
     def __init__(self):
         super(Wolf, self).__init__()
 
+    #polymorphism overriding the Mammals make_noise method
     def make_noise(self):
+        #setting the value of the sub-class' noise to appropriate value
         self.noise = "Bark"
 
+#creation of Badger sub-class
 class Badger(Mammals):
     def __init__(self):
         super(Badger, self).__init__()
 
+    #polymorphism overriding the Mammals make_noise method
     def make_noise(self):
+        #setting the value of the sub-class' noise to appropriate value
         self.noise = "Squeal"
 
+#creation of Kangaroo sub-class
 class Kangaroo(Mammals):
     def __init__(self):
         super(Kangaroo, self).__init__()
 
+    #polymorphism overriding the Mammals make_noise method
     def make_noise(self):
+        #setting the value of the sub-class' noise to appropriate value
         self.noise = "Grunt"
 
-
+#creation of Page Abstract class
 class Page(object):
     def __init__(self):
-        self._head = '''
+        #property to contain the head of the page html (private)
+        self.__head = '''
 <!DOCTYPE HTML>
 <html>
     <head>
@@ -170,53 +179,65 @@ class Page(object):
     </head>
     <body>
                     '''
-        self._body = '''
-        <header><img src="images/logo.png"</header>
+        #property to contain the body of the page html (private)
+        self.__body = '''
+        <header><img src="images/logo.png"></header>
         <h1>Welcome, click each button for a fun fact sheet about some of the world's favorite mammals!</h1>
         '''
-        self._close = '''
+        #property to contain the close of the page html (private)
+        self.__close = '''
 
     </body>
 </html>
                     '''
 
-
+    #head getter
     @property
     def head(self):
-        return self._head
+        #returning self._head
+        return self.__head
 
+    #head setter
     @head.setter
     def head(self, new_head):
-        self._head = new_head
-        self.update()
+        #setting the value of self._head to new_head if changed
+        self.__head = new_head
 
+    #body getter
     @property
     def body(self):
-        return self._body
+        #returning self._body
+        return self.__body
 
+    #body setter
     @body.setter
     def body(self, new_body):
-        self._body = new_body
-        self.update()
+        #setting the value of self._body to new_body if changed
+        self.__body = new_body
 
+    #close getter
     @property
     def close(self):
-        return self._close
+        #returning self._close
+        return self.__close
 
+    #close setter
     @close.setter
     def close(self, new_close):
-        self._close = new_close
-        self.update()
+        #setting the value of self._close to new_close if changed
+        self.__close = new_close
 
+    #method to return the combined value of self._head self._body and self._close
     def print_out(self):
-        return self._head + self._body + self._close
+        return self.__head + self.__body + self.__close
 
 
-
+#creation of FormPage sub-class
 class FormPage(Page):
     def __init__(self):
         super(FormPage, self).__init__()
 
+        #property to contain the form code for the html (private)
         self.__form = '''
         <form method="GET">
             <input type="submit" name="animal" value="Gray Wolf">
@@ -227,30 +248,44 @@ class FormPage(Page):
         </form>
             '''
 
+        #property to contain the form result code for the html (private)
         self.__form_results = ""
 
+        #property to contain the whole page's html
         self.whole_page = ""
 
+    #method to update the whole page's html
     def update(self):
+        #setting whole_page's value to self.form_results + self.close
         self.whole_page = self.form_results + self.close
 
+    #form getter
     @property
     def form(self):
+        #returning self.__form
         return self.__form
 
+    #form setter
     @form.setter
     def form(self, new_form):
+        #setting self.__form to the value of new_form
         self.__form = new_form
 
+    #form getter
     @property
     def form_results(self):
+        #returning self.__form_results
         return self.__form_results
 
+    #form setter
     @form_results.setter
     def form_results(self, new_form_results):
+        #setting the value of __form_results to new_form_results
         self.__form_results = new_form_results
 
+    #polymorphism - overriding the Page Abstract class' print_out method and returning self.whole_page
     def print_out(self):
+        #returning self.whole_page
         return self.whole_page
 
 
