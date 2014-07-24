@@ -239,9 +239,11 @@ class FormPage(Page):
 
         self.__form = '''
         <form method="GET">
-            <input type="submit" name="animal" value="Gray Wolf">
-            <input type="submit" name="animal" value="Honey Badger">
-            <input type="submit" name="animal" value="Kangaroo">
+            <label><img src="images/wolf_icon.png" width="100" height="100"></label><input type="submit" name="animal" value="Gray Wolf">
+            <br/>
+            <label><img src="images/badger_icon.png" width="100" height="100"></label><input type="submit" name="animal" value="Honey Badger">
+            <br/>
+            <label><img src="images/kangaroo_icon.png" width="100" height="100"></label><input type="submit" name="animal" value="Kangaroo">
         </form>
             '''
 

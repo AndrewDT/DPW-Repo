@@ -1,5 +1,6 @@
 body{
     background-color: #fb9e6b;
+    font-family: "Helvetica";
 }
 
 header{
@@ -10,18 +11,55 @@ header{
 }
 
 form{
-    background-color: yellow;
-    width: 50%;
-    margin: 0 auto;
+    background-color: blue;
+    width: 30%;
+    margin-top: 30px;
+    margin-left: 7%;
+    float: left;
 }
 
+form label{
+    margin-right: -2%;
+}
+
+label img{
+    margin-bottom: -45px;
+}
+
+
 input{
-    margin-left: 15%;
+    height: 100px;
+    width: 250px;
+    margin-bottom: 30px;
+    margin-left: 5%;
+    border-radius: 5px;
+    border-color: #31741f;
+    background-color: #31741f;
+    font-size: 1.5em;
+}
+
+input:active{
+    background-color: #d38358;
+}
+
+ul{
+    background-color: #ffff66;
+    width: 53.1%;
+    height: 390px;
+    float: right;
+    margin-top: 30px;
+    margin-right: 7%;
 }
 
 li{
-    margin: 0 auto;
+    height: 25px;
+    width: 105.5%;
+    margin-left: -42px;
+    margin-bottom: 15.7px;
     background-color: red;
-    width: 50%;
     list-style-type: none;
+}
+
+li label{
+    margin-right: 30px;
 }
