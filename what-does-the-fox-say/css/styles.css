@@ -7,7 +7,7 @@ header{
     background-color: #31741f;
     height: 50px;
     width: 101%;
-    margin: -10px 0px 0px -.5%;
+    margin: -7px 0px 0px -.5%;
 }
 
 h1{
@@ -33,9 +33,6 @@ form label{
     margin-right: -2%;
 }
 
-label img{
-    margin-bottom: -45px;
-}
 
 
 input{
@@ -98,21 +95,25 @@ p{
 }
 
 .info_container_whole img{
-    margin-left: 3%;
-    margin-top: 10px;
+    margin-left: 2.5%;
+    margin-top: 12px;
     border-radius: 5px;
 }
 
 .info_container_top{
     float: left;
     width: 40%;
-    margin-left: 11%;
+    margin-left: 8%;
 }
 
 .info_container_bottom{
     float: right;
-    width: 38%;
-    margin-right: 10%;
+    width: 40%;
+    margin-right: 12%;
+}
+
+.info_container_bottom h2{
+    width: 100%;
 }
 
 li label{

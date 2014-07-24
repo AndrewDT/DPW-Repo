@@ -2,8 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d8245105-4081-43fe-b76f-0ef28a09d299" name="Default" comment="">
+      <change type="DELETED" beforePath="$PROJECT_DIR$/what-does-the-fox-say/images/badger_icon.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/what-does-the-fox-say/images/kangaroo_icon.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/what-does-the-fox-say/images/wolf_icon.png" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/what-does-the-fox-say/main.py" afterPath="$PROJECT_DIR$/what-does-the-fox-say/main.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/what-does-the-fox-say/css/styles.css" afterPath="$PROJECT_DIR$/what-does-the-fox-say/css/styles.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="DPW-Repo.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -26,36 +30,27 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="main.py" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="main.py" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/what-does-the-fox-say/main.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="2130" max-vertical-offset="3885">
-              <caret line="209" column="20" selection-start-line="209" selection-start-column="20" selection-end-line="209" selection-end-column="20" />
+            <state vertical-scroll-proportion="0.36293435" vertical-offset="798" max-vertical-offset="3000">
+              <caret line="72" column="36" selection-start-line="72" selection-start-column="36" selection-end-line="72" selection-end-column="36" />
               <folding>
-                <element signature="e#5904#6603#0" expanded="false" />
-                <element signature="e#6630#6741#0" expanded="false" />
-                <element signature="e#6770#6885#0" expanded="false" />
-                <element signature="e#6916#7032#0" expanded="false" />
+                <element signature="e#2655#3627#0" expanded="false" />
+                <element signature="e#3993#4692#0" expanded="false" />
+                <element signature="e#4719#4830#0" expanded="false" />
+                <element signature="e#4859#4974#0" expanded="false" />
+                <element signature="e#5005#5121#0" expanded="false" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="styles.css" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="styles.css" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/what-does-the-fox-say/css/styles.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.521978" vertical-offset="1245" max-vertical-offset="1965">
-              <caret line="96" column="31" selection-start-line="96" selection-start-column="31" selection-end-line="96" selection-end-column="31" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="app.yaml" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/what-does-the-fox-say/app.yaml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="435">
-              <caret line="8" column="20" selection-start-line="8" selection-start-column="20" selection-end-line="8" selection-end-column="20" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="1113" max-vertical-offset="1890">
+              <caret line="98" column="18" selection-start-line="98" selection-start-column="18" selection-end-line="98" selection-end-column="18" />
               <folding />
             </state>
           </provider>
@@ -104,10 +99,9 @@
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="-97" />
-    <option name="y" value="28" />
-    <option name="width" value="1059" />
-    <option name="height" value="643" />
+    <option name="y" value="22" />
+    <option name="width" value="1440" />
+    <option name="height" value="874" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -166,14 +160,6 @@
               <option name="myItemId" value="DPW-Repo" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="what-does-the-fox-say" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="images" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -182,6 +168,10 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="DPW-Repo" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="encapsulated-calculator" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -345,14 +335,14 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-97" y="28" width="1059" height="643" extended-state="0" />
+    <frame x="0" y="22" width="1440" height="874" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.203966" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.15" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
@@ -404,10 +394,11 @@
         <state vertical-scroll-proportion="0.0" vertical-offset="768" max-vertical-offset="3480">
           <caret line="188" column="36" selection-start-line="188" selection-start-column="36" selection-end-line="188" selection-end-column="36" />
           <folding>
-            <element signature="e#5904#6603#0" expanded="false" />
-            <element signature="e#6630#6741#0" expanded="false" />
-            <element signature="e#6770#6885#0" expanded="false" />
-            <element signature="e#6916#7032#0" expanded="false" />
+            <element signature="e#2655#3627#0" expanded="false" />
+            <element signature="e#3993#4692#0" expanded="false" />
+            <element signature="e#4719#4830#0" expanded="false" />
+            <element signature="e#4859#4974#0" expanded="false" />
+            <element signature="e#5005#5121#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -627,14 +618,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/what-does-the-fox-say/app.yaml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="435">
-          <caret line="8" column="20" selection-start-line="8" selection-start-column="20" selection-end-line="8" selection-end-column="20" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/encapsulated-calculator/app.yaml">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.20076482" vertical-offset="0" max-vertical-offset="523">
@@ -643,32 +626,41 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/what-does-the-fox-say/app.yaml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.21978022" vertical-offset="0" max-vertical-offset="546">
+          <caret line="8" column="20" selection-start-line="8" selection-start-column="20" selection-end-line="8" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/encapsulated-calculator/main.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="751" max-vertical-offset="4515">
+        <state vertical-scroll-proportion="3.2185864" vertical-offset="841" max-vertical-offset="4515">
           <caret line="220" column="8" selection-start-line="220" selection-start-column="8" selection-end-line="220" selection-end-column="68" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/what-does-the-fox-say/css/styles.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="1113" max-vertical-offset="1890">
+          <caret line="98" column="18" selection-start-line="98" selection-start-column="18" selection-end-line="98" selection-end-column="18" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/what-does-the-fox-say/main.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="2130" max-vertical-offset="3885">
-          <caret line="209" column="20" selection-start-line="209" selection-start-column="20" selection-end-line="209" selection-end-column="20" />
+        <state vertical-scroll-proportion="0.36293435" vertical-offset="798" max-vertical-offset="3000">
+          <caret line="72" column="36" selection-start-line="72" selection-start-column="36" selection-end-line="72" selection-end-column="36" />
           <folding>
-            <element signature="e#5904#6603#0" expanded="false" />
-            <element signature="e#6630#6741#0" expanded="false" />
-            <element signature="e#6770#6885#0" expanded="false" />
-            <element signature="e#6916#7032#0" expanded="false" />
+            <element signature="e#2655#3627#0" expanded="false" />
+            <element signature="e#3993#4692#0" expanded="false" />
+            <element signature="e#4719#4830#0" expanded="false" />
+            <element signature="e#4859#4974#0" expanded="false" />
+            <element signature="e#5005#5121#0" expanded="false" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/what-does-the-fox-say/css/styles.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.521978" vertical-offset="1245" max-vertical-offset="1965">
-          <caret line="96" column="31" selection-start-line="96" selection-start-column="31" selection-end-line="96" selection-end-column="31" />
-          <folding />
         </state>
       </provider>
     </entry>
