@@ -15,7 +15,20 @@ class MainHandler(webapp2.RequestHandler):
         p.inputs = [["text", "title", "Title"], ["text", "authors", "Author(s)"], ["submit", "Search"]]
         self.response.write(p.page_write())
 
+        if self.request.GET:
+            title = self.request.GET["title"]
+            authors = self.request.GET["authors"]
+            key = '&key=AIzaSyCf5csGwo5jceqciyjS0GIEyVSJcsJ4Wt4'
+            url = "https://www.googleapis.com/books/v1/volumes?q='" + title + "'+inauthor:" + authors + key
 
+            request = urllib2.Request(url)
+            opener = urllib2.build_opener()
+            result = opener.open(request)
+
+            jsondoc = json.load(result)
+
+            book_title = jsondoc["items"][0]["volumeInfo"]["title"]
+            self.response.write(book_title)
 
 class Page(object):
     def __init__(self):
