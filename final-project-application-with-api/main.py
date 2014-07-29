@@ -44,7 +44,35 @@ class MainHandler(webapp2.RequestHandler):
 
 
 
+
+class BookModel(object):
+    ''' This model handles fetching, parsing, and sorting data from Yahoo's weather api '''
+    def __init__(self):
+        self.__url = "https://www.googleapis.com/books/v1/volumes?q='"
+        self.__title = ""
+        self.__author = ""
+        self.__jsondoc = ""
+
+
+    def callApi(self):
+        request = urllib2.Request(url)
+        opener = urllib2.build_opener()
+        result = opener.open(request)
+        self.__jsondoc = json.load(result)
+        books = self.__jsondoc["items"]
+        self._dos = []
+        for item in books:
+            do = BookData()
+            do.title = books["volumeInfo"]["title"]
+            do.authors = books["volumeInfo"]["authors"][0]
+            do.rating = books["volumeInfo"]["averageRating"]
+            do.buy = item["saleInfo"]["buyLink"]
+            self._dos.append(do)
+
+
+
 class BookData(object):
+    ''' this data object holds the data fetched by the model shown by the view  '''
     def __init__(self):
         self.title = ""
         self.authors = ""
