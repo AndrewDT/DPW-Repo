@@ -29,10 +29,31 @@ class MainHandler(webapp2.RequestHandler):
             jsondoc = json.load(result)
 
             books = jsondoc["items"]
+            print books
+
             for item in books:
-                book_title = item["volumeInfo"]["title"]
-                book_author = item["volumeInfo"]["authors"][0]
-                self.response.write("<br/>Title:   " + book_title + "<br/>Author:   " + book_author)
+                try:
+                    book_title = item["volumeInfo"]["title"]
+                    book_author = item["volumeInfo"]["authors"][0]
+                    book_buy = item["saleInfo"]["buyLink"]
+                    book_rating = item["volumeInfo"]["averageRating"]
+                    self.response.write("<br/>Title:   " + book_title + "<br/>Author:   " + book_author + "<br/>Rating:   " + str(book_rating) + "<br/>" + book_buy)
+                except:
+                    self.response.write("<br/>Title:   " + book_title + "<br/>Author:   " + book_author)
+
+
+
+
+class BookData(object):
+    def __init__(self):
+        self.title = ""
+        self.authors = ""
+        self.rating = ""
+        self.buy = ""
+
+
+
+
 
 class Page(object):
     def __init__(self):
