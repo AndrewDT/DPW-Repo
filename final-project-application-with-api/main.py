@@ -44,6 +44,31 @@ class MainHandler(webapp2.RequestHandler):
 
 
 
+class BookView(object):
+    '''  This class handles how the data is shown to the user  '''
+    def __init__(self):
+        self.__bdos = []
+        self.__content = "<br/>"
+
+
+    def update(self):
+        for do in self.__bdos:
+            self.__content += "Title: " + do.title + "<br/> Author: " + do.authors + "<br/> Rating: " + do.rating + "<br/>" + do.buy
+
+    @property
+    def content(self):
+        return self.__content
+
+    @property
+    def bdos(self):
+        pass
+
+    @bdos.setter
+    def bdos(self, arr):
+        self.__bdos = arr
+        self.update()
+
+
 
 class BookModel(object):
     ''' This model handles fetching, parsing, and sorting data from Yahoo's weather api '''
@@ -68,6 +93,28 @@ class BookModel(object):
             do.rating = books["volumeInfo"]["averageRating"]
             do.buy = item["saleInfo"]["buyLink"]
             self._dos.append(do)
+
+
+    @property
+    def dos(self):
+        return self._dos
+
+    @property
+    def title(self):
+        pass
+
+    @title.setter
+    def title(self, t):
+        self.__title = t
+
+
+    @property
+    def author(self):
+        pass
+
+    @author.setter
+    def author(self, a):
+        self.__author = a
 
 
 
