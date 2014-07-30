@@ -13,24 +13,20 @@ class MainHandler(webapp2.RequestHandler):
     def get(self):
         p = FormPage()
         p.inputs = [["text", "title", "Title"], ["text", "authors", "Author(s)"], ["submit", "Search"]]
-        self.response.write(p.page_write())
 
         if self.request.GET:
-            title = self.request.GET["title"]
-            authors = self.request.GET["authors"]
-            key = '&key=AIzaSyCf5csGwo5jceqciyjS0GIEyVSJcsJ4Wt4'
-            url = "https://www.googleapis.com/books/v1/volumes?q='" + title.replace(" ", "") + "'+inauthor:" + authors.replace(" ", "") + key
+            bm = BookModel()
+            bm.title = self.request.GET["title"]
+            bm.author = self.request.GET["authors"]
+            bm.callApi()
 
+            bv = BookView()
+            bv.bdos = bm.dos
 
-            request = urllib2.Request(url)
-            opener = urllib2.build_opener()
-            result = opener.open(request)
+            p._body = bv.content
 
-            jsondoc = json.load(result)
-
-            books = jsondoc["items"]
-            print books
-
+        self.response.write(p.page_write())
+'''
             for item in books:
                 try:
                     book_title = item["volumeInfo"]["title"]
@@ -40,6 +36,8 @@ class MainHandler(webapp2.RequestHandler):
                     self.response.write("<br/>Title:   " + book_title + "<br/>Author:   " + book_author + "<br/>Rating:   " + str(book_rating) + "<br/>" + book_buy)
                 except:
                     self.response.write("<br/>Title:   " + book_title + "<br/>Author:   " + book_author)
+
+'''
 
 
 
@@ -53,7 +51,14 @@ class BookView(object):
 
     def update(self):
         for do in self.__bdos:
-            self.__content += "Title: " + do.title + "<br/> Author: " + do.authors + "<br/> Rating: " + do.rating + "<br/>" + do.buy
+            if do.web_read:
+                self.__content += "Title: "+do.title+"<br/> Author: "+do.authors
+                self.__content += "<br/> Rating: "+str(do.rating)
+                self.__content += "<br/> Read: "+do.web_read + "<br/><br/>"
+            else:
+                self.__content += "Title: "+do.title+"<br/> Author: "+do.authors
+                self.__content += "<br/> Rating: "+str(do.rating) + "</br></br>"
+
 
     @property
     def content(self):
@@ -80,7 +85,7 @@ class BookModel(object):
 
 
     def callApi(self):
-        request = urllib2.Request(url)
+        request = urllib2.Request(self.__url+self.__title.replace(" ", "")+"'+inauthor:"+self.__author.replace(" ", ""))
         opener = urllib2.build_opener()
         result = opener.open(request)
         self.__jsondoc = json.load(result)
@@ -88,11 +93,16 @@ class BookModel(object):
         self._dos = []
         for item in books:
             do = BookData()
-            do.title = books["volumeInfo"]["title"]
-            do.authors = books["volumeInfo"]["authors"][0]
-            do.rating = books["volumeInfo"]["averageRating"]
-            do.buy = item["saleInfo"]["buyLink"]
-            self._dos.append(do)
+            try:
+                do.title = item["volumeInfo"]["title"]
+                do.authors = item["volumeInfo"]["authors"][0]
+                do.rating = item["volumeInfo"]["averageRating"]
+                do.web_read = item["accessInfo"]["webReaderLink"]
+                print item["saleInfo"]
+                self._dos.append(do)
+            except:
+                print item["saleInfo"]
+                self._dos.append(do)
 
 
     @property
@@ -124,7 +134,7 @@ class BookData(object):
         self.title = ""
         self.authors = ""
         self.rating = ""
-        self.buy = ""
+        self.web_read = ""
 
 
 
