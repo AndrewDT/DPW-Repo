@@ -26,18 +26,6 @@ class MainHandler(webapp2.RequestHandler):
             p._body = bv.content
 
         self.response.write(p.page_write())
-'''
-            for item in books:
-                try:
-                    book_title = item["volumeInfo"]["title"]
-                    book_author = item["volumeInfo"]["authors"][0]
-                    book_buy = item["saleInfo"]["buyLink"]
-                    book_rating = item["volumeInfo"]["averageRating"]
-                    self.response.write("<br/>Title:   " + book_title + "<br/>Author:   " + book_author + "<br/>Rating:   " + str(book_rating) + "<br/>" + book_buy)
-                except:
-                    self.response.write("<br/>Title:   " + book_title + "<br/>Author:   " + book_author)
-
-'''
 
 
 
@@ -52,12 +40,12 @@ class BookView(object):
     def update(self):
         for do in self.__bdos:
             if do.web_read:
-                self.__content += "Title: "+do.title+"<br/> Author: "+do.authors
-                self.__content += "<br/> Rating: "+str(do.rating)
-                self.__content += "<br/> Read: "+do.web_read + "<br/><br/>"
+                self.__content += "<h1>Title:</h1> "+do.title+"<br/><h2>Author:</h2> "+do.authors
+                self.__content += "<br/><h2>Rating:</h2> "+str(do.rating)
+                self.__content += "<br/><a href='"+do.web_read + "'>Read " + do.title + "</a><br/><br/>"
             else:
-                self.__content += "Title: "+do.title+"<br/> Author: "+do.authors
-                self.__content += "<br/> Rating: "+str(do.rating) + "</br></br>"
+                self.__content += "<h1>Title:</h1> "+do.title+"<br/><h2>Author:</h2> "+do.authors
+                self.__content += "<br/><h2>Rating:</h2> "+str(do.rating)
 
 
     @property
@@ -147,10 +135,13 @@ class Page(object):
 <html>
     <head>
         <title>Book Search App</title>
+        <link rel="stylesheet" type="text/css" href="css/style.css" />
     </head>
     <body>
         '''
-        self._body = "Book Searching Application"
+        self._body = '''
+
+        '''
         self._close = '''
 
     </body>
@@ -165,7 +156,7 @@ class FormPage(Page):
     def __init__(self):
         super(FormPage, self).__init__()
 
-        self._form_open = "<form method='GET'>"
+        self._form_open = "<form method='GET'><h2>Search for Books</h2>"
         self._form_fields = ""
         self.__inputs = ""
         self._form_end = "</form>"
