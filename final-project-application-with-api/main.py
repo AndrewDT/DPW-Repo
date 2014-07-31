@@ -4,6 +4,10 @@ Date: 7/28/14
 Class: DPW Online 1407
 Assignment: Final Project: Application with API
 
+STILL NEED:
+Create a proof of concept to make sure you have chosen something within scope
+You MUST validate the user's input. Blank submissions cannot be acceptable.
+Comment your code. Everything needs to be explained in detail.
 '''
 import webapp2
 import urllib2 #gives us python classes and code needed to requesting info, receiving, and opening
@@ -85,7 +89,8 @@ class BookModel(object):
 
 
     def callApi(self):
-        request = urllib2.Request(self.__url+self.__title.replace(" ", "")+"'+inauthor:"+self.__author.replace(" ", ""))
+        request = urllib2.Request(self.__url+self.__title.replace(" ", "")+"'+inauthor:"+self.__author.replace(" ", "%20"))
+        print self.__url+self.__title.replace(" ", "")+"'+inauthor:"+self.__author.replace(" ", "%20")
         opener = urllib2.build_opener()
         result = opener.open(request)
         self.__jsondoc = json.load(result)

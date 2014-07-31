@@ -89,11 +89,13 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#528d4f', end
 
 .book_container p{
     margin-top: -10px;
+    font-size: 1em;
 }
 
 .book_container a{
     display: block;
     margin-top: -10px;
+    font-size: 1em;
 }
 
 .title_container{
