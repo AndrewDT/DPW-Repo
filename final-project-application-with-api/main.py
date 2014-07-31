@@ -41,21 +41,21 @@ class BookView(object):
         for do in self.__bdos:
             if do.web_read:
                 self.__content += "<div class='book_container'>"
-                self.__content += "<div class='title_container'><h2>Title:</h2><p>"+do.title+"</p></div><div class='author_container'><h2>Author:</h2><p>"+do.authors+"</p></div>"
-                self.__content += "<div class='read_container'><h2>Read:</h2><a href='"+do.web_read + "'>" + do.title + "</a></div>"
+                self.__content += "<div class='title_container'><h2>Title</h2><p>"+do.title+"</p></div><div class='author_container'><h2>Author</h2><p>"+do.authors+"</p></div>"
+                self.__content += "<div class='read_container'><h2>Read</h2><a href='"+do.web_read + "'>Read Online</a></div>"
                 if do.rating:
-                    self.__content += "<div class='rating_container'><h2>Rating:</h2><p>"+str(do.rating) + "</p></div>"
+                    self.__content += "<div class='rating_container'><h2>Rating</h2><p>"+str(do.rating) + "</p></div>"
                     self.__content += "</div>"
                 else:
                     self.__content += "</div>"
             elif do.rating:
                 self.__content += "<div class='book_container'>"
-                self.__content += "<div class='title_container'><h2>Title:</h2><p>"+do.title+"</p></div><div class='author_container'><h2>Author:</h2><p>"+do.authors + "</p></div>"
-                self.__content += "<div class='rating_container'><h2>Rating:</h2><p>"+str(do.rating) + "</p></div>"
+                self.__content += "<div class='title_container'><h2>Title</h2><p>"+do.title+"</p></div><div class='author_container'><h2>Author:</h2><p>"+do.authors + "</p></div>"
+                self.__content += "<div class='rating_container'><h2>Rating</h2><p>"+str(do.rating) + "</p></div>"
                 self.__content += "</div>"
             else:
                 self.__content += "<div class='book_container'>"
-                self.__content += "<div class='title_container'><h2>Title:</h2><p>"+do.title+"</p></div><div class='author_container'><h2>Author:</h2><p>"+do.authors + "</p></div>"
+                self.__content += "<div class='title_container'><h2>Title</h2><p>"+do.title+"</p></div><div class='author_container'><h2>Author</h2><p>"+do.authors + "</p></div>"
                 self.__content += "</div>"
 
 
