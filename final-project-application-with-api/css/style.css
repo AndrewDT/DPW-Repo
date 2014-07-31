@@ -11,14 +11,15 @@ form{
     width: 90%;
     margin: 0 auto;
     margin-top: 50px;
+    margin-bottom: -20px;
 }
 
-form h2{
+form h1{
     float: left;
     font-family: "Arial";
     font-size: 2em;
     margin-top: 15px;
-    margin-left: 2%;
+    margin-left: 1%;
 }
 
 input{
@@ -28,3 +29,11 @@ input{
     margin-left: 1%;
     font-size: 1.5em;
 }
+
+.book_container{
+    background-color: yellow;
+    width: 90%;
+    margin: 0 auto;
+    margin-bottom: -1px;
+}
+

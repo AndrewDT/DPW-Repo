@@ -40,12 +40,24 @@ class BookView(object):
     def update(self):
         for do in self.__bdos:
             if do.web_read:
-                self.__content += "<h1>Title:</h1> "+do.title+"<br/><h2>Author:</h2> "+do.authors
-                self.__content += "<br/><h2>Rating:</h2> "+str(do.rating)
-                self.__content += "<br/><a href='"+do.web_read + "'>Read " + do.title + "</a><br/><br/>"
+                self.__content += "<div class='book_container'>"
+                self.__content += "<h2>Title:</h2> "+do.title+"<h2>Author:</h2> "+do.authors
+                self.__content += "<h2>Read:</h2><a href='"+do.web_read + "'>" + do.title + "</a>"
+                if do.rating:
+                    self.__content += "<h2>Rating:</h2> "+str(do.rating)
+                    self.__content += "</div>"
+                else:
+                    self.__content += "</div>"
+            elif do.rating:
+                self.__content += "<div class='book_container'>"
+                self.__content += "<h2>Title:</h2> "+do.title+"<h2>Author:</h2> "+do.authors
+                self.__content += "<h2>Rating:</h2> "+str(do.rating)
+                self.__content += "</div>"
             else:
-                self.__content += "<h1>Title:</h1> "+do.title+"<br/><h2>Author:</h2> "+do.authors
-                self.__content += "<br/><h2>Rating:</h2> "+str(do.rating)
+                self.__content += "<div class='book_container'>"
+                self.__content += "<h2>Title:</h2> "+do.title+"<h2>Author:</h2> "+do.authors
+                self.__content += "</div>"
+
 
 
     @property
@@ -156,7 +168,7 @@ class FormPage(Page):
     def __init__(self):
         super(FormPage, self).__init__()
 
-        self._form_open = "<form method='GET'><h2>Search for Books</h2>"
+        self._form_open = "<form method='GET'><h1>Search for Books</h1>"
         self._form_fields = ""
         self.__inputs = ""
         self._form_end = "</form>"
