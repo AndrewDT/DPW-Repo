@@ -22,12 +22,17 @@ class MainHandler(webapp2.RequestHandler):
             bm = BookModel()
             bm.title = self.request.GET["title"]
             bm.author = self.request.GET["authors"]
-            bm.callApi()
+            print self.request.GET["title"]
+            print bm.author
+            if self.request.GET["title"] == "" or self.request.GET["authors"] == "":
+                p._body = "<h1 id='error_message'>Title and/or Author cannot be empty<br/>Please enter both fields</h1>"
+            else:
+                bm.callApi()
 
-            bv = BookView()
-            bv.bdos = bm.dos
+                bv = BookView()
+                bv.bdos = bm.dos
 
-            p._body = bv.content
+                p._body = bv.content
 
         self.response.write(p.page_write())
 
@@ -90,7 +95,6 @@ class BookModel(object):
 
     def callApi(self):
         request = urllib2.Request(self.__url+self.__title.replace(" ", "")+"'+inauthor:"+self.__author.replace(" ", "%20"))
-        print self.__url+self.__title.replace(" ", "")+"'+inauthor:"+self.__author.replace(" ", "%20")
         opener = urllib2.build_opener()
         result = opener.open(request)
         self.__jsondoc = json.load(result)
@@ -103,10 +107,8 @@ class BookModel(object):
                 do.authors = item["volumeInfo"]["authors"][0]
                 do.rating = item["volumeInfo"]["averageRating"]
                 do.web_read = item["accessInfo"]["webReaderLink"]
-                print item["saleInfo"]
                 self._dos.append(do)
             except:
-                print item["saleInfo"]
                 self._dos.append(do)
 
 

@@ -29,7 +29,17 @@ body{
 #greeting_container ul{
     list-style-type: none;
     font-size: 1.1em;
+    font-weight: bold;
+}
 
+
+#error_message{
+    width: 70%;
+    margin: 0 auto;
+    margin-top: 30px;
+    font-size: 2em;
+    text-align: center;
+    font-family: "Myriad Hebrew";
 }
 
 form{
