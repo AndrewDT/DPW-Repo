@@ -6,7 +6,6 @@ Assignment: Final Project: Application with API
 
 STILL NEED:
 Create a proof of concept to make sure you have chosen something within scope
-You MUST validate the user's input. Blank submissions cannot be acceptable.
 Comment your code. Everything needs to be explained in detail.
 '''
 import webapp2
@@ -22,8 +21,6 @@ class MainHandler(webapp2.RequestHandler):
             bm = BookModel()
             bm.title = self.request.GET["title"]
             bm.author = self.request.GET["authors"]
-            print self.request.GET["title"]
-            print bm.author
             if self.request.GET["title"] == "" or self.request.GET["authors"] == "":
                 p._body = "<h1 id='error_message'>Title and/or Author cannot be empty<br/>Please enter both fields</h1>"
             else:
