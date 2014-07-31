@@ -1,13 +1,18 @@
 body{
 }
 
+img{
+    margin-left: 5%;
+    margin-bottom: -10px;
+}
+
 #page_container{
     background-color: rgb(240,240,240);
     border: 1px solid;
     border-color: rgba(0,0,0,.2);
     width: 90%;
     margin: 0 auto;
-    margin-top: 50px;
+    margin-top: 20px;
 }
 
 #greeting_container{
@@ -71,7 +76,7 @@ input{
     height: 40px;
     width: 260px;
     margin-top: 6px;
-    margin-left: 5.5%;
+    margin-left: 5%;
     font-size: 1.5em;
 }
 

@@ -157,6 +157,7 @@ class Page(object):
         <link rel="stylesheet" type="text/css" href="css/style.css" />
     </head>
     <body>
+        <img src='images/logo_final.png'' />
         <div id="page_container">
         '''
         self._body = '''
