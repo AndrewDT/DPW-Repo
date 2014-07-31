@@ -11,6 +11,28 @@ body{
     margin-top: 50px;
 }
 
+#greeting_container{
+    text-align: center;
+    font-family: "Myriad Hebrew"
+}
+
+#greeting_container h1{
+    width: 70%;
+    margin: 0 auto;
+    margin-top: 30px;
+    font-size: 2.5em;
+}
+
+#greeting_container p{
+    font-size: 1.2em;
+}
+
+#greeting_container ul{
+    list-style-type: none;
+    font-size: 1.1em;
+
+}
+
 form{
     background: rgb(168,158,106); /* Old browsers */
     background: -moz-linear-gradient(top, rgba(168,158,106,1) 0%, rgba(156,148,94,1) 40%, rgba(131,125,81,1) 100%); /* FF3.6+ */

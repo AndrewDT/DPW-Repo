@@ -158,7 +158,16 @@ class Page(object):
         <div id="page_container">
         '''
         self._body = '''
-
+        <div id="greeting_container">
+            <h1>Welcome to Book Lib!</h1>
+            <p>Using Google Books, we search the database and provide the following if applicable:</p>
+            <ul>
+                <li>Title</li>
+                <li>Author</li>
+                <li>Online Readable</li>
+                <li>Rating</li>
+            </ul>
+        </div>
         '''
         self._close = '''
         </div>
